@@ -7,7 +7,7 @@ public:
 	Position(int row, int col);
 	Position(const Position& other);
 	Position& operator=(const Position& other);
-	~Position();
+	~Position() {}
 
 public:
 	void set_row(int position);
