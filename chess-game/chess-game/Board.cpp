@@ -29,6 +29,22 @@ void Board::set_board_field()
 	place_all_figures();
 }
 
+void Board::set_figure(Position position, Figure* figure)
+{
+	this->board_field[position.get_row()][position.get_col()].set_figure(*figure);
+}
+
+Figure* Board::get_figure(Position position)
+{
+	Figure* figure = board_field[position.get_row()][position.get_col()].get_figure();
+	return figure;
+}
+
+void Board::remove_figure(Position position)
+{
+	this->board_field[position.get_row()][position.get_col()].remove_figure();
+}
+
 void Board::clear()
 {
 	for (int i = 0; i < BOARD_WIDTH; i++)
