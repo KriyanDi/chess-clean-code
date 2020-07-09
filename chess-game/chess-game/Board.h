@@ -19,6 +19,7 @@ public:
 	void set_figure(Position position, Figure* figure);
 	Figure* get_figure(Position position);
 	void remove_figure(Position position);
+	bool is_empty(Position position) const;
 
 private:
 	Square** board_field;

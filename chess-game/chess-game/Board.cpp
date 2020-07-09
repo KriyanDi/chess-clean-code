@@ -45,6 +45,18 @@ void Board::remove_figure(Position position)
 	this->board_field[position.get_row()][position.get_col()].remove_figure();
 }
 
+bool Board::is_empty(Position position) const
+{
+	if (this->board_field[position.get_row()][position.get_col()].is_empty())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 void Board::clear()
 {
 	for (int i = 0; i < BOARD_WIDTH; i++)
