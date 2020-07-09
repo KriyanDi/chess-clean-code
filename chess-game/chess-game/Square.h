@@ -12,7 +12,7 @@ public:
 
 public:
 	void set_figure(Figure figure);
-	Figure get_figure();
+	Figure* get_figure();
 
 	bool is_empty() const;
 	Figure remove_figure();

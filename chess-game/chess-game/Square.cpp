@@ -21,9 +21,9 @@ void Square::set_figure(Figure figure)
 	}
 }
 
-Figure Square::get_figure()
+Figure* Square::get_figure()
 {
-	Figure figure(*this->figure);
+	Figure* figure = this->figure;
 	return figure;
 }
 
