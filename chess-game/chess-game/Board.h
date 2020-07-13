@@ -21,6 +21,7 @@ public:
 	void remove_figure(Position position);
 	bool is_empty(Position position) const;
 
+
 private:
 	Square** board_field;
 
