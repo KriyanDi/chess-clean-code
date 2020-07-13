@@ -40,5 +40,4 @@ protected:
 	Type type;
 	Color color;
 	Position position;
-	
 };
