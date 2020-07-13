@@ -1,6 +1,12 @@
 #pragma once
 #include "Position.h"
 
+enum Player
+{
+	PLAYER_ONE = 1,
+	PLAYER_TWO
+};
+
 enum Type
 {
 	PAWN = 1,
@@ -21,7 +27,7 @@ enum Color
 class Figure
 {
 public:
-	Figure(Type type, Color color, Position position);
+	Figure(Type type, Color color, Position position, Player owner);
 	Figure(const Figure& other);
 	Figure& operator=(const Figure& other) = delete;
 	~Figure();
@@ -36,7 +42,11 @@ public:
 	void set_position(Position position);
 	Position get_position() const;
 
+	void set_owner(Player owner);
+	Player get_owner() const;
+
 protected:
+	Player owner;
 	Type type;
 	Color color;
 	Position position;

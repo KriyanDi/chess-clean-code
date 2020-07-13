@@ -87,7 +87,7 @@ void Board::place_black_pawns()
 {
 	for (int i = 0; i < BOARD_WIDTH; i++)
 	{
-		board_field[1][i].set_figure(Figure(Type::PAWN, Color::BLACK, Position(1, i)));
+		board_field[1][i].set_figure(Figure(Type::PAWN, Color::BLACK, Position(1, i), Player::PLAYER_TWO));
 	}
 }
 
@@ -95,7 +95,7 @@ void Board::place_white_pawns()
 {
 	for (int i = 0; i < BOARD_WIDTH; i++)
 	{
-		board_field[6][i].set_figure(Figure(Type::PAWN, Color::WHITE, Position(6, i)));
+		board_field[6][i].set_figure(Figure(Type::PAWN, Color::WHITE, Position(6, i), Player::PLAYER_ONE));
 	}
 }
 
@@ -107,14 +107,14 @@ void Board::place_rooks()
 
 void Board::place_black_rooks()
 {
-	board_field[0][0].set_figure(Figure(Type::ROOK, Color::BLACK, Position(0, 0)));
-	board_field[0][7].set_figure(Figure(Type::ROOK, Color::BLACK, Position(0, 7)));
+	board_field[0][0].set_figure(Figure(Type::ROOK, Color::BLACK, Position(0, 0), Player::PLAYER_TWO));
+	board_field[0][7].set_figure(Figure(Type::ROOK, Color::BLACK, Position(0, 7), Player::PLAYER_TWO));
 }
 
 void Board::place_white_rooks()
 {
-	board_field[7][0].set_figure(Figure(Type::ROOK, Color::WHITE, Position(7, 0)));
-	board_field[7][7].set_figure(Figure(Type::ROOK, Color::WHITE, Position(7, 7)));
+	board_field[7][0].set_figure(Figure(Type::ROOK, Color::WHITE, Position(7, 0), Player::PLAYER_ONE));
+	board_field[7][7].set_figure(Figure(Type::ROOK, Color::WHITE, Position(7, 7), Player::PLAYER_ONE));
 }
 
 void Board::place_knights()
@@ -125,14 +125,14 @@ void Board::place_knights()
 
 void Board::place_black_knights()
 {
-	board_field[0][1].set_figure(Figure(Type::KNIGHT, Color::BLACK, Position(0, 1)));
-	board_field[0][6].set_figure(Figure(Type::KNIGHT, Color::BLACK, Position(0, 6)));
+	board_field[0][1].set_figure(Figure(Type::KNIGHT, Color::BLACK, Position(0, 1), Player::PLAYER_TWO));
+	board_field[0][6].set_figure(Figure(Type::KNIGHT, Color::BLACK, Position(0, 6), Player::PLAYER_TWO));
 }
 
 void Board::place_white_knights()
 {
-	board_field[7][1].set_figure(Figure(Type::KNIGHT, Color::WHITE, Position(7, 1)));
-	board_field[7][6].set_figure(Figure(Type::KNIGHT, Color::WHITE, Position(7, 6)));
+	board_field[7][1].set_figure(Figure(Type::KNIGHT, Color::WHITE, Position(7, 1), Player::PLAYER_ONE));
+	board_field[7][6].set_figure(Figure(Type::KNIGHT, Color::WHITE, Position(7, 6), Player::PLAYER_ONE));
 }
 
 void Board::place_bishops()
@@ -143,14 +143,14 @@ void Board::place_bishops()
 
 void Board::place_black_bishops()
 {
-	board_field[0][2].set_figure(Figure(Type::BISHOP, Color::BLACK, Position(0, 2)));
-	board_field[0][5].set_figure(Figure(Type::BISHOP, Color::BLACK, Position(0, 5)));
+	board_field[0][2].set_figure(Figure(Type::BISHOP, Color::BLACK, Position(0, 2), Player::PLAYER_TWO));
+	board_field[0][5].set_figure(Figure(Type::BISHOP, Color::BLACK, Position(0, 5), Player::PLAYER_TWO));
 }
 
 void Board::place_white_bishops()
 {
-	board_field[7][2].set_figure(Figure(Type::BISHOP, Color::WHITE, Position(7, 2)));
-	board_field[7][5].set_figure(Figure(Type::BISHOP, Color::WHITE, Position(7, 5)));
+	board_field[7][2].set_figure(Figure(Type::BISHOP, Color::WHITE, Position(7, 2), Player::PLAYER_ONE));
+	board_field[7][5].set_figure(Figure(Type::BISHOP, Color::WHITE, Position(7, 5), Player::PLAYER_ONE));
 }
 
 void Board::place_queens()
@@ -161,12 +161,12 @@ void Board::place_queens()
 
 void Board::place_black_queen()
 {
-	board_field[0][3].set_figure(Figure(Type::QUEEN, Color::BLACK, Position(0, 3)));
+	board_field[0][3].set_figure(Figure(Type::QUEEN, Color::BLACK, Position(0, 3), Player::PLAYER_TWO));
 }
 
 void Board::place_white_queen()
 {
-	board_field[7][3].set_figure(Figure(Type::QUEEN, Color::WHITE, Position(7, 3)));
+	board_field[7][3].set_figure(Figure(Type::QUEEN, Color::WHITE, Position(7, 3), Player::PLAYER_ONE));
 }
 
 void Board::place_kings()
@@ -177,11 +177,11 @@ void Board::place_kings()
 
 void Board::place_black_king()
 {
-	board_field[0][4].set_figure(Figure(Type::KING, Color::BLACK, Position(0, 4)));
+	board_field[0][4].set_figure(Figure(Type::KING, Color::BLACK, Position(0, 4), Player::PLAYER_TWO));
 }
 
 void Board::place_white_king()
 {
-	board_field[7][4].set_figure(Figure(Type::KING, Color::WHITE, Position(7, 4)));
+	board_field[7][4].set_figure(Figure(Type::KING, Color::WHITE, Position(7, 4), Player::PLAYER_ONE));
 }
 

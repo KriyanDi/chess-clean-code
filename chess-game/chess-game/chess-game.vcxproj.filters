@@ -28,37 +28,49 @@
     <Filter Include="Header Files\Player">
       <UniqueIdentifier>{c7a2902d-203b-4f73-9884-dc742b7361df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Figures">
+      <UniqueIdentifier>{3165ac8a-0702-4ad2-833d-5a9bc6360ed6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Position">
+      <UniqueIdentifier>{311150c7-d305-47e1-ad25-43aad1b04527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Board">
+      <UniqueIdentifier>{bb296685-ab5c-4f68-9ed3-6194606ab5ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Position.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Square.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Bishop.cpp">
+      <Filter>Source Files\Figures</Filter>
     </ClCompile>
     <ClCompile Include="Figure.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Board.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Pawn.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Rook.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Figures</Filter>
     </ClCompile>
     <ClCompile Include="Horse.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Figures</Filter>
     </ClCompile>
-    <ClCompile Include="Bishop.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="King.cpp">
+      <Filter>Source Files\Figures</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Source Files\Figures</Filter>
     </ClCompile>
     <ClCompile Include="Queen.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Figures</Filter>
+    </ClCompile>
+    <ClCompile Include="Rook.cpp">
+      <Filter>Source Files\Figures</Filter>
+    </ClCompile>
+    <ClCompile Include="Position.cpp">
+      <Filter>Source Files\Position</Filter>
+    </ClCompile>
+    <ClCompile Include="Square.cpp">
+      <Filter>Source Files\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="Board.cpp">
+      <Filter>Source Files\Board</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,10 +1,11 @@
 #include "Figure.h"
 
-Figure::Figure(Type type, Color color, Position position)
+Figure::Figure(Type type, Color color, Position position, Player owner)
 {
 	set_type(type);
 	set_color(color);
 	set_position(position);
+	set_owner(owner);
 }
 
 Figure::Figure(const Figure& other)
@@ -47,4 +48,15 @@ Position Figure::get_position() const
 {
 	Position position(this->position);
 	return position;
+}
+
+void Figure::set_owner(Player owner)
+{
+	this->owner = owner;
+}
+
+Player Figure::get_owner() const
+{
+	Player owner(this->owner);
+	return owner;
 }
