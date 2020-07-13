@@ -149,7 +149,7 @@
     <ClInclude Include="Board.h" />
     <ClInclude Include="Figure.h" />
     <ClInclude Include="King.h" />
-    <ClInclude Include="Knight.h" />
+    <ClInclude Include="Horse.h" />
     <ClInclude Include="Pawn.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Queen.h" />
