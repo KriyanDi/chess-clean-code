@@ -5,6 +5,8 @@
 //const
 const int BOARD_HIGH = 8;
 const int BOARD_WIDTH = 8;
+const int BOARD_FIELD_VIEW_HIGH = 12;
+const int BOARD_FIELD_VIEW_WIDTH = 24;
 
 class Board
 {
@@ -16,14 +18,31 @@ public:
 
 public:
 	void set_board_field();
+
 	void set_figure(Position position, Figure* figure);
 	Figure* get_figure(Position position);
 	void remove_figure(Position position);
+
 	bool is_empty(Position position) const;
 
+	void print_board_field_view();
+	void update_board_field_view_center();
+
+	void set_board_field_view();
+	void set_board_field_view_center();
+	void set_board_field_view_outlines();
+	void set_all_chars_with_spaces_board_field_view();
+	void set_top_numbers_board_field_view();
+	void set_bottom_numbers_board_field_view();
+	void set_left_side_numbers_board_field_view();
+	void set_right_side_numbers_board_field_view();
+
+	int convert_row_board_field_view_to_row_board_view_index(int row);
+	int convert_col_board_field_view_to_col_board_view_index(int col);
 
 private:
 	Square** board_field;
+	char board_field_view[BOARD_FIELD_VIEW_HIGH][BOARD_FIELD_VIEW_WIDTH];
 
 private:
 	void clear();

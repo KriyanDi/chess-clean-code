@@ -17,6 +17,9 @@ Board::Board()
 			std::cout << "Problem allocating memory for board field width row " << i << " !\n";
 		}
 	}
+
+	set_board_field();
+	set_board_field_view();
 }
 
 Board::~Board()
@@ -32,6 +35,7 @@ void Board::set_board_field()
 void Board::set_figure(Position position, Figure* figure)
 {
 	this->board_field[position.get_row()][position.get_col()].set_figure(*figure);
+	figure->set_position(position);
 }
 
 Figure* Board::get_figure(Position position)
@@ -55,6 +59,122 @@ bool Board::is_empty(Position position) const
 	{
 		return false;
 	}
+}
+
+void Board::set_board_field_view()
+{
+	set_board_field_view_outlines();
+	set_board_field_view_center();
+}
+
+void Board::set_board_field_view_center()
+{
+	for (int row = 2; row <= 9; row++)
+	{
+		for (int col = 4; col <= 19; col = col + 2)
+		{
+			int converted_row = convert_row_board_field_view_to_row_board_view_index(row);
+			int converted_col = convert_col_board_field_view_to_col_board_view_index(col);
+
+			char figure_symbol = this->board_field[converted_row][converted_col].get_figure()->get_symbol();
+
+			this->board_field_view[row][col] = figure_symbol;
+		}
+	}
+}
+
+void Board::update_board_field_view_center()
+{
+	set_board_field_view_center();
+}
+
+void Board::print_board_field_view()
+{
+	update_board_field_view_center();
+	for (int row = 0; row < BOARD_FIELD_VIEW_HIGH; row++)
+	{
+		for (int col = 0; col < BOARD_FIELD_VIEW_WIDTH; col++)
+		{
+			std::cout << this->board_field_view[row][col];
+		}
+		std::cout << std::endl;
+	}
+}
+
+void Board::set_board_field_view_outlines()
+{
+	set_all_chars_with_spaces_board_field_view();
+	set_top_numbers_board_field_view();
+	set_bottom_numbers_board_field_view();
+	set_left_side_numbers_board_field_view();
+	set_right_side_numbers_board_field_view();
+}
+
+void Board::set_all_chars_with_spaces_board_field_view()
+{
+	for (int row = 0; row < BOARD_FIELD_VIEW_HIGH; row++)
+	{
+		for (int col = 0; col < BOARD_FIELD_VIEW_WIDTH; col++)
+		{
+			this->board_field_view[row][col] = ' ';
+		}
+	}
+}
+
+void Board::set_top_numbers_board_field_view()
+{
+	int row = 0;
+	int index = 0;
+	for (int col = 4; col <= 19; col = col + 2)
+	{
+		this->board_field_view[row][col] = char(48 + index);
+		index++;
+	}
+}
+
+void Board::set_bottom_numbers_board_field_view()
+{
+	int row = 11;
+	int index = 0;
+	for (int col = 4; col <= 19; col = col + 2)
+	{
+		this->board_field_view[row][col] = char(48 + index);
+		index++;
+	}
+}
+
+void Board::set_left_side_numbers_board_field_view()
+{
+	int col = 0;
+	int index = 0;
+	for (int row = 2; row <= 9; row++)
+	{
+		this->board_field_view[row][col] = char(48 + index);
+		index++;
+	}
+}
+
+void Board::set_right_side_numbers_board_field_view()
+{
+	int col = 21;
+	int index = 0;
+	for (int row = 2; row <= 9; row++)
+	{
+		this->board_field_view[row][col] = char(48 + index);
+		index++;
+	}
+}
+
+int Board::convert_row_board_field_view_to_row_board_view_index(int row)
+{
+	int converted_row = row - 2;
+	return converted_row;
+}
+
+int Board::convert_col_board_field_view_to_col_board_view_index(int col)
+{
+	int converted_col = (col / 2) - 2;
+	return converted_col;
 }
 
 void Board::clear()
