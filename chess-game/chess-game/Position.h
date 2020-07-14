@@ -7,7 +7,10 @@ public:
 	Position(int row, int col);
 	Position(const Position& other);
 	Position& operator=(const Position& other);
-	~Position() {}
+	~Position();
+
+public: 
+	bool operator==(const Position rhs);
 
 public:
 	void set_row(int position);

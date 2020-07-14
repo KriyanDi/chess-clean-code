@@ -25,6 +25,23 @@ Position& Position::operator=(const Position& other)
 	return *this;
 }
 
+Position::~Position()
+{
+}
+
+bool Position::operator==(const Position rhs)
+{
+	if (this->row == rhs.get_row() &&
+		this->col == rhs.get_col())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 void Position::set_row(int position)
 {
 	this->row = position;
