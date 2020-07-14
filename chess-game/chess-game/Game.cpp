@@ -216,7 +216,6 @@ void Game::move_figure(Position& from, Position& to)
 	}
 	else
 	{
-		change_figure_position(from, to);
 		std::cout << "You can not move your figure there!\n";
 	}
 }
