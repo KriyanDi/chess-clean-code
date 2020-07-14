@@ -29,7 +29,7 @@ Figure* Square::get_figure()
 
 bool Square::is_empty() const
 {
-	if (this->figure)
+	if (!this->figure)
 	{
 		return true;
 	}
