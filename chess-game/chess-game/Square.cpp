@@ -41,10 +41,13 @@ bool Square::is_empty() const
 
 Figure Square::remove_figure()
 {
-	Figure temp_figure(*this->figure);
-	delete this->figure;
-	figure = nullptr;
-	return temp_figure;
+	if (!this->is_empty())
+	{
+		Figure temp_figure(*this->figure);
+		delete this->figure;
+		figure = nullptr;
+		return temp_figure;
+	}
 }
 
 void Square::clear()
