@@ -22,12 +22,6 @@
     <Filter Include="Header Files\Board">
       <UniqueIdentifier>{51d8fa96-e8d6-4240-8bfa-849117c297b7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Game">
-      <UniqueIdentifier>{26222117-1edf-4e18-9f0b-8ba549124c8b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Player">
-      <UniqueIdentifier>{c7a2902d-203b-4f73-9884-dc742b7361df}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Figures">
       <UniqueIdentifier>{3165ac8a-0702-4ad2-833d-5a9bc6360ed6}</UniqueIdentifier>
     </Filter>
@@ -36,6 +30,12 @@
     </Filter>
     <Filter Include="Source Files\Board">
       <UniqueIdentifier>{bb296685-ab5c-4f68-9ed3-6194606ab5ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{6e4ab3d5-f27f-463f-b4f0-0a98a845674b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{37e1139d-78f6-46db-911e-b18ec3c61a22}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +72,9 @@
     <ClCompile Include="Board.cpp">
       <Filter>Source Files\Board</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Figure.h">
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="Horse.h">
       <Filter>Header Files\Figures</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
