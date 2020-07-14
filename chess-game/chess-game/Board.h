@@ -19,11 +19,11 @@ public:
 public:
 	void set_board_field();
 
-	void set_figure(Position position, Figure* figure);
-	Figure* get_figure(Position position);
-	void remove_figure(Position position);
+	void set_figure(Position& position, Figure* figure);
+	Figure* get_figure(Position& position);
+	void remove_figure(Position& position);
 
-	bool is_empty(Position position) const;
+	bool is_empty(Position& position) const;
 
 	void print_board_field_view();
 	void update_board_field_view_center();
@@ -37,8 +37,8 @@ public:
 	void set_left_side_numbers_board_field_view();
 	void set_right_side_numbers_board_field_view();
 
-	int convert_row_board_field_view_to_row_board_view_index(int row);
-	int convert_col_board_field_view_to_col_board_view_index(int col);
+	int convert_row_board_field_view_to_row_board_view_index(int& row);
+	int convert_col_board_field_view_to_col_board_view_index(int& col);
 
 private:
 	Square** board_field;

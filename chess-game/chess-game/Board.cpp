@@ -32,24 +32,24 @@ void Board::set_board_field()
 	place_all_figures();
 }
 
-void Board::set_figure(Position position, Figure* figure)
+void Board::set_figure(Position& position, Figure* figure)
 {
 	this->board_field[position.get_row()][position.get_col()].set_figure(*figure);
 	figure->set_position(position);
 }
 
-Figure* Board::get_figure(Position position)
+Figure* Board::get_figure(Position& position)
 {
 	Figure* figure = board_field[position.get_row()][position.get_col()].get_figure();
 	return figure;
 }
 
-void Board::remove_figure(Position position)
+void Board::remove_figure(Position& position)
 {
 	this->board_field[position.get_row()][position.get_col()].remove_figure();
 }
 
-bool Board::is_empty(Position position) const
+bool Board::is_empty(Position& position) const
 {
 	if (this->board_field[position.get_row()][position.get_col()].is_empty())
 	{
@@ -165,13 +165,13 @@ void Board::set_right_side_numbers_board_field_view()
 	}
 }
 
-int Board::convert_row_board_field_view_to_row_board_view_index(int row)
+int Board::convert_row_board_field_view_to_row_board_view_index(int& row)
 {
 	int converted_row = row - 2;
 	return converted_row;
 }
 
-int Board::convert_col_board_field_view_to_col_board_view_index(int col)
+int Board::convert_col_board_field_view_to_col_board_view_index(int& col)
 {
 	int converted_col = (col / 2) - 2;
 	return converted_col;

@@ -12,7 +12,7 @@ Game::~Game()
 	clear();
 }
 
-void Game::move(Position from, Position to)
+void Game::move(Position& from, Position& to)
 {
 	move_figure(from, to);
 }
@@ -79,9 +79,32 @@ void Game::execute_command(const char* command)
 	}
 }
 
+char* Game::extract_command(const char* command) const
+{
+	char exctracted_command[10];
+	if (!exctracted_command)
+	{
+		std::cout << "Problem allocating memory for Exctracted word!\n";
+	}
+
+
+	for (int i = 0; i < strlen(command); i++)
+	{
+		if (command[i] == ' ')
+		{
+			exctracted_command[i] = '\0';
+			break;
+		}
+		
+		exctracted_command[i] = command[i];
+	}
+
+	return exctracted_command;
+}
+
 bool Game::is_print_command(const char* command) const
 {
-	if (strcmp(command, "print") == 0)
+	if (strcmp(extract_command(command), "print") == 0)
 	{
 		return true;
 	}
@@ -93,7 +116,7 @@ bool Game::is_print_command(const char* command) const
 
 bool Game::is_move_command(const char* command) const
 {
-	if (strcmp(command, "move") == 0)
+	if (strcmp(extract_command(command), "move") == 0)
 	{
 		return true;
 	}
@@ -103,7 +126,7 @@ bool Game::is_move_command(const char* command) const
 	}
 }
 
-bool Game::is_valid_move_command(Position from, Position to)
+bool Game::is_valid_move_command(Position& from, Position& to)
 {
 	if (is_position_valid(from) && is_position_valid(to) &&
 		is_position_occupied(from) && is_selected_figure_player_on_turns_figure(from))
@@ -116,7 +139,7 @@ bool Game::is_valid_move_command(Position from, Position to)
 	}
 }
 
-bool Game::is_position_valid(Position position) const
+bool Game::is_position_valid(Position& position) const
 {
 	if (0 <= position.get_row() && position.get_row() <= 7)
 	{
@@ -128,7 +151,7 @@ bool Game::is_position_valid(Position position) const
 	}
 }
 
-bool Game::is_position_occupied(Position position) const
+bool Game::is_position_occupied(Position& position) const
 {
 	if (board_field->get_figure(position))
 	{
@@ -140,7 +163,7 @@ bool Game::is_position_occupied(Position position) const
 	}
 }
 
-bool Game::is_selected_figure_player_on_turns_figure(Position position)
+bool Game::is_selected_figure_player_on_turns_figure(Position& position)
 {
 	if (this->get_player_on_turn() == this->board_field->get_figure(position)->get_color())
 	{
@@ -181,7 +204,7 @@ bool Game::is_player_one_on_turn() const
 	}
 }
 
-void Game::move_figure(Position from, Position to)
+void Game::move_figure(Position& from, Position& to)
 {
 	if (can_figure_change_current_position(from, to))
 	{
@@ -193,18 +216,19 @@ void Game::move_figure(Position from, Position to)
 	}
 	else
 	{
+		change_figure_position(from, to);
 		std::cout << "You can not move your figure there!\n";
 	}
 }
 
-void Game::change_figure_position(Position from, Position to)
+void Game::change_figure_position(Position& from, Position& to)
 {
 	this->board_field->remove_figure(to);
 	this->board_field->set_figure(to, this->board_field->get_figure(from));
 	this->board_field->remove_figure(from);
 }
 
-bool Game::can_figure_change_current_position(Position from, Position to)
+bool Game::can_figure_change_current_position(Position& from, Position& to)
 {
 	std::vector<Position> all_posible_moves;
 	set_all_possible_moves_for_figure(all_posible_moves, from);
@@ -219,7 +243,7 @@ bool Game::can_figure_change_current_position(Position from, Position to)
 	return false;
 }
 
-void Game::set_all_possible_moves_for_figure(std::vector<Position>& all_possible_moves, Position position)
+void Game::set_all_possible_moves_for_figure(std::vector<Position>& all_possible_moves, Position& position)
 {
 	all_possible_moves = this->board_field->get_figure(position)->get_all_possible_moves(this, position);
 }

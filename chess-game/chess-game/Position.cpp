@@ -29,7 +29,7 @@ Position::~Position()
 {
 }
 
-bool Position::operator==(const Position rhs)
+bool Position::operator==(const Position& rhs)
 {
 	if (this->row == rhs.get_row() &&
 		this->col == rhs.get_col())
@@ -42,12 +42,12 @@ bool Position::operator==(const Position rhs)
 	}
 }
 
-void Position::set_row(int position)
+void Position::set_row(int& position)
 {
 	this->row = position;
 }
 
-void Position::set_col(int position)
+void Position::set_col(int& position)
 {
 	this->col = position;
 }

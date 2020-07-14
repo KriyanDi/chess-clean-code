@@ -10,11 +10,11 @@ public:
 	~Position();
 
 public: 
-	bool operator==(const Position rhs);
+	bool operator==(const Position& rhs);
 
 public:
-	void set_row(int position);
-	void set_col(int position);
+	void set_row(int& position);
+	void set_col(int& position);
 
 	int get_row() const;
 	int get_col() const;

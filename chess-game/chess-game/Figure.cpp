@@ -17,7 +17,7 @@ Figure::~Figure()
 {
 }
 
-void Figure::set_type(Type type)
+void Figure::set_type(Type& type)
 {
 	this->type = type;
 }
@@ -28,7 +28,7 @@ Type Figure::get_type() const
 	return type;
 }
 
-void Figure::set_color(Color color)
+void Figure::set_color(Color& color)
 {
 	this->color = color;
 }
@@ -39,7 +39,7 @@ Color Figure::get_color() const
 	return color;
 }
 
-void Figure::set_position(Position position)
+void Figure::set_position(Position& position)
 {
 	this->position = position;
 }
@@ -50,7 +50,7 @@ Position Figure::get_position() const
 	return position;
 }
 
-void Figure::set_owner(Player owner)
+void Figure::set_owner(Player& owner)
 {
 	this->owner = owner;
 }
@@ -61,7 +61,7 @@ Player Figure::get_owner() const
 	return owner;
 }
 
-std::vector<Position> Figure::get_all_possible_moves(const Game* game, Position position)
+std::vector<Position> Figure::get_all_possible_moves(const Game* game, Position& position)
 {
 	return std::vector<Position>();
 }
