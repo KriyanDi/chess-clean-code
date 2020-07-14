@@ -1,5 +1,10 @@
 #pragma once
+
+#include <vector>
+
 #include "Position.h"
+
+class Game;
 
 enum Player
 {
@@ -45,9 +50,15 @@ public:
 	void set_owner(Player owner);
 	Player get_owner() const;
 
+	std::vector<Position> get_all_possible_moves(const Game* game, Position position);
+	char get_symbol();
+
 protected:
 	Player owner;
 	Type type;
 	Color color;
 	Position position;
+
+private:
+	void copy_from(const Figure& other);
 };

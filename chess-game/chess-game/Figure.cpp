@@ -10,7 +10,7 @@ Figure::Figure(Type type, Color color, Position position, Player owner)
 
 Figure::Figure(const Figure& other)
 {
-	this->position = other.position;
+	copy_from(other);
 }
 
 Figure::~Figure()
@@ -59,4 +59,81 @@ Player Figure::get_owner() const
 {
 	Player owner(this->owner);
 	return owner;
+}
+
+std::vector<Position> Figure::get_all_possible_moves(const Game* game, Position position)
+{
+	return std::vector<Position>();
+}
+
+char Figure::get_symbol()
+{
+	if (this == nullptr)
+	{
+		return '-';
+	}
+	else if (this->color == Color::BLACK)
+	{
+		switch (this->type)
+		{
+		case Type::PAWN:
+			return 'P';
+
+		case Type::ROOK:
+			return 'R';
+
+		case Type::KNIGHT:
+			return 'H';
+
+		case Type::BISHOP:
+			return 'B';
+
+		case Type::QUEEN:
+			return 'Q';
+
+		case Type::KING:
+			return 'K';
+
+		default:
+			break;
+		}
+	}
+	else if (this->color == Color::WHITE)
+	{
+		switch (this->type)
+		{
+		case Type::PAWN:
+			return 'p';
+
+		case Type::ROOK:
+			return 'r';
+
+		case Type::KNIGHT:
+			return 'h';
+
+		case Type::BISHOP:
+			return 'b';
+
+		case Type::QUEEN:
+			return 'q';
+
+		case Type::KING:
+			return 'k';
+
+		default:
+			break;
+		}
+	}
+	else
+	{
+		return '*';
+	}
+}
+
+void Figure::copy_from(const Figure& other)
+{
+	this->owner = other.owner;
+	this->type = other.type;
+	this->color = other.color;
+	this->position = other.position;
 }
