@@ -83,6 +83,10 @@ Figure Square::remove_figure()
 		figure = nullptr;
 		return temp_figure;
 	}
+	else
+	{
+		return Figure(Type::NO_TYPE, Color::NO_COLOR, Position(-1, -1), Player::NO_PLAYER);
+	}
 }
 
 void Square::clear()
