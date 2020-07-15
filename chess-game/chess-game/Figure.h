@@ -50,6 +50,9 @@ public:
 	void set_owner(Player& owner);
 	Player get_owner() const;
 
+	void set_has_been_moved();
+	bool has_figure_been_moved();
+
 	std::vector<Position> get_all_possible_moves(const Game* game, Position& position);
 	char get_symbol();
 
@@ -58,6 +61,7 @@ protected:
 	Type type;
 	Color color;
 	Position position;
+	bool has_been_moved;
 
 private:
 	void copy_from(const Figure& other);

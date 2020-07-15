@@ -6,6 +6,7 @@ Figure::Figure(Type type, Color color, Position position, Player owner)
 	set_color(color);
 	set_position(position);
 	set_owner(owner);
+	set_has_been_moved();
 }
 
 Figure::Figure(const Figure& other)
@@ -59,6 +60,23 @@ Player Figure::get_owner() const
 {
 	Player owner(this->owner);
 	return owner;
+}
+
+void Figure::set_has_been_moved()
+{
+	this->has_been_moved = false;
+}
+
+bool Figure::has_figure_been_moved()
+{
+	if (this->has_been_moved)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 std::vector<Position> Figure::get_all_possible_moves(const Game* game, Position& position)
