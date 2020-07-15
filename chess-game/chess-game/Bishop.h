@@ -4,6 +4,7 @@
 
 class Bishop : virtual public Figure
 {
+public:
 	Bishop(Type& type, Color& color, Position& position, Player& owner);
 	Bishop(const Bishop& other) = delete;
 	Bishop& operator=(const Bishop& other) = delete;

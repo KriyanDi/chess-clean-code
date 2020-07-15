@@ -4,6 +4,7 @@
 
 class King : virtual public Figure
 {
+public:
 	King(Type& type, Color& color, Position& position, Player& owner);
 	King(const King& other) = delete;
 	King& operator=(const King& other) = delete;

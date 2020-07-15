@@ -1,6 +1,5 @@
 #include "Pawn.h"
 #include "Game.h"
-#include "Game.cpp"
 
 #include <vector>
 
