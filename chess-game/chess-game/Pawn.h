@@ -11,7 +11,7 @@ public:
 	virtual ~Pawn();
 
 public:
-	std::vector<Position> get_all_possible_moves(Game* game, Position& position);
+	std::vector<Position> get_all_possible_moves(Game* game) override;
 
 private:
 	void set_one_step_forward_possible_moves(Game* game, std::vector<Position>& all_possible_moves);

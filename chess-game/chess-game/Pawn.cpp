@@ -12,7 +12,7 @@ Pawn::~Pawn()
 {
 }
 
-std::vector<Position> Pawn::get_all_possible_moves(Game* game, Position& position)
+std::vector<Position> Pawn::get_all_possible_moves(Game* game)
 {
 	std::vector<Position> all_possible_moves;
 	set_one_step_forward_possible_moves(game, all_possible_moves);

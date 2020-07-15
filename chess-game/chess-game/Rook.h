@@ -9,4 +9,10 @@ public:
 	Rook(const Rook& other) = delete;
 	Rook& operator=(const Rook& other) = delete;
 	virtual ~Rook();
+
+public:
+	std::vector<Position> get_all_possible_moves(Game* game);
+
+private:
+
 };

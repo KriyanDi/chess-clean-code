@@ -91,7 +91,7 @@ void Figure::has_moved()
 	this->has_been_moved = true;
 }
 
-std::vector<Position> Figure::get_all_possible_moves(Game* game, Position& position)
+std::vector<Position> Figure::get_all_possible_moves(Game* game)
 {
 	return std::vector<Position>();
 }

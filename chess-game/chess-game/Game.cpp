@@ -267,7 +267,7 @@ bool Game::can_figure_change_current_position(Position& from, Position& to)
 
 void Game::set_all_possible_moves_for_figure(std::vector<Position>& all_possible_moves, Position& position)
 {
-	all_possible_moves = this->board_field->get_figure(position)->get_all_possible_moves(this, position);
+	all_possible_moves = this->board_field->get_figure(position)->get_all_possible_moves(this);
 }
 
 bool Game::is_king_under_attack() const
