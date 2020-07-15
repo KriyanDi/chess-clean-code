@@ -36,8 +36,15 @@ void Figure::set_color(Color& color)
 
 Color Figure::get_color() const
 {
-	Color color(this->color);
-	return color;
+	if (this != nullptr)
+	{
+		Color color(this->color);
+		return color;
+	}
+	else
+	{
+		return Color::NO_COLOR;
+	}
 }
 
 void Figure::set_position(Position& position)

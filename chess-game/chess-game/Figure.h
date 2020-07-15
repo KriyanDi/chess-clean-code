@@ -53,7 +53,7 @@ public:
 	void set_has_been_moved();
 	bool has_figure_been_moved();
 
-	std::vector<Position> get_all_possible_moves(Game* game, Position& position);
+	virtual std::vector<Position> get_all_possible_moves(Game* game, Position& position);
 	char get_symbol();
 
 protected:
