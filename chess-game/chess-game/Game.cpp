@@ -141,7 +141,7 @@ bool Game::is_valid_move_command(Position& from, Position& to)
 
 bool Game::is_position_valid(Position& position) const
 {
-	if (0 <= position.get_row() && position.get_row() <= 7)
+	if (position.is_position_valid())
 	{
 		return true;
 	}
