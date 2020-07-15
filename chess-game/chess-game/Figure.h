@@ -9,7 +9,8 @@ class Game;
 enum Player
 {
 	PLAYER_ONE = 1,
-	PLAYER_TWO
+	PLAYER_TWO,
+	NO_PLAYER
 };
 
 enum Type
@@ -19,7 +20,8 @@ enum Type
 	KNIGHT,
 	BISHOP,
 	QUEEN,
-	KING
+	KING,
+	NO_TYPE
 };
 
 enum Color
