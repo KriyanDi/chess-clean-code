@@ -18,6 +18,7 @@ public:
 	void move(Position& from, Position& to);
 	void start_game();
 	void print_board_field();
+	Board* get_board_field();
 
 private:
 	Board* board_field;

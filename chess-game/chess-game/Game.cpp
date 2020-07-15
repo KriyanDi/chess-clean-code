@@ -29,6 +29,11 @@ void Game::print_board_field()
 	this->board_field->print_board_field_view();
 }
 
+Board* Game::get_board_field()
+{
+	return this->board_field;
+}
+
 void Game::clear()
 {
 	delete this->board_field;
