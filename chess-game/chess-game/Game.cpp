@@ -141,7 +141,7 @@ bool Game::is_valid_move_command(Position& from, Position& to)
 
 bool Game::is_position_valid(Position& position) const
 {
-	if (position.is_position_valid())
+	if (position.is_valid_position())
 	{
 		return true;
 	}
