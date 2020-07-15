@@ -14,6 +14,9 @@ public:
 	std::vector<Position> get_all_possible_moves(Game* game) override;
 
 private:
+	void set_vertical_possible_moves(Game* game, std::vector<Position>& all_possible_moves);
+	void set_horizontal_possible_moves(Game* game, std::vector<Position>& all_possible_moves);
+
 	void set_forward_possible_moves(Game* game, std::vector<Position>& all_possible_moves);
 	void set_step_forward(Position& position, Position current);
 	Position get_step_forward_black_figure(Position position);

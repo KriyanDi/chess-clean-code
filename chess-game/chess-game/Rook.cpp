@@ -13,12 +13,22 @@ Rook::~Rook()
 std::vector<Position> Rook::get_all_possible_moves(Game* game)
 {
 	std::vector<Position> all_possible_moves;
-	set_forward_possible_moves(game, all_possible_moves);
-	set_backwards_possible_moves(game, all_possible_moves);
-	set_left_possible_moves(game, all_possible_moves);
-	set_right_possible_moves(game, all_possible_moves);
+	set_horizontal_possible_moves(game, all_possible_moves);
+	set_vertical_possible_moves(game, all_possible_moves);
 
 	return all_possible_moves;
+}
+
+void Rook::set_vertical_possible_moves(Game* game, std::vector<Position>& all_possible_moves)
+{
+	set_forward_possible_moves(game, all_possible_moves);
+	set_backwards_possible_moves(game, all_possible_moves);
+}
+
+void Rook::set_horizontal_possible_moves(Game* game, std::vector<Position>& all_possible_moves)
+{
+	set_left_possible_moves(game, all_possible_moves);
+	set_right_possible_moves(game, all_possible_moves);
 }
 
 void Rook::set_forward_possible_moves(Game* game, std::vector<Position>& all_possible_moves)
