@@ -40,6 +40,7 @@ private:
 	bool is_selected_figure_player_on_turns_figure(Position& position);
 
 	void set_player_on_turn();
+	void change_player_on_turn();
 	Player get_player_on_turn() const;
 	bool is_player_one_on_turn() const;
 

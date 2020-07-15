@@ -25,7 +25,7 @@ void Game::start_game()
 
 void Game::print_board_field()
 {
-	system("CLS");
+	//system("CLS");
 	this->board_field->print_board_field_view();
 }
 
@@ -74,6 +74,11 @@ void Game::execute_command(const char* command)
 		if (is_valid_move_command(from, to))
 		{
 			move(from, to);
+			change_player_on_turn();
+		}
+		else
+		{
+			std::cout << "Invalid move command!\n";
 		}
 
 		this->print_board_field();
@@ -183,6 +188,18 @@ bool Game::is_selected_figure_player_on_turns_figure(Position& position)
 void Game::set_player_on_turn()
 {
 	this->player_on_turn = Player::PLAYER_ONE;
+}
+
+void Game::change_player_on_turn()
+{
+	if (is_player_one_on_turn())
+	{
+		player_on_turn = Player::PLAYER_TWO;
+	}
+	else
+	{
+		player_on_turn = Player::PLAYER_ONE;
+	}
 }
 
 Player Game::get_player_on_turn() const
