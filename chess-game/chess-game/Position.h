@@ -19,9 +19,9 @@ public:
 	int get_row() const;
 	int get_col() const;
 
-	bool is_position_valid();
-	//bool is_position_valid(int& row, int& col);
-	//bool is_position_valid(const Position& position);
+	bool is_valid_position();
+	//bool is_valid_position(int& row, int& col);
+	//bool is_valid_position(const Position& position);
 
 private:
 	int row;
