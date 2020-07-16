@@ -138,10 +138,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AllDirectionsOneStepMovement.cpp" />
     <ClCompile Include="Bishop.cpp" />
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="DiagonalMovement.cpp" />
+    <ClCompile Include="ExtendedDiagonalMovement.cpp" />
     <ClCompile Include="Figure.cpp" />
+    <ClCompile Include="ForwardMovement.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="HorizontalMovement.cpp" />
     <ClCompile Include="Horse.cpp" />
     <ClCompile Include="King.cpp" />
     <ClCompile Include="main.cpp" />
@@ -150,12 +155,18 @@
     <ClCompile Include="Queen.cpp" />
     <ClCompile Include="Rook.cpp" />
     <ClCompile Include="Square.cpp" />
+    <ClCompile Include="VerticalMovement.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AllDirectionsOneStepMovement.h" />
     <ClInclude Include="Bishop.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="DiagonalMovement.h" />
+    <ClInclude Include="ExtendedDiagonalMovement.h" />
     <ClInclude Include="Figure.h" />
+    <ClInclude Include="ForwardMovement.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="HorizontalMovement.h" />
     <ClInclude Include="King.h" />
     <ClInclude Include="Horse.h" />
     <ClInclude Include="Pawn.h" />
@@ -163,6 +174,7 @@
     <ClInclude Include="Queen.h" />
     <ClInclude Include="Rook.h" />
     <ClInclude Include="Square.h" />
+    <ClInclude Include="VerticalMovement.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

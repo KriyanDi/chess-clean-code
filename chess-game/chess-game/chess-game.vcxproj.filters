@@ -40,6 +40,9 @@
     <Filter Include="Header Files\Movement">
       <UniqueIdentifier>{6dd17c48-90f4-4444-bf59-b8add7d7f7b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Movement">
+      <UniqueIdentifier>{75f97990-b236-4d50-b3d2-df3deef3bbde}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -78,6 +81,24 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
+    <ClCompile Include="AllDirectionsOneStepMovement.cpp">
+      <Filter>Source Files\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="HorizontalMovement.cpp">
+      <Filter>Source Files\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="VerticalMovement.cpp">
+      <Filter>Source Files\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="DiagonalMovement.cpp">
+      <Filter>Source Files\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="ExtendedDiagonalMovement.cpp">
+      <Filter>Source Files\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="ForwardMovement.cpp">
+      <Filter>Source Files\Movement</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Figure.h">
@@ -112,6 +133,24 @@
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="AllDirectionsOneStepMovement.h">
+      <Filter>Header Files\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="HorizontalMovement.h">
+      <Filter>Header Files\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="VerticalMovement.h">
+      <Filter>Header Files\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="DiagonalMovement.h">
+      <Filter>Header Files\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtendedDiagonalMovement.h">
+      <Filter>Header Files\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="ForwardMovement.h">
+      <Filter>Header Files\Movement</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
