@@ -259,7 +259,7 @@ void Game::change_figure_position(Position& from, Position& to)
 {
 	this->board_field->remove_figure(to);
 	this->board_field->set_figure(to, this->board_field->get_figure(from));
-	this->board_field->get_figure(from)->set_position(to);
+	this->board_field->get_figure(to)->set_position(to);
 	this->board_field->remove_figure(from);
 	this->board_field->get_figure(to)->has_moved();
 }
