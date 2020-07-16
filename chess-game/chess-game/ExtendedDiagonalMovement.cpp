@@ -155,8 +155,8 @@ void ExtendedDiagonalMovement::set_left_extended_diagonal(Position& left_extende
 std::vector<Position> ExtendedDiagonalMovement::get_left_extended_diagonal_moves_black_figure()
 {
 	std::vector<Position> extended_diagonal_moves;
-	Position extended_right_diagonal(figure->get_position().get_row() - 1, figure->get_position().get_col() - 2);
-	Position extended_left_diagonal(figure->get_position().get_row() + 1, figure->get_position().get_col() - 2);
+	Position extended_right_diagonal(figure->get_position().get_row() - 1, figure->get_position().get_col() + 2);
+	Position extended_left_diagonal(figure->get_position().get_row() + 1, figure->get_position().get_col() + 2);
 
 	extended_diagonal_moves.push_back(extended_right_diagonal);
 	extended_diagonal_moves.push_back(extended_left_diagonal);
@@ -166,8 +166,8 @@ std::vector<Position> ExtendedDiagonalMovement::get_left_extended_diagonal_moves
 std::vector<Position> ExtendedDiagonalMovement::get_left_extended_diagonal_moves_white_figure()
 {
 	std::vector<Position> extended_diagonal_moves;
-	Position extended_right_diagonal(figure->get_position().get_row() - 1, figure->get_position().get_col() + 2);
-	Position extended_left_diagonal(figure->get_position().get_row() + 1, figure->get_position().get_col() + 2);
+	Position extended_right_diagonal(figure->get_position().get_row() - 1, figure->get_position().get_col() - 2);
+	Position extended_left_diagonal(figure->get_position().get_row() + 1, figure->get_position().get_col() - 2);
 
 	extended_diagonal_moves.push_back(extended_right_diagonal);
 	extended_diagonal_moves.push_back(extended_left_diagonal);
@@ -210,8 +210,8 @@ void ExtendedDiagonalMovement::set_right_extended_diagonal(Position& left_extend
 std::vector<Position> ExtendedDiagonalMovement::get_right_extended_diagonal_moves_black_figure()
 {
 	std::vector<Position> extended_diagonal_moves;
-	Position extended_right_diagonal(figure->get_position().get_row() + 1, figure->get_position().get_col() - 2);
-	Position extended_left_diagonal(figure->get_position().get_row() - 1, figure->get_position().get_col() - 2);
+	Position extended_right_diagonal(figure->get_position().get_row() - 1, figure->get_position().get_col() - 2);
+	Position extended_left_diagonal(figure->get_position().get_row() + 1, figure->get_position().get_col() - 2);
 
 	extended_diagonal_moves.push_back(extended_right_diagonal);
 	extended_diagonal_moves.push_back(extended_left_diagonal);
