@@ -13,10 +13,11 @@ public:
 public:
 	std::vector<Position> get_all_possible_moves(Game* game) override;
 
-private:
+protected:
 	void set_right_diagonal_possible_moves(Game* game, std::vector<Position>& all_possible_moves);
 	void set_left_diagonal_possible_moves(Game* game, std::vector<Position>& all_possible_moves);
 
+private:
 	void set_right_top_diagonal_possible_moves(Game* game, std::vector<Position>& all_possible_moves);
 	void set_step_right_top_diagonal(Position& position, Position current);
 	Position get_step_right_top_diagonal_black_figure(Position position);
