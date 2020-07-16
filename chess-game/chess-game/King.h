@@ -2,7 +2,9 @@
 
 #include "AllDirectionsOneStepMovement.h"
 
-class King : virtual public Figure, public AllDirectionsOneStepMovement
+class King 
+	: virtual public Figure
+	, public AllDirectionsOneStepMovement
 {
 public:
 	King(Type& type, Color& color, Position& position, Player& owner);

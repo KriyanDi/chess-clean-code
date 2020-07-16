@@ -3,7 +3,10 @@
 #include "HorizontalMovement.h"
 #include "VerticalMovement.h"
 
-class Rook : virtual public Figure, public HorizontalMovement, public VerticalMovement
+class Rook 
+	: virtual public Figure
+	, public HorizontalMovement
+	, public VerticalMovement
 {
 public:
 	Rook(Type& type, Color& color, Position& position, Player& owner);
