@@ -52,11 +52,24 @@ void Game::read_command()
 {
 	while (true)
 	{
-		std::cout << "> ";
+		std::cout << std::endl;
+		print_command_line();
 		char* command = new char[MAX_COMMAND_LENGHT];
 		std::cin.getline(command, MAX_COMMAND_LENGHT, '\n');
 		execute_command(command);
 		delete[] command;
+	}
+}
+
+void Game::print_command_line()
+{
+	if (get_player_on_turn() == Player::PLAYER_ONE)
+	{
+		std::cout << "player one> ";
+	}
+	else
+	{
+		std::cout << "player two> ";
 	}
 }
 
@@ -74,7 +87,6 @@ void Game::execute_command(const char* command)
 		if (is_valid_move_command(from, to))
 		{
 			move(from, to);
-			change_player_on_turn();
 		}
 		else
 		{
@@ -231,6 +243,7 @@ void Game::move_figure(Position& from, Position& to)
 	if (can_figure_change_current_position(from, to))
 	{
 		change_figure_position(from, to);
+		change_player_on_turn();
 	}
 	else if (is_king_under_attack())
 	{

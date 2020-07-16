@@ -30,6 +30,7 @@ private:
 	void set_board_field();
 
 	void read_command();
+	void print_command_line();
 	void execute_command(const char* command);
 	char* extract_command(const char* command) const;
 	bool is_print_command(const char* command) const;
