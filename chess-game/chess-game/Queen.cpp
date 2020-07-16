@@ -2,6 +2,8 @@
 
 Queen::Queen(Type& type, Color& color, Position& position, Player& owner)
 	:Figure(type, color, position, owner)
+	, Rook(type, color, position, owner)
+	, Bishop(type, color, position, owner)
 {
 }
 
