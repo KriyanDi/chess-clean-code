@@ -1,10 +1,14 @@
 #pragma once
 
-#include "Figure.h"
-#include "Rook.h"
-#include "Bishop.h"
+#include "HorizontalMovement.h"
+#include "VerticalMovement.h"
+#include "DiagonalMovement.h"
 
-class Queen : virtual public Figure, public Rook, public Bishop
+class Queen 
+	: virtual public Figure
+	, public HorizontalMovement
+	, public VerticalMovement
+	, public DiagonalMovement
 {
 public:
 	Queen(Type& type, Color& color, Position& position, Player& owner);
