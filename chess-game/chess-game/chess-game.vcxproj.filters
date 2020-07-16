@@ -37,6 +37,9 @@
     <Filter Include="Source Files\Game">
       <UniqueIdentifier>{37e1139d-78f6-46db-911e-b18ec3c61a22}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Movement">
+      <UniqueIdentifier>{6dd17c48-90f4-4444-bf59-b8add7d7f7b0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
