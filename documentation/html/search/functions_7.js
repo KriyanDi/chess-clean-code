@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['has_5ffigure_5fbeen_5fmoved_240',['has_figure_been_moved',['../class_figure.html#aba10ff58b7788e59c16655da969c1394',1,'Figure']]],
-  ['has_5fmoved_241',['has_moved',['../class_figure.html#ad1c36e75ca54707bb3fab8a3da63b449',1,'Figure']]],
-  ['has_5fposition_5fenemy_5ffigure_242',['has_position_enemy_figure',['../class_all_directions_one_step_movement.html#a2993ff8481b8cbecef207fdd58bcbbb1',1,'AllDirectionsOneStepMovement']]],
-  ['horizontalmovement_243',['HorizontalMovement',['../class_horizontal_movement.html#a0d222d8963da0f429e2097e28518fa96',1,'HorizontalMovement::HorizontalMovement(Figure *figure)'],['../class_horizontal_movement.html#a00c457045957c3607bb738e090062fd0',1,'HorizontalMovement::HorizontalMovement(const HorizontalMovement &amp;other)=delete']]],
-  ['horse_244',['Horse',['../class_horse.html#afef07e4a4e0571bb3bffd9ae2dabbced',1,'Horse::Horse(Type &amp;type, Color &amp;color, Position &amp;position, Player &amp;owner)'],['../class_horse.html#a75c16a080b936b372cf98380936895ce',1,'Horse::Horse(const Horse &amp;other)=delete']]]
+  ['is_5fempty_233',['is_empty',['../class_board.html#a5eb03ba58670ca5bb8ba25b516960bda',1,'Board::is_empty()'],['../class_square.html#ac2194a37b021b8b5fb03d3669d104626',1,'Square::is_empty()']]],
+  ['is_5fposition_5fempty_234',['is_position_empty',['../class_all_directions_one_step_movement.html#a37e34bc7169d238de11d1454e7539f9b',1,'AllDirectionsOneStepMovement']]],
+  ['is_5fvalid_5fposition_235',['is_valid_position',['../class_position.html#aded10ac3cfcdf2b810134132178749f4',1,'Position']]]
 ];

@@ -1,14 +1,8 @@
 var searchData=
 [
-  ['game_229',['Game',['../class_game.html#ad59df6562a58a614fda24622d3715b65',1,'Game::Game()'],['../class_game.html#a84389b59f971371e667202ae2dd33bc6',1,'Game::Game(const Game &amp;other)=delete']]],
-  ['get_5fall_5fpossible_5fmoves_230',['get_all_possible_moves',['../class_bishop.html#a8f67e09cb7e4a792fccb8ba3c202552f',1,'Bishop::get_all_possible_moves()'],['../class_figure.html#adfe6d91bcf9820f307f8b72d468b6f34',1,'Figure::get_all_possible_moves()'],['../class_horse.html#a437b7dab5be59474055cce7129663227',1,'Horse::get_all_possible_moves()'],['../class_king.html#a325edf4c683e35a41e12e4bb8a9b40e0',1,'King::get_all_possible_moves()'],['../class_pawn.html#a937cfc76dbc18cb5496fe6d041a4dee0',1,'Pawn::get_all_possible_moves()'],['../class_queen.html#ae06b6524af6a2c48c7aa9a60079eae1d',1,'Queen::get_all_possible_moves()'],['../class_rook.html#a9de0cd66487932bde9bbf0dff2c88f1d',1,'Rook::get_all_possible_moves()']]],
-  ['get_5fboard_5ffield_231',['get_board_field',['../class_game.html#a780bb0af976102f58e1607a54d77c588',1,'Game']]],
-  ['get_5fcol_232',['get_col',['../class_position.html#a87ff2b58598c64e434653f185b421b02',1,'Position']]],
-  ['get_5fcolor_233',['get_color',['../class_figure.html#aac46e62377737a47db51c71e4b65deef',1,'Figure']]],
-  ['get_5ffigure_234',['get_figure',['../class_board.html#ab350dddd3d7d0bfa2de28b43351bc7d4',1,'Board::get_figure()'],['../class_square.html#a731c8b84dc7a5a36dca18dcb97a1d057',1,'Square::get_figure()']]],
-  ['get_5fowner_235',['get_owner',['../class_figure.html#aea0baba43643476161f58496dd1f43e6',1,'Figure']]],
-  ['get_5fposition_236',['get_position',['../class_figure.html#a5f2601bf1e467f45df75562147307dcf',1,'Figure']]],
-  ['get_5frow_237',['get_row',['../class_position.html#ab26b27ba0224c90145c3d67732fbed36',1,'Position']]],
-  ['get_5fsymbol_238',['get_symbol',['../class_figure.html#aaeaa9fc7a1991b64a2f5896a3573d57a',1,'Figure']]],
-  ['get_5ftype_239',['get_type',['../class_figure.html#a8d4b52743ed6a0b294d08e5331ad140d',1,'Figure']]]
+  ['has_5ffigure_5fbeen_5fmoved_228',['has_figure_been_moved',['../class_figure.html#aba10ff58b7788e59c16655da969c1394',1,'Figure']]],
+  ['has_5fmoved_229',['has_moved',['../class_figure.html#ad1c36e75ca54707bb3fab8a3da63b449',1,'Figure']]],
+  ['has_5fposition_5fenemy_5ffigure_230',['has_position_enemy_figure',['../class_all_directions_one_step_movement.html#a2993ff8481b8cbecef207fdd58bcbbb1',1,'AllDirectionsOneStepMovement']]],
+  ['horizontalmovement_231',['HorizontalMovement',['../class_horizontal_movement.html#a0d222d8963da0f429e2097e28518fa96',1,'HorizontalMovement::HorizontalMovement(Figure *figure)'],['../class_horizontal_movement.html#a00c457045957c3607bb738e090062fd0',1,'HorizontalMovement::HorizontalMovement(const HorizontalMovement &amp;other)=delete']]],
+  ['horse_232',['Horse',['../class_horse.html#afef07e4a4e0571bb3bffd9ae2dabbced',1,'Horse::Horse(Type &amp;type, Color &amp;color, Position &amp;position, Player &amp;owner)'],['../class_horse.html#a75c16a080b936b372cf98380936895ce',1,'Horse::Horse(const Horse &amp;other)=delete']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['convert_5fcol_5fboard_5ffield_5fview_5fto_5fcol_5fboard_5fview_5findex_223',['convert_col_board_field_view_to_col_board_view_index',['../class_board.html#aa36a7dec8560d7e50eee8dbb2d1478eb',1,'Board']]],
-  ['convert_5frow_5fboard_5ffield_5fview_5fto_5frow_5fboard_5fview_5findex_224',['convert_row_board_field_view_to_row_board_view_index',['../class_board.html#aa427eee3243288f87d34c20fa6cd1161',1,'Board']]]
+  ['diagonalmovement_213',['DiagonalMovement',['../class_diagonal_movement.html#ae1665f8a668f32c0736da9fb488bba0b',1,'DiagonalMovement::DiagonalMovement(Figure *figure)'],['../class_diagonal_movement.html#a66596a777bc4b87a7771a82f17bdb051',1,'DiagonalMovement::DiagonalMovement(const DiagonalMovement &amp;other)=delete']]]
 ];

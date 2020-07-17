@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['king_349',['KING',['../_figure_8h.html#a1d1cfd8ffb84e947f82999c682b666a7a157524408d6f0fc4b7dc5e52f3dd3b80',1,'Figure.h']]],
-  ['knight_350',['KNIGHT',['../_figure_8h.html#a1d1cfd8ffb84e947f82999c682b666a7ad4a86ac7d51335fcb5756203a88612d6',1,'Figure.h']]]
+  ['king_329',['KING',['../_figure_8h.html#a1d1cfd8ffb84e947f82999c682b666a7a157524408d6f0fc4b7dc5e52f3dd3b80',1,'Figure.h']]],
+  ['knight_330',['KNIGHT',['../_figure_8h.html#a1d1cfd8ffb84e947f82999c682b666a7ad4a86ac7d51335fcb5756203a88612d6',1,'Figure.h']]]
 ];

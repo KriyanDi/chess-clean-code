@@ -1,15 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"class_vertical_movement.html#a9c12f8a36d439f2c79c9bbf514baffa0":[0,0,16,2],
-"class_vertical_movement.html#ae120b117e17309c3228fdd5977f70e00":[0,0,16,6],
-"classes.html":[0,1],
-"dir_37c47cf16e327a3e1644203455d628db.html":[1,0,0,0],
-"dir_e616e25d7bd79137915e90e651d34dea.html":[1,0,0],
-"files.html":[1,0],
-"functions.html":[0,3,0],
-"functions_func.html":[0,3,1],
-"functions_vars.html":[0,3,2],
-"globals.html":[1,1,0],
 "globals_enum.html":[1,1,3],
 "globals_eval.html":[1,1,4],
 "globals_func.html":[1,1,1],

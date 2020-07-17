@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['diagonalmovement_225',['DiagonalMovement',['../class_diagonal_movement.html#ae1665f8a668f32c0736da9fb488bba0b',1,'DiagonalMovement::DiagonalMovement(Figure *figure)'],['../class_diagonal_movement.html#a66596a777bc4b87a7771a82f17bdb051',1,'DiagonalMovement::DiagonalMovement(const DiagonalMovement &amp;other)=delete']]]
+  ['extendeddiagonalmovement_214',['ExtendedDiagonalMovement',['../class_extended_diagonal_movement.html#adf0a119d7f9e9613cd3cb15222c2de07',1,'ExtendedDiagonalMovement::ExtendedDiagonalMovement(Figure *figure)'],['../class_extended_diagonal_movement.html#a1074e36c48a779b82842baf1e7b85d3d',1,'ExtendedDiagonalMovement::ExtendedDiagonalMovement(const ExtendedDiagonalMovement &amp;other)=delete']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['extendeddiagonalmovement_226',['ExtendedDiagonalMovement',['../class_extended_diagonal_movement.html#adf0a119d7f9e9613cd3cb15222c2de07',1,'ExtendedDiagonalMovement::ExtendedDiagonalMovement(Figure *figure)'],['../class_extended_diagonal_movement.html#a1074e36c48a779b82842baf1e7b85d3d',1,'ExtendedDiagonalMovement::ExtendedDiagonalMovement(const ExtendedDiagonalMovement &amp;other)=delete']]]
+  ['figure_215',['Figure',['../class_figure.html#a9fb0a85b27638fcbf9fbc91deaeff116',1,'Figure::Figure(Type type, Color color, Position position, Player owner)'],['../class_figure.html#a40b60bf7dc7033b52bdf02650aaf002b',1,'Figure::Figure(const Figure &amp;other)']]],
+  ['forwardmovement_216',['ForwardMovement',['../class_forward_movement.html#a13f444eafd39d18eac8e01438b773152',1,'ForwardMovement::ForwardMovement(Figure *figure)'],['../class_forward_movement.html#a6d67c666c37bd5eb23e90e1ab7044ede',1,'ForwardMovement::ForwardMovement(const ForwardMovement &amp;other)=delete']]]
 ];

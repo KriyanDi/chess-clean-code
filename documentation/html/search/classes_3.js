@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['extendeddiagonalmovement_171',['ExtendedDiagonalMovement',['../class_extended_diagonal_movement.html',1,'']]]
+  ['extendeddiagonalmovement_161',['ExtendedDiagonalMovement',['../class_extended_diagonal_movement.html',1,'']]]
 ];
