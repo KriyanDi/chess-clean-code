@@ -2,6 +2,10 @@
 
 #include "Board.h"
 
+/// This method is Board default constructor
+///
+/// This method is allocating memory for the board field
+/// and its about setting the board field and board field view
 Board::Board()
 {
 	this->board_field = new Square * [BOARD_HIGH];
@@ -23,33 +27,50 @@ Board::Board()
 	set_board_field_view();
 }
 
+/// This method is Board destructor
+///
+/// This method is responsible for cleaning all the
+/// allocated memory for the board field
 Board::~Board()
 {
 	clear();
 }
 
+/// This method sets the board field so all figures
+/// are on their proper starting position
 void Board::set_board_field()
 {
 	place_all_figures();
 }
 
+/// This method sets figure on specific square on the board field
+/// @param position square coordinates on the board field
+/// @param figure figure that has to be placed in the square
 void Board::set_figure(Position& position, Figure* figure)
 {
 	this->board_field[position.get_row()][position.get_col()].set_figure(*figure);
 	figure->set_position(position);
 }
 
+/// This method gives us the figure on specific square on the board field
+/// @param position square coordinates on the board field
+/// @return pointer to the figure in the square
 Figure* Board::get_figure(Position& position)
 {
 	Figure* figure = board_field[position.get_row()][position.get_col()].get_figure();
 	return figure;
 }
 
+/// This method removes figure on specific square on the board field
+/// @param position square coordinates on the board field
 void Board::remove_figure(Position& position)
 {
 	this->board_field[position.get_row()][position.get_col()].remove_figure();
 }
 
+/// This method tells us if square on the board field contains any figure
+/// @param position square on the board field
+/// @return **true** if square is empty, **false** otherwise
 bool Board::is_empty(Position& position) const
 {
 	if (this->board_field[position.get_row()][position.get_col()].is_empty())
@@ -62,12 +83,14 @@ bool Board::is_empty(Position& position) const
 	}
 }
 
+/// This method sets the board field view
 void Board::set_board_field_view()
 {
 	set_board_field_view_outlines();
 	set_board_field_view_center();
 }
 
+/// This method sets the center of the board field where the figures are
 void Board::set_board_field_view_center()
 {
 	for (int row = 2; row <= 9; row++)
@@ -84,10 +107,12 @@ void Board::set_board_field_view_center()
 	}
 }
 
+/// This method updates the board field view after any change on the board field
 void Board::update_board_field_view_center()
 {
 	set_board_field_view_center();
 }
+
 
 void Board::print_board_field_view()
 {
@@ -102,6 +127,7 @@ void Board::print_board_field_view()
 	}
 }
 
+/// This method sets the outlines of the board field - the numbers of each row and column
 void Board::set_board_field_view_outlines()
 {
 	set_all_chars_with_spaces_board_field_view();
@@ -111,6 +137,7 @@ void Board::set_board_field_view_outlines()
 	set_right_side_numbers_board_field_view();
 }
 
+/// This method sets all elements of the 2D char array for the board field view with char 'space'
 void Board::set_all_chars_with_spaces_board_field_view()
 {
 	for (int row = 0; row < BOARD_FIELD_VIEW_HIGH; row++)
@@ -122,6 +149,7 @@ void Board::set_all_chars_with_spaces_board_field_view()
 	}
 }
 
+/// This method sets the top outline of the board field view - the numbers of each column
 void Board::set_top_numbers_board_field_view()
 {
 	int row = 0;
@@ -133,6 +161,7 @@ void Board::set_top_numbers_board_field_view()
 	}
 }
 
+/// This method sets the bottom outline of the board field view - the numbers of each column
 void Board::set_bottom_numbers_board_field_view()
 {
 	int row = 11;
@@ -144,6 +173,7 @@ void Board::set_bottom_numbers_board_field_view()
 	}
 }
 
+/// This method sets the left outline of the board field view - the numbers of each row
 void Board::set_left_side_numbers_board_field_view()
 {
 	int col = 0;
@@ -155,6 +185,7 @@ void Board::set_left_side_numbers_board_field_view()
 	}
 }
 
+/// This method sets the right outline of the board field view - the numbers of each row
 void Board::set_right_side_numbers_board_field_view()
 {
 	int col = 21;
@@ -166,18 +197,25 @@ void Board::set_right_side_numbers_board_field_view()
 	}
 }
 
+/// This method is converts row index from the board field to row index from board field view so when 
+/// we change figure position in the board field to have coresponding coordinates to the board field
+/// view. Helps in updating the board field view
 int Board::convert_row_board_field_view_to_row_board_view_index(int& row)
 {
 	int converted_row = row - 2;
 	return converted_row;
 }
 
+/// This method is converts column index from the board field to column index from board field view so when 
+/// we change figure position in the board field to have coresponding coordinates to the board field
+/// view. Helps in updating the board field view
 int Board::convert_col_board_field_view_to_col_board_view_index(int& col)
 {
 	int converted_col = (col / 2) - 2;
 	return converted_col;
 }
 
+/// This method cleans up the allocated memory for the board field
 void Board::clear()
 {
 	for (int i = 0; i < BOARD_WIDTH; i++)
