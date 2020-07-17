@@ -6,7 +6,7 @@ Special thanks to our teacher **Philip Yankov** for the great teaching and motiv
 
 # Project Highlights
   - *Full Git history*
-  - *Documentation*
+  - *Documentation with JavaDocs and Doxygen*
   - *Clean Code practices used in all files*
   - *Unit Tests*
 
