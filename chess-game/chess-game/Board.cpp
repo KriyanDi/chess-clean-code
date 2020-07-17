@@ -83,14 +83,12 @@ bool Board::is_empty(Position& position) const
 	}
 }
 
-/// This method sets the board field view
 void Board::set_board_field_view()
 {
 	set_board_field_view_outlines();
 	set_board_field_view_center();
 }
 
-/// This method sets the center of the board field where the figures are
 void Board::set_board_field_view_center()
 {
 	for (int row = 2; row <= 9; row++)
@@ -113,7 +111,6 @@ void Board::update_board_field_view_center()
 	set_board_field_view_center();
 }
 
-
 void Board::print_board_field_view()
 {
 	update_board_field_view_center();
@@ -127,7 +124,6 @@ void Board::print_board_field_view()
 	}
 }
 
-/// This method sets the outlines of the board field - the numbers of each row and column
 void Board::set_board_field_view_outlines()
 {
 	set_all_chars_with_spaces_board_field_view();
@@ -137,7 +133,6 @@ void Board::set_board_field_view_outlines()
 	set_right_side_numbers_board_field_view();
 }
 
-/// This method sets all elements of the 2D char array for the board field view with char 'space'
 void Board::set_all_chars_with_spaces_board_field_view()
 {
 	for (int row = 0; row < BOARD_FIELD_VIEW_HIGH; row++)
@@ -149,7 +144,6 @@ void Board::set_all_chars_with_spaces_board_field_view()
 	}
 }
 
-/// This method sets the top outline of the board field view - the numbers of each column
 void Board::set_top_numbers_board_field_view()
 {
 	int row = 0;
@@ -161,7 +155,6 @@ void Board::set_top_numbers_board_field_view()
 	}
 }
 
-/// This method sets the bottom outline of the board field view - the numbers of each column
 void Board::set_bottom_numbers_board_field_view()
 {
 	int row = 11;
@@ -173,7 +166,6 @@ void Board::set_bottom_numbers_board_field_view()
 	}
 }
 
-/// This method sets the left outline of the board field view - the numbers of each row
 void Board::set_left_side_numbers_board_field_view()
 {
 	int col = 0;
@@ -185,7 +177,6 @@ void Board::set_left_side_numbers_board_field_view()
 	}
 }
 
-/// This method sets the right outline of the board field view - the numbers of each row
 void Board::set_right_side_numbers_board_field_view()
 {
 	int col = 21;

@@ -23,16 +23,13 @@ public:
 	~Board();
 
 public:
-	void set_board_field();
-
 	void set_figure(Position& position, Figure* figure);
-
 	Figure* get_figure(Position& position);
 	void remove_figure(Position& position);
+
 	bool is_empty(Position& position) const;
 
 	void print_board_field_view();
-	void update_board_field_view_center();
 
 private:
 	Square** board_field;
@@ -41,6 +38,8 @@ private:
 private:
 	void clear();
 
+	void set_board_field();
+	
 	void place_all_figures();
 
 	void place_pawns();
@@ -68,6 +67,7 @@ private:
 	void place_black_king();
 	void place_white_king();
 
+	void update_board_field_view_center();
 	void set_board_field_view();
 	void set_board_field_view_center();
 	void set_board_field_view_outlines();
