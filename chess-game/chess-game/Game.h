@@ -1,11 +1,15 @@
 #pragma once
-#include <vector>
-
 #include "Board.h"
+#include <vector>
 
 //const
 const int MAX_COMMAND_LENGHT = 15;
 
+/// This is the whole game class
+///
+/// This class contains all the figures, board field, commands.
+/// Here you can interact with the board field and figures. Also
+/// you can print the board field view and see the board field.
 class Game
 {
 public:

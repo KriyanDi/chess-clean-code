@@ -1,22 +1,31 @@
 #include "Game.h"
 #include <iostream>
 
+/// This method is Game default constructor.
+/// Its role is to set up the board field and player on turn
 Game::Game()
 {
 	set_board_field();
 	set_player_on_turn();
 }
 
+/// This method is Game destructor. Clears the allocated memory 
+/// for the board field
 Game::~Game()
 {
 	clear();
 }
 
+/// This method moves figure from position to position
+/// @param from position from which we select figure
+/// @param to position to which we want to move the figure
 void Game::move(Position& from, Position& to)
 {
 	move_figure(from, to);
 }
 
+/// This method prints the board field view on the console and
+/// read player on turn command
 void Game::start_game()
 {
 	print_board_field();
@@ -48,6 +57,8 @@ void Game::set_board_field()
 	}
 }
 
+/// This method reads players on turn command. For move command you need to
+/// type coordinates of from position and to position
 void Game::read_command()
 {
 	while (true)
