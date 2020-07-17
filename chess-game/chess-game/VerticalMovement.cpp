@@ -1,5 +1,8 @@
 #include "VerticalMovement.h"
 
+/// This method is VerticalMovement default constructor.
+/// Its role is to set pointer to the figure
+/// @param figure pointer to the figure we want to give movement
 VerticalMovement::VerticalMovement(Figure* figure)
 	:AllDirectionsOneStepMovement(figure)
 {

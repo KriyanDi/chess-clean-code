@@ -1,6 +1,9 @@
 #pragma once
 #include "AllDirectionsOneStepMovement.h"
 
+/// This class is Vertical movement
+///
+/// This class is inherited by pieces that can move verticaly
 class VerticalMovement : public AllDirectionsOneStepMovement
 {
 public:
