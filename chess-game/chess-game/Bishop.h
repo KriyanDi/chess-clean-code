@@ -1,7 +1,9 @@
 #pragma once
-
 #include "DiagonalMovement.h"
 
+/// This is Bishop piece
+///
+/// This class is about Bishop piece as piece and can give Bishop possible moves on the board field
 class Bishop
 	: virtual public Figure
 	, public DiagonalMovement
