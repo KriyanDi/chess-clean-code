@@ -1,5 +1,10 @@
 #include "Figure.h"
 
+/// This method is Figure default constructor
+/// @param type figure type
+/// @param color figure color
+/// @param position position on the board field
+/// @param owner which player owns the figure
 Figure::Figure(Type type, Color color, Position position, Player owner)
 {
 	set_type(type);
@@ -9,6 +14,8 @@ Figure::Figure(Type type, Color color, Position position, Player owner)
 	set_has_been_moved();
 }
 
+/// This method is Figure copy constructor 
+/// @param other figure from which we copy
 Figure::Figure(const Figure& other)
 {
 	copy_from(other);
@@ -91,11 +98,15 @@ void Figure::has_moved()
 	this->has_been_moved = true;
 }
 
+/// This method gives us all possible moves for our figure on the board field
+/// @return vector of possible positions on the board field
 std::vector<Position> Figure::get_all_possible_moves(Game* game)
 {
 	return std::vector<Position>();
 }
 
+/// This method give us first letter of the piece name if its white it gives us small letter, if black - big letter
+/// @return char symbol of the piece
 char Figure::get_symbol()
 {
 	if (this == nullptr)
@@ -166,4 +177,16 @@ void Figure::copy_from(const Figure& other)
 	this->type = other.type;
 	this->color = other.color;
 	this->position = other.position;
+}
+
+bool operator==(const Figure& lhs, const Figure& rhs)
+{
+	if (lhs.get_color() == rhs.get_color())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

@@ -1,7 +1,5 @@
 #pragma once
-
 #include <vector>
-
 #include "Position.h"
 
 class Game;
@@ -31,6 +29,9 @@ enum Color
 	NO_COLOR
 };
 
+/// This is basis Figure class
+///
+/// This class is inherited by all other five pieces
 class Figure
 {
 public:
