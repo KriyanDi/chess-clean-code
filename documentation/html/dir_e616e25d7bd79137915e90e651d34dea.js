@@ -19,7 +19,7 @@ var dir_e616e25d7bd79137915e90e651d34dea =
     [ "ExtendedDiagonalMovement.h", "_extended_diagonal_movement_8h.html", [
       [ "ExtendedDiagonalMovement", "class_extended_diagonal_movement.html", "class_extended_diagonal_movement" ]
     ] ],
-    [ "Figure.cpp", "_figure_8cpp.html", null ],
+    [ "Figure.cpp", "_figure_8cpp.html", "_figure_8cpp" ],
     [ "Figure.h", "_figure_8h.html", "_figure_8h" ],
     [ "ForwardMovement.cpp", "_forward_movement_8cpp.html", null ],
     [ "ForwardMovement.h", "_forward_movement_8h.html", [

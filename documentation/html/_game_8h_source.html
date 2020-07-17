@@ -98,75 +98,74 @@ $(document).ready(function(){initNavTree('_game_8h_source.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <a href="_game_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_board_8h.html">Board.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//const</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="_game_8h.html#a07dc9f1175479a0976659be624e66b92">    7</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_game_8h.html#a07dc9f1175479a0976659be624e66b92">MAX_COMMAND_LENGHT</a> = 15;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_game.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_game.html">Game</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game</a>();</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_game.html#a84389b59f971371e667202ae2dd33bc6">   13</a></span>&#160;    <a class="code" href="class_game.html#a84389b59f971371e667202ae2dd33bc6">Game</a>(<span class="keyword">const</span> <a class="code" href="class_game.html">Game</a>&amp; other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_game.html#aa164fc0843bf178d1a1292c6dd253a76">   14</a></span>&#160;    <a class="code" href="class_game.html">Game</a>&amp; <a class="code" href="class_game.html#aa164fc0843bf178d1a1292c6dd253a76">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_game.html">Game</a>&amp; other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#ab399521a18191ca73320d684114e3b1f">move</a>(<a class="code" href="class_position.html">Position</a>&amp; from, <a class="code" href="class_position.html">Position</a>&amp; to);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a3fa1fd5cde5e8e3cd7def3c8e1ec9ac7">start_game</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a2f361d747553a399a01c8e3f3d5c5bde">print_board_field</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_board.html">Board</a>* <a class="code" href="class_game.html#a780bb0af976102f58e1607a54d77c588">get_board_field</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_board.html">Board</a>* board_field;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="_figure_8h.html#a9c8780378078e51e7c9041cbac392db9">Player</a> player_on_turn;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_board_8h.html">Board.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//const</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="_game_8h.html#a07dc9f1175479a0976659be624e66b92">    6</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_game_8h.html#a07dc9f1175479a0976659be624e66b92">MAX_COMMAND_LENGHT</a> = 15;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_game.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_game.html">Game</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_game.html#a84389b59f971371e667202ae2dd33bc6">   17</a></span>&#160;    <a class="code" href="class_game.html#a84389b59f971371e667202ae2dd33bc6">Game</a>(<span class="keyword">const</span> <a class="code" href="class_game.html">Game</a>&amp; other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_game.html#aa164fc0843bf178d1a1292c6dd253a76">   18</a></span>&#160;    <a class="code" href="class_game.html">Game</a>&amp; <a class="code" href="class_game.html#aa164fc0843bf178d1a1292c6dd253a76">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_game.html">Game</a>&amp; other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#ab399521a18191ca73320d684114e3b1f">move</a>(<a class="code" href="class_position.html">Position</a>&amp; from, <a class="code" href="class_position.html">Position</a>&amp; to);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a3fa1fd5cde5e8e3cd7def3c8e1ec9ac7">start_game</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a2f361d747553a399a01c8e3f3d5c5bde">print_board_field</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_board.html">Board</a>* <a class="code" href="class_game.html#a780bb0af976102f58e1607a54d77c588">get_board_field</a>();</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> clear();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> set_board_field();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> read_command();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> print_command_line();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> execute_command(<span class="keyword">const</span> <span class="keywordtype">char</span>* command);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">char</span>* extract_command(<span class="keyword">const</span> <span class="keywordtype">char</span>* command) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> is_print_command(<span class="keyword">const</span> <span class="keywordtype">char</span>* command) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> is_move_command(<span class="keyword">const</span> <span class="keywordtype">char</span>* command) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span> is_valid_move_command(<a class="code" href="class_position.html">Position</a>&amp; from, <a class="code" href="class_position.html">Position</a>&amp; to);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> is_position_valid(<a class="code" href="class_position.html">Position</a>&amp; position) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> is_position_occupied(<a class="code" href="class_position.html">Position</a>&amp; position) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">bool</span> is_selected_figure_player_on_turns_figure(<a class="code" href="class_position.html">Position</a>&amp; position);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> set_player_on_turn();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> change_player_on_turn();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="_figure_8h.html#a9c8780378078e51e7c9041cbac392db9">Player</a> get_player_on_turn() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">bool</span> is_player_one_on_turn() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> move_figure(<a class="code" href="class_position.html">Position</a>&amp; from, <a class="code" href="class_position.html">Position</a>&amp; to);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> change_figure_position(<a class="code" href="class_position.html">Position</a>&amp; from, <a class="code" href="class_position.html">Position</a>&amp; to);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> can_figure_change_current_position(<a class="code" href="class_position.html">Position</a>&amp; from, <a class="code" href="class_position.html">Position</a>&amp; to);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> set_all_possible_moves_for_figure(std::vector&lt;Position&gt;&amp; all_possible_moves, <a class="code" href="class_position.html">Position</a>&amp; position);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">bool</span> is_king_under_attack() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_board.html">Board</a>* board_field;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="_figure_8h.html#a9c8780378078e51e7c9041cbac392db9">Player</a> player_on_turn;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> clear();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> set_board_field();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> read_command();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> print_command_line();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> execute_command(<span class="keyword">const</span> <span class="keywordtype">char</span>* command);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">char</span>* extract_command(<span class="keyword">const</span> <span class="keywordtype">char</span>* command) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> is_print_command(<span class="keyword">const</span> <span class="keywordtype">char</span>* command) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">bool</span> is_move_command(<span class="keyword">const</span> <span class="keywordtype">char</span>* command) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> is_valid_move_command(<a class="code" href="class_position.html">Position</a>&amp; from, <a class="code" href="class_position.html">Position</a>&amp; to);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> is_position_valid(<a class="code" href="class_position.html">Position</a>&amp; position) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> is_position_occupied(<a class="code" href="class_position.html">Position</a>&amp; position) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> is_selected_figure_player_on_turns_figure(<a class="code" href="class_position.html">Position</a>&amp; position);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> set_player_on_turn();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> change_player_on_turn();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="_figure_8h.html#a9c8780378078e51e7c9041cbac392db9">Player</a> get_player_on_turn() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> is_player_one_on_turn() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> move_figure(<a class="code" href="class_position.html">Position</a>&amp; from, <a class="code" href="class_position.html">Position</a>&amp; to);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> change_figure_position(<a class="code" href="class_position.html">Position</a>&amp; from, <a class="code" href="class_position.html">Position</a>&amp; to);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">bool</span> can_figure_change_current_position(<a class="code" href="class_position.html">Position</a>&amp; from, <a class="code" href="class_position.html">Position</a>&amp; to);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> set_all_possible_moves_for_figure(std::vector&lt;Position&gt;&amp; all_possible_moves, <a class="code" href="class_position.html">Position</a>&amp; position);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> is_king_under_attack() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_game_html_ab399521a18191ca73320d684114e3b1f"><div class="ttname"><a href="class_game.html#ab399521a18191ca73320d684114e3b1f">Game::move</a></div><div class="ttdeci">void move(Position &amp;from, Position &amp;to)</div><div class="ttdef"><b>Definition:</b> Game.cpp:15</div></div>
-<div class="ttc" id="aclass_game_html_a3fa1fd5cde5e8e3cd7def3c8e1ec9ac7"><div class="ttname"><a href="class_game.html#a3fa1fd5cde5e8e3cd7def3c8e1ec9ac7">Game::start_game</a></div><div class="ttdeci">void start_game()</div><div class="ttdef"><b>Definition:</b> Game.cpp:20</div></div>
-<div class="ttc" id="aclass_game_html_a780bb0af976102f58e1607a54d77c588"><div class="ttname"><a href="class_game.html#a780bb0af976102f58e1607a54d77c588">Game::get_board_field</a></div><div class="ttdeci">Board * get_board_field()</div><div class="ttdef"><b>Definition:</b> Game.cpp:32</div></div>
-<div class="ttc" id="aclass_game_html_ad59df6562a58a614fda24622d3715b65"><div class="ttname"><a href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game::Game</a></div><div class="ttdeci">Game()</div><div class="ttdef"><b>Definition:</b> Game.cpp:4</div></div>
+<div class="ttc" id="aclass_game_html_ab399521a18191ca73320d684114e3b1f"><div class="ttname"><a href="class_game.html#ab399521a18191ca73320d684114e3b1f">Game::move</a></div><div class="ttdeci">void move(Position &amp;from, Position &amp;to)</div><div class="ttdoc">This method moves figure from position to position.</div><div class="ttdef"><b>Definition:</b> Game.cpp:22</div></div>
+<div class="ttc" id="aclass_game_html_a3fa1fd5cde5e8e3cd7def3c8e1ec9ac7"><div class="ttname"><a href="class_game.html#a3fa1fd5cde5e8e3cd7def3c8e1ec9ac7">Game::start_game</a></div><div class="ttdeci">void start_game()</div><div class="ttdoc">This method prints the board field view on the console and read player on turn command.</div><div class="ttdef"><b>Definition:</b> Game.cpp:29</div></div>
+<div class="ttc" id="aclass_game_html_a780bb0af976102f58e1607a54d77c588"><div class="ttname"><a href="class_game.html#a780bb0af976102f58e1607a54d77c588">Game::get_board_field</a></div><div class="ttdeci">Board * get_board_field()</div><div class="ttdef"><b>Definition:</b> Game.cpp:41</div></div>
+<div class="ttc" id="aclass_game_html_ad59df6562a58a614fda24622d3715b65"><div class="ttname"><a href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game::Game</a></div><div class="ttdeci">Game()</div><div class="ttdoc">This method is Game default constructor.</div><div class="ttdef"><b>Definition:</b> Game.cpp:6</div></div>
 <div class="ttc" id="aclass_position_html"><div class="ttname"><a href="class_position.html">Position</a></div><div class="ttdef"><b>Definition:</b> Position.h:4</div></div>
 <div class="ttc" id="aclass_game_html_aa164fc0843bf178d1a1292c6dd253a76"><div class="ttname"><a href="class_game.html#aa164fc0843bf178d1a1292c6dd253a76">Game::operator=</a></div><div class="ttdeci">Game &amp; operator=(const Game &amp;other)=delete</div></div>
 <div class="ttc" id="a_board_8h_html"><div class="ttname"><a href="_board_8h.html">Board.h</a></div></div>
 <div class="ttc" id="aclass_game_html_a84389b59f971371e667202ae2dd33bc6"><div class="ttname"><a href="class_game.html#a84389b59f971371e667202ae2dd33bc6">Game::Game</a></div><div class="ttdeci">Game(const Game &amp;other)=delete</div></div>
-<div class="ttc" id="aclass_game_html_a2f361d747553a399a01c8e3f3d5c5bde"><div class="ttname"><a href="class_game.html#a2f361d747553a399a01c8e3f3d5c5bde">Game::print_board_field</a></div><div class="ttdeci">void print_board_field()</div><div class="ttdef"><b>Definition:</b> Game.cpp:26</div></div>
+<div class="ttc" id="aclass_game_html_a2f361d747553a399a01c8e3f3d5c5bde"><div class="ttname"><a href="class_game.html#a2f361d747553a399a01c8e3f3d5c5bde">Game::print_board_field</a></div><div class="ttdeci">void print_board_field()</div><div class="ttdef"><b>Definition:</b> Game.cpp:35</div></div>
 <div class="ttc" id="aclass_board_html"><div class="ttname"><a href="class_board.html">Board</a></div><div class="ttdoc">This is Chess board field.</div><div class="ttdef"><b>Definition:</b> Board.h:18</div></div>
-<div class="ttc" id="a_figure_8h_html_a9c8780378078e51e7c9041cbac392db9"><div class="ttname"><a href="_figure_8h.html#a9c8780378078e51e7c9041cbac392db9">Player</a></div><div class="ttdeci">Player</div><div class="ttdef"><b>Definition:</b> Figure.h:10</div></div>
-<div class="ttc" id="a_game_8h_html_a07dc9f1175479a0976659be624e66b92"><div class="ttname"><a href="_game_8h.html#a07dc9f1175479a0976659be624e66b92">MAX_COMMAND_LENGHT</a></div><div class="ttdeci">const int MAX_COMMAND_LENGHT</div><div class="ttdef"><b>Definition:</b> Game.h:7</div></div>
-<div class="ttc" id="aclass_game_html_ae3d112ca6e0e55150d2fdbc704474530"><div class="ttname"><a href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">Game::~Game</a></div><div class="ttdeci">~Game()</div><div class="ttdef"><b>Definition:</b> Game.cpp:10</div></div>
-<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdef"><b>Definition:</b> Game.h:10</div></div>
+<div class="ttc" id="a_figure_8h_html_a9c8780378078e51e7c9041cbac392db9"><div class="ttname"><a href="_figure_8h.html#a9c8780378078e51e7c9041cbac392db9">Player</a></div><div class="ttdeci">Player</div><div class="ttdef"><b>Definition:</b> Figure.h:8</div></div>
+<div class="ttc" id="a_game_8h_html_a07dc9f1175479a0976659be624e66b92"><div class="ttname"><a href="_game_8h.html#a07dc9f1175479a0976659be624e66b92">MAX_COMMAND_LENGHT</a></div><div class="ttdeci">const int MAX_COMMAND_LENGHT</div><div class="ttdef"><b>Definition:</b> Game.h:6</div></div>
+<div class="ttc" id="aclass_game_html_ae3d112ca6e0e55150d2fdbc704474530"><div class="ttname"><a href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">Game::~Game</a></div><div class="ttdeci">~Game()</div><div class="ttdoc">This method is Game destructor.</div><div class="ttdef"><b>Definition:</b> Game.cpp:14</div></div>
+<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">This is the whole game class.</div><div class="ttdef"><b>Definition:</b> Game.h:14</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

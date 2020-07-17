@@ -8,7 +8,5 @@ var class_board =
     [ "operator=", "class_board.html#a7288b018e3e2373dde861de91b8e05c8", null ],
     [ "print_board_field_view", "class_board.html#a34959dc76efdab3602d0b0f0e0a7fe46", null ],
     [ "remove_figure", "class_board.html#a66872346d3b0f78020021b2fd848f4c1", null ],
-    [ "set_board_field", "class_board.html#a492a90319e3d7908f1ffbd87ad1b5c00", null ],
-    [ "set_figure", "class_board.html#a1b806283f82517d0b60622790a433be0", null ],
-    [ "update_board_field_view_center", "class_board.html#a48824243ff5eb858561c8389ec6a8a23", null ]
+    [ "set_figure", "class_board.html#a1b806283f82517d0b60622790a433be0", null ]
 ];

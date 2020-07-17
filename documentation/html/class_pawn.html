@@ -101,6 +101,9 @@ $(document).ready(function(){initNavTree('class_pawn.html',''); initResizable();
 </div><!--header-->
 <div class="contents">
 
+<p>This is <a class="el" href="class_pawn.html" title="This is Pawn piece.">Pawn</a> piece.  
+ <a href="class_pawn.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_pawn_8h_source.html">Pawn.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Pawn:</div>
@@ -108,7 +111,7 @@ Inheritance diagram for Pawn:</div>
  <div class="center">
   <img src="class_pawn.png" usemap="#Pawn_map" alt=""/>
   <map id="Pawn_map" name="Pawn_map">
-<area href="class_figure.html" alt="Figure" shape="rect" coords="0,56,191,80"/>
+<area href="class_figure.html" title="This is basis Figure class." alt="Figure" shape="rect" coords="0,56,191,80"/>
 <area href="class_forward_movement.html" alt="ForwardMovement" shape="rect" coords="201,56,392,80"/>
 <area href="class_all_directions_one_step_movement.html" alt="AllDirectionsOneStepMovement" shape="rect" coords="201,0,392,24"/>
   </map>
@@ -117,6 +120,7 @@ Inheritance diagram for Pawn:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3647af9fbf4a223850c7a5e51ae80f49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pawn.html#a3647af9fbf4a223850c7a5e51ae80f49">Pawn</a> (<a class="el" href="_figure_8h.html#a1d1cfd8ffb84e947f82999c682b666a7">Type</a> &amp;<a class="el" href="class_figure.html#a68bd13f418af6f0ffb6d5d2f4ad26659">type</a>, <a class="el" href="_figure_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a> &amp;<a class="el" href="class_figure.html#a8517502c37fc3d236286fb10085e1899">color</a>, <a class="el" href="class_position.html">Position</a> &amp;<a class="el" href="class_figure.html#abd896d4437c9a7c279aa8bffee43ae4b">position</a>, <a class="el" href="_figure_8h.html#a9c8780378078e51e7c9041cbac392db9">Player</a> &amp;<a class="el" href="class_figure.html#a20fe047209e33c0adba7a2f00be2c295">owner</a>)</td></tr>
+<tr class="memdesc:a3647af9fbf4a223850c7a5e51ae80f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is <a class="el" href="class_pawn.html" title="This is Pawn piece.">Pawn</a> default constructor.  <a href="class_pawn.html#a3647af9fbf4a223850c7a5e51ae80f49">More...</a><br /></td></tr>
 <tr class="separator:a3647af9fbf4a223850c7a5e51ae80f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d7dfc437105f709f48fdaf2e6540125"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pawn.html#a5d7dfc437105f709f48fdaf2e6540125">Pawn</a> (const <a class="el" href="class_pawn.html">Pawn</a> &amp;other)=delete</td></tr>
 <tr class="separator:a5d7dfc437105f709f48fdaf2e6540125"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,11 +129,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3095938fb8326469c3bd05da0b8f50af"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pawn.html#a3095938fb8326469c3bd05da0b8f50af">~Pawn</a> ()</td></tr>
 <tr class="separator:a3095938fb8326469c3bd05da0b8f50af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a937cfc76dbc18cb5496fe6d041a4dee0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pawn.html#a937cfc76dbc18cb5496fe6d041a4dee0">get_all_possible_moves</a> (<a class="el" href="class_game.html">Game</a> *game) override</td></tr>
+<tr class="memdesc:a937cfc76dbc18cb5496fe6d041a4dee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method gives all possible moves for the <a class="el" href="class_pawn.html" title="This is Pawn piece.">Pawn</a> on the board field.  <a href="class_pawn.html#a937cfc76dbc18cb5496fe6d041a4dee0">More...</a><br /></td></tr>
 <tr class="separator:a937cfc76dbc18cb5496fe6d041a4dee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_figure"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_figure')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_figure.html">Figure</a></td></tr>
 <tr class="memitem:a9fb0a85b27638fcbf9fbc91deaeff116 inherit pub_methods_class_figure"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figure.html#a9fb0a85b27638fcbf9fbc91deaeff116">Figure</a> (<a class="el" href="_figure_8h.html#a1d1cfd8ffb84e947f82999c682b666a7">Type</a> <a class="el" href="class_figure.html#a68bd13f418af6f0ffb6d5d2f4ad26659">type</a>, <a class="el" href="_figure_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a> <a class="el" href="class_figure.html#a8517502c37fc3d236286fb10085e1899">color</a>, <a class="el" href="class_position.html">Position</a> <a class="el" href="class_figure.html#abd896d4437c9a7c279aa8bffee43ae4b">position</a>, <a class="el" href="_figure_8h.html#a9c8780378078e51e7c9041cbac392db9">Player</a> <a class="el" href="class_figure.html#a20fe047209e33c0adba7a2f00be2c295">owner</a>)</td></tr>
+<tr class="memdesc:a9fb0a85b27638fcbf9fbc91deaeff116 inherit pub_methods_class_figure"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is <a class="el" href="class_figure.html" title="This is basis Figure class.">Figure</a> default constructor.  <a href="class_figure.html#a9fb0a85b27638fcbf9fbc91deaeff116">More...</a><br /></td></tr>
 <tr class="separator:a9fb0a85b27638fcbf9fbc91deaeff116 inherit pub_methods_class_figure"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40b60bf7dc7033b52bdf02650aaf002b inherit pub_methods_class_figure"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figure.html#a40b60bf7dc7033b52bdf02650aaf002b">Figure</a> (const <a class="el" href="class_figure.html">Figure</a> &amp;other)</td></tr>
+<tr class="memdesc:a40b60bf7dc7033b52bdf02650aaf002b inherit pub_methods_class_figure"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is <a class="el" href="class_figure.html" title="This is basis Figure class.">Figure</a> copy constructor.  <a href="class_figure.html#a40b60bf7dc7033b52bdf02650aaf002b">More...</a><br /></td></tr>
 <tr class="separator:a40b60bf7dc7033b52bdf02650aaf002b inherit pub_methods_class_figure"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c6f6627642ebeeccebe176cd4a25938 inherit pub_methods_class_figure"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_figure.html">Figure</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figure.html#a9c6f6627642ebeeccebe176cd4a25938">operator=</a> (const <a class="el" href="class_figure.html">Figure</a> &amp;other)=delete</td></tr>
 <tr class="separator:a9c6f6627642ebeeccebe176cd4a25938 inherit pub_methods_class_figure"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +165,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1c36e75ca54707bb3fab8a3da63b449 inherit pub_methods_class_figure"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figure.html#ad1c36e75ca54707bb3fab8a3da63b449">has_moved</a> ()</td></tr>
 <tr class="separator:ad1c36e75ca54707bb3fab8a3da63b449 inherit pub_methods_class_figure"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaeaa9fc7a1991b64a2f5896a3573d57a inherit pub_methods_class_figure"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figure.html#aaeaa9fc7a1991b64a2f5896a3573d57a">get_symbol</a> ()</td></tr>
+<tr class="memdesc:aaeaa9fc7a1991b64a2f5896a3573d57a inherit pub_methods_class_figure"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method give us first letter of the piece name if its white it gives us small letter, if black - big letter.  <a href="class_figure.html#aaeaa9fc7a1991b64a2f5896a3573d57a">More...</a><br /></td></tr>
 <tr class="separator:aaeaa9fc7a1991b64a2f5896a3573d57a inherit pub_methods_class_figure"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_forward_movement"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_forward_movement')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_forward_movement.html">ForwardMovement</a></td></tr>
 <tr class="memitem:a13f444eafd39d18eac8e01438b773152 inherit pub_methods_class_forward_movement"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_forward_movement.html#a13f444eafd39d18eac8e01438b773152">ForwardMovement</a> (<a class="el" href="class_figure.html">Figure</a> *<a class="el" href="class_all_directions_one_step_movement.html#add6c67f8484b71ca63e3b2299e0fb1f7">figure</a>)</td></tr>
@@ -239,7 +247,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:add6c67f8484b71ca63e3b2299e0fb1f7 inherit pro_attribs_class_all_directions_one_step_movement"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_figure.html">Figure</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#add6c67f8484b71ca63e3b2299e0fb1f7">figure</a></td></tr>
 <tr class="separator:add6c67f8484b71ca63e3b2299e0fb1f7 inherit pro_attribs_class_all_directions_one_step_movement"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This is <a class="el" href="class_pawn.html" title="This is Pawn piece.">Pawn</a> piece. </p>
+<p>This class is about <a class="el" href="class_pawn.html" title="This is Pawn piece.">Pawn</a> piece as piece and can give <a class="el" href="class_pawn.html" title="This is Pawn piece.">Pawn</a> possible moves on the board field </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3647af9fbf4a223850c7a5e51ae80f49"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3647af9fbf4a223850c7a5e51ae80f49">&#9670;&nbsp;</a></span>Pawn() <span class="overload">[1/2]</span></h2>
 
@@ -277,6 +288,17 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This method is <a class="el" href="class_pawn.html" title="This is Pawn piece.">Pawn</a> default constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>figure type </td></tr>
+    <tr><td class="paramname">color</td><td>figure color </td></tr>
+    <tr><td class="paramname">position</td><td>position on the board field </td></tr>
+    <tr><td class="paramname">owner</td><td>which player owns the figure </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -355,6 +377,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This method gives all possible moves for the <a class="el" href="class_pawn.html" title="This is Pawn piece.">Pawn</a> on the board field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>pointer to the game, from where we can get the board field state </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector of possible possitions on the board field </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_figure.html#adfe6d91bcf9820f307f8b72d468b6f34">Figure</a>.</p>
 

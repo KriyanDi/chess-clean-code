@@ -116,51 +116,51 @@ $(document).ready(function(){initNavTree('_board_8h_source.html',''); initResiza
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_board.html#af73f45730119a1fd8f6670f53f959e68">~Board</a>();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a492a90319e3d7908f1ffbd87ad1b5c00">set_board_field</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a1b806283f82517d0b60622790a433be0">set_figure</a>(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_figure.html">Figure</a>* figure);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a1b806283f82517d0b60622790a433be0">set_figure</a>(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_figure.html">Figure</a>* figure);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_figure.html">Figure</a>* <a class="code" href="class_board.html#ab350dddd3d7d0bfa2de28b43351bc7d4">get_figure</a>(<a class="code" href="class_position.html">Position</a>&amp; position);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a66872346d3b0f78020021b2fd848f4c1">remove_figure</a>(<a class="code" href="class_position.html">Position</a>&amp; position);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_figure.html">Figure</a>* <a class="code" href="class_board.html#ab350dddd3d7d0bfa2de28b43351bc7d4">get_figure</a>(<a class="code" href="class_position.html">Position</a>&amp; position);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a66872346d3b0f78020021b2fd848f4c1">remove_figure</a>(<a class="code" href="class_position.html">Position</a>&amp; position);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_board.html#a5eb03ba58670ca5bb8ba25b516960bda">is_empty</a>(<a class="code" href="class_position.html">Position</a>&amp; position) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_board.html#a5eb03ba58670ca5bb8ba25b516960bda">is_empty</a>(<a class="code" href="class_position.html">Position</a>&amp; position) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a34959dc76efdab3602d0b0f0e0a7fe46">print_board_field_view</a>();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a34959dc76efdab3602d0b0f0e0a7fe46">print_board_field_view</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a48824243ff5eb858561c8389ec6a8a23">update_board_field_view_center</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_square.html">Square</a>** board_field;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">char</span> board_field_view[<a class="code" href="_board_8h.html#aa5a9121c30dfe7c1af3df2319eb5d0a9">BOARD_FIELD_VIEW_HIGH</a>][<a class="code" href="_board_8h.html#ac071607249d50cc2110862a8b36f75a2">BOARD_FIELD_VIEW_WIDTH</a>];</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_square.html">Square</a>** board_field;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">char</span> board_field_view[<a class="code" href="_board_8h.html#aa5a9121c30dfe7c1af3df2319eb5d0a9">BOARD_FIELD_VIEW_HIGH</a>][<a class="code" href="_board_8h.html#ac071607249d50cc2110862a8b36f75a2">BOARD_FIELD_VIEW_WIDTH</a>];</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> clear();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> clear();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> place_all_figures();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> place_pawns();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> place_black_pawns();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> place_white_pawns();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> set_board_field();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> place_all_figures();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> place_pawns();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> place_black_pawns();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> place_white_pawns();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> place_rooks();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> place_black_rooks();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> place_white_rooks();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> place_knights();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> place_black_knights();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> place_white_knights();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> place_bishops();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> place_black_bishops();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> place_white_bishops();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> place_queens();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> place_black_queen();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> place_white_queen();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> place_kings();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> place_black_king();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> place_white_king();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> place_rooks();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> place_black_rooks();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> place_white_rooks();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> place_knights();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> place_black_knights();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> place_white_knights();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> place_bishops();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> place_black_bishops();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> place_white_bishops();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> place_queens();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> place_black_queen();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> place_white_queen();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> place_kings();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> place_black_king();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> place_white_king();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> update_board_field_view_center();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> set_board_field_view();</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> set_board_field_view_center();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> set_board_field_view_outlines();</div>
@@ -180,17 +180,15 @@ $(document).ready(function(){initNavTree('_board_8h_source.html',''); initResiza
 <div class="ttc" id="a_board_8h_html_aa5a9121c30dfe7c1af3df2319eb5d0a9"><div class="ttname"><a href="_board_8h.html#aa5a9121c30dfe7c1af3df2319eb5d0a9">BOARD_FIELD_VIEW_HIGH</a></div><div class="ttdeci">const int BOARD_FIELD_VIEW_HIGH</div><div class="ttdef"><b>Definition:</b> Board.h:8</div></div>
 <div class="ttc" id="a_board_8h_html_a42324bf350708926d83bca3e862ec3db"><div class="ttname"><a href="_board_8h.html#a42324bf350708926d83bca3e862ec3db">BOARD_WIDTH</a></div><div class="ttdeci">const int BOARD_WIDTH</div><div class="ttdef"><b>Definition:</b> Board.h:7</div></div>
 <div class="ttc" id="aclass_board_html_a7288b018e3e2373dde861de91b8e05c8"><div class="ttname"><a href="class_board.html#a7288b018e3e2373dde861de91b8e05c8">Board::operator=</a></div><div class="ttdeci">Board &amp; operator=(const Board &amp;other)=delete</div></div>
-<div class="ttc" id="aclass_square_html"><div class="ttname"><a href="class_square.html">Square</a></div><div class="ttdef"><b>Definition:</b> Square.h:6</div></div>
+<div class="ttc" id="aclass_square_html"><div class="ttname"><a href="class_square.html">Square</a></div><div class="ttdoc">This Chess board square.</div><div class="ttdef"><b>Definition:</b> Square.h:12</div></div>
 <div class="ttc" id="aclass_board_html_ab350dddd3d7d0bfa2de28b43351bc7d4"><div class="ttname"><a href="class_board.html#ab350dddd3d7d0bfa2de28b43351bc7d4">Board::get_figure</a></div><div class="ttdeci">Figure * get_figure(Position &amp;position)</div><div class="ttdoc">This method gives us the figure on specific square on the board field.</div><div class="ttdef"><b>Definition:</b> Board.cpp:58</div></div>
-<div class="ttc" id="aclass_board_html_a34959dc76efdab3602d0b0f0e0a7fe46"><div class="ttname"><a href="class_board.html#a34959dc76efdab3602d0b0f0e0a7fe46">Board::print_board_field_view</a></div><div class="ttdeci">void print_board_field_view()</div><div class="ttdef"><b>Definition:</b> Board.cpp:117</div></div>
-<div class="ttc" id="aclass_board_html_a48824243ff5eb858561c8389ec6a8a23"><div class="ttname"><a href="class_board.html#a48824243ff5eb858561c8389ec6a8a23">Board::update_board_field_view_center</a></div><div class="ttdeci">void update_board_field_view_center()</div><div class="ttdoc">This method updates the board field view after any change on the board field.</div><div class="ttdef"><b>Definition:</b> Board.cpp:111</div></div>
+<div class="ttc" id="aclass_board_html_a34959dc76efdab3602d0b0f0e0a7fe46"><div class="ttname"><a href="class_board.html#a34959dc76efdab3602d0b0f0e0a7fe46">Board::print_board_field_view</a></div><div class="ttdeci">void print_board_field_view()</div><div class="ttdef"><b>Definition:</b> Board.cpp:114</div></div>
 <div class="ttc" id="aclass_board_html_a66872346d3b0f78020021b2fd848f4c1"><div class="ttname"><a href="class_board.html#a66872346d3b0f78020021b2fd848f4c1">Board::remove_figure</a></div><div class="ttdeci">void remove_figure(Position &amp;position)</div><div class="ttdoc">This method removes figure on specific square on the board field.</div><div class="ttdef"><b>Definition:</b> Board.cpp:66</div></div>
 <div class="ttc" id="a_board_8h_html_ac071607249d50cc2110862a8b36f75a2"><div class="ttname"><a href="_board_8h.html#ac071607249d50cc2110862a8b36f75a2">BOARD_FIELD_VIEW_WIDTH</a></div><div class="ttdeci">const int BOARD_FIELD_VIEW_WIDTH</div><div class="ttdef"><b>Definition:</b> Board.h:9</div></div>
 <div class="ttc" id="aclass_position_html"><div class="ttname"><a href="class_position.html">Position</a></div><div class="ttdef"><b>Definition:</b> Position.h:4</div></div>
-<div class="ttc" id="aclass_board_html_a492a90319e3d7908f1ffbd87ad1b5c00"><div class="ttname"><a href="class_board.html#a492a90319e3d7908f1ffbd87ad1b5c00">Board::set_board_field</a></div><div class="ttdeci">void set_board_field()</div><div class="ttdoc">This method sets the board field so all figures are on their proper starting position.</div><div class="ttdef"><b>Definition:</b> Board.cpp:41</div></div>
 <div class="ttc" id="a_board_8h_html_a5cf45f7203687ad56426452f6b80cdca"><div class="ttname"><a href="_board_8h.html#a5cf45f7203687ad56426452f6b80cdca">BOARD_HIGH</a></div><div class="ttdeci">const int BOARD_HIGH</div><div class="ttdef"><b>Definition:</b> Board.h:6</div></div>
 <div class="ttc" id="aclass_board_html_a5eb03ba58670ca5bb8ba25b516960bda"><div class="ttname"><a href="class_board.html#a5eb03ba58670ca5bb8ba25b516960bda">Board::is_empty</a></div><div class="ttdeci">bool is_empty(Position &amp;position) const</div><div class="ttdoc">This method tells us if square on the board field contains any figure.</div><div class="ttdef"><b>Definition:</b> Board.cpp:74</div></div>
-<div class="ttc" id="aclass_figure_html"><div class="ttname"><a href="class_figure.html">Figure</a></div><div class="ttdef"><b>Definition:</b> Figure.h:35</div></div>
+<div class="ttc" id="aclass_figure_html"><div class="ttname"><a href="class_figure.html">Figure</a></div><div class="ttdoc">This is basis Figure class.</div><div class="ttdef"><b>Definition:</b> Figure.h:36</div></div>
 <div class="ttc" id="aclass_board_html"><div class="ttname"><a href="class_board.html">Board</a></div><div class="ttdoc">This is Chess board field.</div><div class="ttdef"><b>Definition:</b> Board.h:18</div></div>
 <div class="ttc" id="aclass_board_html_a1b806283f82517d0b60622790a433be0"><div class="ttname"><a href="class_board.html#a1b806283f82517d0b60622790a433be0">Board::set_figure</a></div><div class="ttdeci">void set_figure(Position &amp;position, Figure *figure)</div><div class="ttdoc">This method sets figure on specific square on the board field.</div><div class="ttdef"><b>Definition:</b> Board.cpp:49</div></div>
 <div class="ttc" id="aclass_board_html_af73f45730119a1fd8f6670f53f959e68"><div class="ttname"><a href="class_board.html#af73f45730119a1fd8f6670f53f959e68">Board::~Board</a></div><div class="ttdeci">~Board()</div><div class="ttdoc">This method is Board destructor.</div><div class="ttdef"><b>Definition:</b> Board.cpp:34</div></div>

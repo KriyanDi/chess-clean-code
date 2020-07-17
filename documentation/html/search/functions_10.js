@@ -1,4 +1,20 @@
 var searchData=
 [
-  ['verticalmovement_295',['VerticalMovement',['../class_vertical_movement.html#a1daa436c50f401887e6bc25fb2c97b5d',1,'VerticalMovement::VerticalMovement(Figure *figure)'],['../class_vertical_movement.html#a15ef42a1f3296b08f5f4c8c04f489e0f',1,'VerticalMovement::VerticalMovement(const VerticalMovement &amp;other)=delete']]]
+  ['_7ealldirectionsonestepmovement_292',['~AllDirectionsOneStepMovement',['../class_all_directions_one_step_movement.html#a0b089bdf8a7ddb3613e9eeea495e3c28',1,'AllDirectionsOneStepMovement']]],
+  ['_7ebishop_293',['~Bishop',['../class_bishop.html#a3705b4537a39d09a59143fe01a62442f',1,'Bishop']]],
+  ['_7eboard_294',['~Board',['../class_board.html#af73f45730119a1fd8f6670f53f959e68',1,'Board']]],
+  ['_7ediagonalmovement_295',['~DiagonalMovement',['../class_diagonal_movement.html#a73de03bd402bd0d950cf945640734ea4',1,'DiagonalMovement']]],
+  ['_7eextendeddiagonalmovement_296',['~ExtendedDiagonalMovement',['../class_extended_diagonal_movement.html#ac2d7387ac4b3ab47b47bbd7d05a76f5a',1,'ExtendedDiagonalMovement']]],
+  ['_7efigure_297',['~Figure',['../class_figure.html#af155c20558330034441de6a19d94f4a7',1,'Figure']]],
+  ['_7eforwardmovement_298',['~ForwardMovement',['../class_forward_movement.html#a4e08d415d4f0875eff6dec20b15aaf99',1,'ForwardMovement']]],
+  ['_7egame_299',['~Game',['../class_game.html#ae3d112ca6e0e55150d2fdbc704474530',1,'Game']]],
+  ['_7ehorizontalmovement_300',['~HorizontalMovement',['../class_horizontal_movement.html#a3e249378147ae4ce9ddb7126e094c102',1,'HorizontalMovement']]],
+  ['_7ehorse_301',['~Horse',['../class_horse.html#a99fa977e45cd260c8c87076ceae6b501',1,'Horse']]],
+  ['_7eking_302',['~King',['../class_king.html#aac368ce96e2b12f62e3608d27262e941',1,'King']]],
+  ['_7epawn_303',['~Pawn',['../class_pawn.html#a3095938fb8326469c3bd05da0b8f50af',1,'Pawn']]],
+  ['_7eposition_304',['~Position',['../class_position.html#abe83df4cab7af756636b4e39e4378f4a',1,'Position']]],
+  ['_7equeen_305',['~Queen',['../class_queen.html#aa22f6c1a49a583b549bd1f940e50721d',1,'Queen']]],
+  ['_7erook_306',['~Rook',['../class_rook.html#a70d445b94848b22ded850b6f58bc2972',1,'Rook']]],
+  ['_7esquare_307',['~Square',['../class_square.html#a90af7ce1060cff7b717ceddb333846b8',1,'Square']]],
+  ['_7everticalmovement_308',['~VerticalMovement',['../class_vertical_movement.html#a9c12f8a36d439f2c79c9bbf514baffa0',1,'VerticalMovement']]]
 ];

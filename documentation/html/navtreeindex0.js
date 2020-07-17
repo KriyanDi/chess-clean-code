@@ -20,6 +20,7 @@ var NAVTREEINDEX0 =
 "_extended_diagonal_movement_8h.html":[1,0,0,10],
 "_extended_diagonal_movement_8h_source.html":[1,0,0,10],
 "_figure_8cpp.html":[1,0,0,11],
+"_figure_8cpp.html#a8892d60c88e4233c8992a4226de791fb":[1,0,0,11,0],
 "_figure_8h.html":[1,0,0,12],
 "_figure_8h.html#a1d1cfd8ffb84e947f82999c682b666a7":[1,0,0,12,3],
 "_figure_8h.html#a1d1cfd8ffb84e947f82999c682b666a7a157524408d6f0fc4b7dc5e52f3dd3b80":[1,0,0,12,3,5],
@@ -105,10 +106,8 @@ var NAVTREEINDEX0 =
 "class_bishop.html#abf287160ff10a2b42f8f7ab3a95a3d34":[0,0,1,1],
 "class_bishop.html#af9057c3cfb77ee3f87bfb5d078fcdb9a":[0,0,1,0],
 "class_board.html":[0,0,2],
-"class_board.html#a1b806283f82517d0b60622790a433be0":[0,0,2,9],
+"class_board.html#a1b806283f82517d0b60622790a433be0":[0,0,2,8],
 "class_board.html#a34959dc76efdab3602d0b0f0e0a7fe46":[0,0,2,6],
-"class_board.html#a48824243ff5eb858561c8389ec6a8a23":[0,0,2,10],
-"class_board.html#a492a90319e3d7908f1ffbd87ad1b5c00":[0,0,2,8],
 "class_board.html#a5eb03ba58670ca5bb8ba25b516960bda":[0,0,2,4],
 "class_board.html#a66872346d3b0f78020021b2fd848f4c1":[0,0,2,7],
 "class_board.html#a692f9810041644a115a59d7b0f774c88":[0,0,2,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "functions.html":[0,3,0],
 "functions_func.html":[0,3,1],
 "functions_vars.html":[0,3,2],
-"globals.html":[1,1,0]
+"globals.html":[1,1,0],
+"globals_enum.html":[1,1,3]
 };

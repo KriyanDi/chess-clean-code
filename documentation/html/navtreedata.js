@@ -51,7 +51,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_all_directions_one_step_movement_8cpp.html",
-"globals_enum.html"
+"globals_eval.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -102,6 +102,9 @@ $(document).ready(function(){initNavTree('class_figure.html',''); initResizable(
 </div><!--header-->
 <div class="contents">
 
+<p>This is basis <a class="el" href="class_figure.html" title="This is basis Figure class.">Figure</a> class.  
+ <a href="class_figure.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_figure_8h_source.html">Figure.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Figure:</div>
@@ -109,20 +112,22 @@ Inheritance diagram for Figure:</div>
  <div class="center">
   <img src="class_figure.png" usemap="#Figure_map" alt=""/>
   <map id="Figure_map" name="Figure_map">
-<area href="class_bishop.html" alt="Bishop" shape="rect" coords="0,56,50,80"/>
-<area href="class_horse.html" alt="Horse" shape="rect" coords="60,56,110,80"/>
-<area href="class_king.html" alt="King" shape="rect" coords="120,56,170,80"/>
-<area href="class_pawn.html" alt="Pawn" shape="rect" coords="180,56,230,80"/>
-<area href="class_queen.html" alt="Queen" shape="rect" coords="240,56,290,80"/>
-<area href="class_rook.html" alt="Rook" shape="rect" coords="300,56,350,80"/>
+<area href="class_bishop.html" title="This is Bishop piece." alt="Bishop" shape="rect" coords="0,56,50,80"/>
+<area href="class_horse.html" title="This is Horse piece." alt="Horse" shape="rect" coords="60,56,110,80"/>
+<area href="class_king.html" title="This is King piece." alt="King" shape="rect" coords="120,56,170,80"/>
+<area href="class_pawn.html" title="This is Pawn piece." alt="Pawn" shape="rect" coords="180,56,230,80"/>
+<area href="class_queen.html" title="This is Queen piece." alt="Queen" shape="rect" coords="240,56,290,80"/>
+<area href="class_rook.html" title="This is Rook piece." alt="Rook" shape="rect" coords="300,56,350,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9fb0a85b27638fcbf9fbc91deaeff116"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figure.html#a9fb0a85b27638fcbf9fbc91deaeff116">Figure</a> (<a class="el" href="_figure_8h.html#a1d1cfd8ffb84e947f82999c682b666a7">Type</a> <a class="el" href="class_figure.html#a68bd13f418af6f0ffb6d5d2f4ad26659">type</a>, <a class="el" href="_figure_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a> <a class="el" href="class_figure.html#a8517502c37fc3d236286fb10085e1899">color</a>, <a class="el" href="class_position.html">Position</a> <a class="el" href="class_figure.html#abd896d4437c9a7c279aa8bffee43ae4b">position</a>, <a class="el" href="_figure_8h.html#a9c8780378078e51e7c9041cbac392db9">Player</a> <a class="el" href="class_figure.html#a20fe047209e33c0adba7a2f00be2c295">owner</a>)</td></tr>
+<tr class="memdesc:a9fb0a85b27638fcbf9fbc91deaeff116"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is <a class="el" href="class_figure.html" title="This is basis Figure class.">Figure</a> default constructor.  <a href="class_figure.html#a9fb0a85b27638fcbf9fbc91deaeff116">More...</a><br /></td></tr>
 <tr class="separator:a9fb0a85b27638fcbf9fbc91deaeff116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40b60bf7dc7033b52bdf02650aaf002b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figure.html#a40b60bf7dc7033b52bdf02650aaf002b">Figure</a> (const <a class="el" href="class_figure.html">Figure</a> &amp;other)</td></tr>
+<tr class="memdesc:a40b60bf7dc7033b52bdf02650aaf002b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is <a class="el" href="class_figure.html" title="This is basis Figure class.">Figure</a> copy constructor.  <a href="class_figure.html#a40b60bf7dc7033b52bdf02650aaf002b">More...</a><br /></td></tr>
 <tr class="separator:a40b60bf7dc7033b52bdf02650aaf002b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c6f6627642ebeeccebe176cd4a25938"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_figure.html">Figure</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figure.html#a9c6f6627642ebeeccebe176cd4a25938">operator=</a> (const <a class="el" href="class_figure.html">Figure</a> &amp;other)=delete</td></tr>
 <tr class="separator:a9c6f6627642ebeeccebe176cd4a25938"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,8 +156,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1c36e75ca54707bb3fab8a3da63b449"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figure.html#ad1c36e75ca54707bb3fab8a3da63b449">has_moved</a> ()</td></tr>
 <tr class="separator:ad1c36e75ca54707bb3fab8a3da63b449"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfe6d91bcf9820f307f8b72d468b6f34"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figure.html#adfe6d91bcf9820f307f8b72d468b6f34">get_all_possible_moves</a> (<a class="el" href="class_game.html">Game</a> *game)</td></tr>
+<tr class="memdesc:adfe6d91bcf9820f307f8b72d468b6f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method gives us all possible moves for our figure on the board field.  <a href="class_figure.html#adfe6d91bcf9820f307f8b72d468b6f34">More...</a><br /></td></tr>
 <tr class="separator:adfe6d91bcf9820f307f8b72d468b6f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaeaa9fc7a1991b64a2f5896a3573d57a"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figure.html#aaeaa9fc7a1991b64a2f5896a3573d57a">get_symbol</a> ()</td></tr>
+<tr class="memdesc:aaeaa9fc7a1991b64a2f5896a3573d57a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method give us first letter of the piece name if its white it gives us small letter, if black - big letter.  <a href="class_figure.html#aaeaa9fc7a1991b64a2f5896a3573d57a">More...</a><br /></td></tr>
 <tr class="separator:aaeaa9fc7a1991b64a2f5896a3573d57a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -168,7 +175,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a7280aa5bc57d744e291bc66a35968247"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figure.html#a7280aa5bc57d744e291bc66a35968247">has_been_moved</a></td></tr>
 <tr class="separator:a7280aa5bc57d744e291bc66a35968247"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This is basis <a class="el" href="class_figure.html" title="This is basis Figure class.">Figure</a> class. </p>
+<p>This class is inherited by all other five pieces </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9fb0a85b27638fcbf9fbc91deaeff116"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9fb0a85b27638fcbf9fbc91deaeff116">&#9670;&nbsp;</a></span>Figure() <span class="overload">[1/2]</span></h2>
 
@@ -207,6 +217,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This method is <a class="el" href="class_figure.html" title="This is basis Figure class.">Figure</a> default constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>figure type </td></tr>
+    <tr><td class="paramname">color</td><td>figure color </td></tr>
+    <tr><td class="paramname">position</td><td>position on the board field </td></tr>
+    <tr><td class="paramname">owner</td><td>which player owns the figure </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a40b60bf7dc7033b52bdf02650aaf002b"></a>
@@ -224,6 +245,14 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This method is <a class="el" href="class_figure.html" title="This is basis Figure class.">Figure</a> copy constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>figure from which we copy </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -268,6 +297,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This method gives us all possible moves for our figure on the board field. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector of possible positions on the board field </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_queen.html#ae06b6524af6a2c48c7aa9a60079eae1d">Queen</a>, <a class="el" href="class_rook.html#a9de0cd66487932bde9bbf0dff2c88f1d">Rook</a>, <a class="el" href="class_bishop.html#a8f67e09cb7e4a792fccb8ba3c202552f">Bishop</a>, <a class="el" href="class_horse.html#a437b7dab5be59474055cce7129663227">Horse</a>, <a class="el" href="class_king.html#a325edf4c683e35a41e12e4bb8a9b40e0">King</a>, and <a class="el" href="class_pawn.html#a937cfc76dbc18cb5496fe6d041a4dee0">Pawn</a>.</p>
 
@@ -338,6 +370,9 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This method give us first letter of the piece name if its white it gives us small letter, if black - big letter. </p>
+<dl class="section return"><dt>Returns</dt><dd>char symbol of the piece </dd></dl>
 
 </div>
 </div>
