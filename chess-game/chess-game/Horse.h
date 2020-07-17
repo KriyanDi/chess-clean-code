@@ -1,7 +1,9 @@
 #pragma once
-
 #include "ExtendedDiagonalMovement.h"
 
+/// This is Horse piece
+///
+/// This class is about Horse piece as piece and can give Horse possible moves on the board field
 class Horse 
 	: virtual public Figure
 	, public ExtendedDiagonalMovement
