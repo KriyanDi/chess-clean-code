@@ -1,7 +1,10 @@
 #pragma once
-
 #include "AllDirectionsOneStepMovement.h"
 
+/// This class is Diagonal movement
+///
+/// This class is inherited by the pieces that can move diagonaly.
+/// The class has methods for left and right diagonal movement
 class DiagonalMovement : public AllDirectionsOneStepMovement
 {
 public:

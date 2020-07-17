@@ -1,5 +1,8 @@
 #include "DiagonalMovement.h"
 
+/// This method is DiagonalMovement default constructor.
+/// Its role is to set pointer to the figure
+/// @param figure pointer to the figure we want to give movement
 DiagonalMovement::DiagonalMovement(Figure* figure)
 	:AllDirectionsOneStepMovement(figure)
 {
