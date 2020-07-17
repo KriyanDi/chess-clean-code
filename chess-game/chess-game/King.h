@@ -1,7 +1,9 @@
 #pragma once
-
 #include "AllDirectionsOneStepMovement.h"
 
+/// This is King piece
+///
+/// This class is about King piece and can give King possible moves on the board field
 class King 
 	: virtual public Figure
 	, public AllDirectionsOneStepMovement
