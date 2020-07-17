@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +35,21 @@
    </div>
    <div id="projectbrief">Simple Chess Game with Console User Interface</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +61,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('_board_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,61 +92,56 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_e616e25d7bd79137915e90e651d34dea.html">chess-game</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Board.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<a href="_board_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;Square.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_square_8h.html">Square.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//const</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> BOARD_HIGH = 8;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> BOARD_WIDTH = 8;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> BOARD_FIELD_VIEW_HIGH = 12;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> BOARD_FIELD_VIEW_WIDTH = 24;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="_board_8h.html#a5cf45f7203687ad56426452f6b80cdca">    6</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_board_8h.html#a5cf45f7203687ad56426452f6b80cdca">BOARD_HIGH</a> = 8;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="_board_8h.html#a42324bf350708926d83bca3e862ec3db">    7</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_board_8h.html#a42324bf350708926d83bca3e862ec3db">BOARD_WIDTH</a> = 8;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="_board_8h.html#aa5a9121c30dfe7c1af3df2319eb5d0a9">    8</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_board_8h.html#aa5a9121c30dfe7c1af3df2319eb5d0a9">BOARD_FIELD_VIEW_HIGH</a> = 12;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="_board_8h.html#ac071607249d50cc2110862a8b36f75a2">    9</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_board_8h.html#ac071607249d50cc2110862a8b36f75a2">BOARD_FIELD_VIEW_WIDTH</a> = 24;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_board.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_board.html">Board</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_board.html">Board</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_board.html">Board</a>(<span class="keyword">const</span> <a class="code" href="class_board.html">Board</a>&amp; other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_board.html">Board</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="class_board.html">Board</a>&amp; other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    ~<a class="code" href="class_board.html">Board</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_board.html#a9ee491d4fea680cf69b033374a9fdfcb">Board</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_board.html#a692f9810041644a115a59d7b0f774c88">   15</a></span>&#160;    <a class="code" href="class_board.html#a692f9810041644a115a59d7b0f774c88">Board</a>(<span class="keyword">const</span> <a class="code" href="class_board.html">Board</a>&amp; other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_board.html#a7288b018e3e2373dde861de91b8e05c8">   16</a></span>&#160;    <a class="code" href="class_board.html">Board</a>&amp; <a class="code" href="class_board.html#a7288b018e3e2373dde861de91b8e05c8">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_board.html">Board</a>&amp; other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_board.html#af73f45730119a1fd8f6670f53f959e68">~Board</a>();</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> set_board_field();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a492a90319e3d7908f1ffbd87ad1b5c00">set_board_field</a>();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> set_figure(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_figure.html">Figure</a>* figure);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_figure.html">Figure</a>* get_figure(<a class="code" href="class_position.html">Position</a>&amp; position);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> remove_figure(<a class="code" href="class_position.html">Position</a>&amp; position);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a1b806283f82517d0b60622790a433be0">set_figure</a>(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_figure.html">Figure</a>* figure);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_figure.html">Figure</a>* <a class="code" href="class_board.html#ab350dddd3d7d0bfa2de28b43351bc7d4">get_figure</a>(<a class="code" href="class_position.html">Position</a>&amp; position);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a66872346d3b0f78020021b2fd848f4c1">remove_figure</a>(<a class="code" href="class_position.html">Position</a>&amp; position);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> is_empty(<a class="code" href="class_position.html">Position</a>&amp; position) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_board.html#a5eb03ba58670ca5bb8ba25b516960bda">is_empty</a>(<a class="code" href="class_position.html">Position</a>&amp; position) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> print_board_field_view();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> update_board_field_view_center();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a34959dc76efdab3602d0b0f0e0a7fe46">print_board_field_view</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a48824243ff5eb858561c8389ec6a8a23">update_board_field_view_center</a>();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> set_board_field_view();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> set_board_field_view_center();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> set_board_field_view_outlines();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> set_all_chars_with_spaces_board_field_view();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> set_top_numbers_board_field_view();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> set_bottom_numbers_board_field_view();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> set_left_side_numbers_board_field_view();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> set_right_side_numbers_board_field_view();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#ad102636ebfa9afe01eec250d46fccf58">set_board_field_view</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#ac5f68d37856d912f83cbb3a05f3bff33">set_board_field_view_center</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#aaef1bc1c7a20418b14bcd56e65bb0dd6">set_board_field_view_outlines</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#ac09647e9b66b635ac59281b9888d650c">set_all_chars_with_spaces_board_field_view</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a02696557716bdebf6f8dac898050a490">set_top_numbers_board_field_view</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a2c624728ae8ad08ea1a0a811a0ea44be">set_bottom_numbers_board_field_view</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#ae346115afab095c3c75c816e907f772d">set_left_side_numbers_board_field_view</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_board.html#a3484d2a7136173c11506635ca1f9f12a">set_right_side_numbers_board_field_view</a>();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> convert_row_board_field_view_to_row_board_view_index(<span class="keywordtype">int</span>&amp; row);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> convert_col_board_field_view_to_col_board_view_index(<span class="keywordtype">int</span>&amp; col);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_board.html#aa427eee3243288f87d34c20fa6cd1161">convert_row_board_field_view_to_row_board_view_index</a>(<span class="keywordtype">int</span>&amp; row);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_board.html#aa36a7dec8560d7e50eee8dbb2d1478eb">convert_col_board_field_view_to_col_board_view_index</a>(<span class="keywordtype">int</span>&amp; col);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="class_square.html">Square</a>** board_field;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">char</span> board_field_view[BOARD_FIELD_VIEW_HIGH][BOARD_FIELD_VIEW_WIDTH];</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">char</span> board_field_view[<a class="code" href="_board_8h.html#aa5a9121c30dfe7c1af3df2319eb5d0a9">BOARD_FIELD_VIEW_HIGH</a>][<a class="code" href="_board_8h.html#ac071607249d50cc2110862a8b36f75a2">BOARD_FIELD_VIEW_WIDTH</a>];</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> clear();</div>
@@ -147,15 +173,45 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> place_white_king();</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="a_square_8h_html"><div class="ttname"><a href="_square_8h.html">Square.h</a></div></div>
+<div class="ttc" id="aclass_board_html_a692f9810041644a115a59d7b0f774c88"><div class="ttname"><a href="class_board.html#a692f9810041644a115a59d7b0f774c88">Board::Board</a></div><div class="ttdeci">Board(const Board &amp;other)=delete</div></div>
+<div class="ttc" id="aclass_board_html_a02696557716bdebf6f8dac898050a490"><div class="ttname"><a href="class_board.html#a02696557716bdebf6f8dac898050a490">Board::set_top_numbers_board_field_view</a></div><div class="ttdeci">void set_top_numbers_board_field_view()</div><div class="ttdef"><b>Definition:</b> Board.cpp:125</div></div>
+<div class="ttc" id="a_board_8h_html_aa5a9121c30dfe7c1af3df2319eb5d0a9"><div class="ttname"><a href="_board_8h.html#aa5a9121c30dfe7c1af3df2319eb5d0a9">BOARD_FIELD_VIEW_HIGH</a></div><div class="ttdeci">const int BOARD_FIELD_VIEW_HIGH</div><div class="ttdef"><b>Definition:</b> Board.h:8</div></div>
+<div class="ttc" id="a_board_8h_html_a42324bf350708926d83bca3e862ec3db"><div class="ttname"><a href="_board_8h.html#a42324bf350708926d83bca3e862ec3db">BOARD_WIDTH</a></div><div class="ttdeci">const int BOARD_WIDTH</div><div class="ttdef"><b>Definition:</b> Board.h:7</div></div>
+<div class="ttc" id="aclass_board_html_a7288b018e3e2373dde861de91b8e05c8"><div class="ttname"><a href="class_board.html#a7288b018e3e2373dde861de91b8e05c8">Board::operator=</a></div><div class="ttdeci">Board &amp; operator=(const Board &amp;other)=delete</div></div>
+<div class="ttc" id="aclass_board_html_ad102636ebfa9afe01eec250d46fccf58"><div class="ttname"><a href="class_board.html#ad102636ebfa9afe01eec250d46fccf58">Board::set_board_field_view</a></div><div class="ttdeci">void set_board_field_view()</div><div class="ttdef"><b>Definition:</b> Board.cpp:65</div></div>
+<div class="ttc" id="aclass_board_html_aa427eee3243288f87d34c20fa6cd1161"><div class="ttname"><a href="class_board.html#aa427eee3243288f87d34c20fa6cd1161">Board::convert_row_board_field_view_to_row_board_view_index</a></div><div class="ttdeci">int convert_row_board_field_view_to_row_board_view_index(int &amp;row)</div><div class="ttdef"><b>Definition:</b> Board.cpp:169</div></div>
 <div class="ttc" id="aclass_square_html"><div class="ttname"><a href="class_square.html">Square</a></div><div class="ttdef"><b>Definition:</b> Square.h:6</div></div>
+<div class="ttc" id="aclass_board_html_ab350dddd3d7d0bfa2de28b43351bc7d4"><div class="ttname"><a href="class_board.html#ab350dddd3d7d0bfa2de28b43351bc7d4">Board::get_figure</a></div><div class="ttdeci">Figure * get_figure(Position &amp;position)</div><div class="ttdef"><b>Definition:</b> Board.cpp:42</div></div>
+<div class="ttc" id="aclass_board_html_a34959dc76efdab3602d0b0f0e0a7fe46"><div class="ttname"><a href="class_board.html#a34959dc76efdab3602d0b0f0e0a7fe46">Board::print_board_field_view</a></div><div class="ttdeci">void print_board_field_view()</div><div class="ttdef"><b>Definition:</b> Board.cpp:92</div></div>
+<div class="ttc" id="aclass_board_html_a48824243ff5eb858561c8389ec6a8a23"><div class="ttname"><a href="class_board.html#a48824243ff5eb858561c8389ec6a8a23">Board::update_board_field_view_center</a></div><div class="ttdeci">void update_board_field_view_center()</div><div class="ttdef"><b>Definition:</b> Board.cpp:87</div></div>
+<div class="ttc" id="aclass_board_html_a66872346d3b0f78020021b2fd848f4c1"><div class="ttname"><a href="class_board.html#a66872346d3b0f78020021b2fd848f4c1">Board::remove_figure</a></div><div class="ttdeci">void remove_figure(Position &amp;position)</div><div class="ttdef"><b>Definition:</b> Board.cpp:48</div></div>
+<div class="ttc" id="aclass_board_html_ac5f68d37856d912f83cbb3a05f3bff33"><div class="ttname"><a href="class_board.html#ac5f68d37856d912f83cbb3a05f3bff33">Board::set_board_field_view_center</a></div><div class="ttdeci">void set_board_field_view_center()</div><div class="ttdef"><b>Definition:</b> Board.cpp:71</div></div>
+<div class="ttc" id="aclass_board_html_a3484d2a7136173c11506635ca1f9f12a"><div class="ttname"><a href="class_board.html#a3484d2a7136173c11506635ca1f9f12a">Board::set_right_side_numbers_board_field_view</a></div><div class="ttdeci">void set_right_side_numbers_board_field_view()</div><div class="ttdef"><b>Definition:</b> Board.cpp:158</div></div>
+<div class="ttc" id="a_board_8h_html_ac071607249d50cc2110862a8b36f75a2"><div class="ttname"><a href="_board_8h.html#ac071607249d50cc2110862a8b36f75a2">BOARD_FIELD_VIEW_WIDTH</a></div><div class="ttdeci">const int BOARD_FIELD_VIEW_WIDTH</div><div class="ttdef"><b>Definition:</b> Board.h:9</div></div>
+<div class="ttc" id="aclass_board_html_aaef1bc1c7a20418b14bcd56e65bb0dd6"><div class="ttname"><a href="class_board.html#aaef1bc1c7a20418b14bcd56e65bb0dd6">Board::set_board_field_view_outlines</a></div><div class="ttdeci">void set_board_field_view_outlines()</div><div class="ttdef"><b>Definition:</b> Board.cpp:105</div></div>
 <div class="ttc" id="aclass_position_html"><div class="ttname"><a href="class_position.html">Position</a></div><div class="ttdef"><b>Definition:</b> Position.h:4</div></div>
+<div class="ttc" id="aclass_board_html_a2c624728ae8ad08ea1a0a811a0ea44be"><div class="ttname"><a href="class_board.html#a2c624728ae8ad08ea1a0a811a0ea44be">Board::set_bottom_numbers_board_field_view</a></div><div class="ttdeci">void set_bottom_numbers_board_field_view()</div><div class="ttdef"><b>Definition:</b> Board.cpp:136</div></div>
+<div class="ttc" id="aclass_board_html_a492a90319e3d7908f1ffbd87ad1b5c00"><div class="ttname"><a href="class_board.html#a492a90319e3d7908f1ffbd87ad1b5c00">Board::set_board_field</a></div><div class="ttdeci">void set_board_field()</div><div class="ttdef"><b>Definition:</b> Board.cpp:31</div></div>
+<div class="ttc" id="a_board_8h_html_a5cf45f7203687ad56426452f6b80cdca"><div class="ttname"><a href="_board_8h.html#a5cf45f7203687ad56426452f6b80cdca">BOARD_HIGH</a></div><div class="ttdeci">const int BOARD_HIGH</div><div class="ttdef"><b>Definition:</b> Board.h:6</div></div>
+<div class="ttc" id="aclass_board_html_a5eb03ba58670ca5bb8ba25b516960bda"><div class="ttname"><a href="class_board.html#a5eb03ba58670ca5bb8ba25b516960bda">Board::is_empty</a></div><div class="ttdeci">bool is_empty(Position &amp;position) const</div><div class="ttdef"><b>Definition:</b> Board.cpp:53</div></div>
+<div class="ttc" id="aclass_board_html_ae346115afab095c3c75c816e907f772d"><div class="ttname"><a href="class_board.html#ae346115afab095c3c75c816e907f772d">Board::set_left_side_numbers_board_field_view</a></div><div class="ttdeci">void set_left_side_numbers_board_field_view()</div><div class="ttdef"><b>Definition:</b> Board.cpp:147</div></div>
+<div class="ttc" id="aclass_board_html_aa36a7dec8560d7e50eee8dbb2d1478eb"><div class="ttname"><a href="class_board.html#aa36a7dec8560d7e50eee8dbb2d1478eb">Board::convert_col_board_field_view_to_col_board_view_index</a></div><div class="ttdeci">int convert_col_board_field_view_to_col_board_view_index(int &amp;col)</div><div class="ttdef"><b>Definition:</b> Board.cpp:175</div></div>
 <div class="ttc" id="aclass_figure_html"><div class="ttname"><a href="class_figure.html">Figure</a></div><div class="ttdef"><b>Definition:</b> Figure.h:35</div></div>
 <div class="ttc" id="aclass_board_html"><div class="ttname"><a href="class_board.html">Board</a></div><div class="ttdef"><b>Definition:</b> Board.h:12</div></div>
+<div class="ttc" id="aclass_board_html_a1b806283f82517d0b60622790a433be0"><div class="ttname"><a href="class_board.html#a1b806283f82517d0b60622790a433be0">Board::set_figure</a></div><div class="ttdeci">void set_figure(Position &amp;position, Figure *figure)</div><div class="ttdef"><b>Definition:</b> Board.cpp:36</div></div>
+<div class="ttc" id="aclass_board_html_ac09647e9b66b635ac59281b9888d650c"><div class="ttname"><a href="class_board.html#ac09647e9b66b635ac59281b9888d650c">Board::set_all_chars_with_spaces_board_field_view</a></div><div class="ttdeci">void set_all_chars_with_spaces_board_field_view()</div><div class="ttdef"><b>Definition:</b> Board.cpp:114</div></div>
+<div class="ttc" id="aclass_board_html_af73f45730119a1fd8f6670f53f959e68"><div class="ttname"><a href="class_board.html#af73f45730119a1fd8f6670f53f959e68">Board::~Board</a></div><div class="ttdeci">~Board()</div><div class="ttdef"><b>Definition:</b> Board.cpp:26</div></div>
+<div class="ttc" id="aclass_board_html_a9ee491d4fea680cf69b033374a9fdfcb"><div class="ttname"><a href="class_board.html#a9ee491d4fea680cf69b033374a9fdfcb">Board::Board</a></div><div class="ttdeci">Board()</div><div class="ttdef"><b>Definition:</b> Board.cpp:5</div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.18
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e616e25d7bd79137915e90e651d34dea.html">chess-game</a></li><li class="navelem"><a class="el" href="_board_8h.html">Board.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
 </body>
 </html>

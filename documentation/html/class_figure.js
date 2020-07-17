@@ -1,0 +1,25 @@
+var class_figure =
+[
+    [ "Figure", "class_figure.html#a9fb0a85b27638fcbf9fbc91deaeff116", null ],
+    [ "Figure", "class_figure.html#a40b60bf7dc7033b52bdf02650aaf002b", null ],
+    [ "~Figure", "class_figure.html#af155c20558330034441de6a19d94f4a7", null ],
+    [ "get_all_possible_moves", "class_figure.html#adfe6d91bcf9820f307f8b72d468b6f34", null ],
+    [ "get_color", "class_figure.html#aac46e62377737a47db51c71e4b65deef", null ],
+    [ "get_owner", "class_figure.html#aea0baba43643476161f58496dd1f43e6", null ],
+    [ "get_position", "class_figure.html#a5f2601bf1e467f45df75562147307dcf", null ],
+    [ "get_symbol", "class_figure.html#aaeaa9fc7a1991b64a2f5896a3573d57a", null ],
+    [ "get_type", "class_figure.html#a8d4b52743ed6a0b294d08e5331ad140d", null ],
+    [ "has_figure_been_moved", "class_figure.html#aba10ff58b7788e59c16655da969c1394", null ],
+    [ "has_moved", "class_figure.html#ad1c36e75ca54707bb3fab8a3da63b449", null ],
+    [ "operator=", "class_figure.html#a9c6f6627642ebeeccebe176cd4a25938", null ],
+    [ "set_color", "class_figure.html#a5bc28da0e15393007543df0d15b53128", null ],
+    [ "set_has_been_moved", "class_figure.html#a6a5851f8336e621324565fca34e12cd7", null ],
+    [ "set_owner", "class_figure.html#ab262e18874b1792f65aea006cd6a01df", null ],
+    [ "set_position", "class_figure.html#aaad0e11ee89cfa4b45e4a71ab5b2536c", null ],
+    [ "set_type", "class_figure.html#acf0003ceeee633dd520c15fda2286dc9", null ],
+    [ "color", "class_figure.html#a8517502c37fc3d236286fb10085e1899", null ],
+    [ "has_been_moved", "class_figure.html#a7280aa5bc57d744e291bc66a35968247", null ],
+    [ "owner", "class_figure.html#a20fe047209e33c0adba7a2f00be2c295", null ],
+    [ "position", "class_figure.html#abd896d4437c9a7c279aa8bffee43ae4b", null ],
+    [ "type", "class_figure.html#a68bd13f418af6f0ffb6d5d2f4ad26659", null ]
+];

@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +35,21 @@
    </div>
    <div id="projectbrief">Simple Chess Game with Console User Interface</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +61,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('class_square.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +92,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -70,38 +100,195 @@ $(function() {
 <div class="title">Square Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_square_8h_source.html">Square.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aed2b762514bacaa1eadba139ee770278"><td class="memItemLeft" align="right" valign="top"><a id="aed2b762514bacaa1eadba139ee770278"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Square</b> (const <a class="el" href="class_square.html">Square</a> &amp;other)=delete</td></tr>
+<tr class="memitem:a3dc7ff9aefc2725172b5d3153973d243"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a3dc7ff9aefc2725172b5d3153973d243">Square</a> ()</td></tr>
+<tr class="separator:a3dc7ff9aefc2725172b5d3153973d243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed2b762514bacaa1eadba139ee770278"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#aed2b762514bacaa1eadba139ee770278">Square</a> (const <a class="el" href="class_square.html">Square</a> &amp;other)=delete</td></tr>
 <tr class="separator:aed2b762514bacaa1eadba139ee770278"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3598ea3e02ea92e22b0d9f9c647582d3"><td class="memItemLeft" align="right" valign="top"><a id="a3598ea3e02ea92e22b0d9f9c647582d3"></a>
-<a class="el" href="class_square.html">Square</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_square.html">Square</a> &amp;other)=delete</td></tr>
+<tr class="memitem:a3598ea3e02ea92e22b0d9f9c647582d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_square.html">Square</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a3598ea3e02ea92e22b0d9f9c647582d3">operator=</a> (const <a class="el" href="class_square.html">Square</a> &amp;other)=delete</td></tr>
 <tr class="separator:a3598ea3e02ea92e22b0d9f9c647582d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae74055767c64f1a55c1dd0cb585f44ee"><td class="memItemLeft" align="right" valign="top"><a id="ae74055767c64f1a55c1dd0cb585f44ee"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_figure</b> (<a class="el" href="class_figure.html">Figure</a> figure)</td></tr>
+<tr class="memitem:a90af7ce1060cff7b717ceddb333846b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a90af7ce1060cff7b717ceddb333846b8">~Square</a> ()</td></tr>
+<tr class="separator:a90af7ce1060cff7b717ceddb333846b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae74055767c64f1a55c1dd0cb585f44ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#ae74055767c64f1a55c1dd0cb585f44ee">set_figure</a> (<a class="el" href="class_figure.html">Figure</a> figure)</td></tr>
 <tr class="separator:ae74055767c64f1a55c1dd0cb585f44ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a731c8b84dc7a5a36dca18dcb97a1d057"><td class="memItemLeft" align="right" valign="top"><a id="a731c8b84dc7a5a36dca18dcb97a1d057"></a>
-<a class="el" href="class_figure.html">Figure</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_figure</b> ()</td></tr>
+<tr class="memitem:a731c8b84dc7a5a36dca18dcb97a1d057"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_figure.html">Figure</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a731c8b84dc7a5a36dca18dcb97a1d057">get_figure</a> ()</td></tr>
 <tr class="separator:a731c8b84dc7a5a36dca18dcb97a1d057"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2194a37b021b8b5fb03d3669d104626"><td class="memItemLeft" align="right" valign="top"><a id="ac2194a37b021b8b5fb03d3669d104626"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_empty</b> () const</td></tr>
+<tr class="memitem:ac2194a37b021b8b5fb03d3669d104626"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#ac2194a37b021b8b5fb03d3669d104626">is_empty</a> () const</td></tr>
 <tr class="separator:ac2194a37b021b8b5fb03d3669d104626"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4561562473a4a434a194d125364586c"><td class="memItemLeft" align="right" valign="top"><a id="ae4561562473a4a434a194d125364586c"></a>
-<a class="el" href="class_figure.html">Figure</a>&#160;</td><td class="memItemRight" valign="bottom"><b>remove_figure</b> ()</td></tr>
+<tr class="memitem:ae4561562473a4a434a194d125364586c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_figure.html">Figure</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#ae4561562473a4a434a194d125364586c">remove_figure</a> ()</td></tr>
 <tr class="separator:ae4561562473a4a434a194d125364586c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>chess-game/<a class="el" href="_square_8h_source.html">Square.h</a></li>
-<li>chess-game/Square.cpp</li>
-</ul>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3dc7ff9aefc2725172b5d3153973d243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dc7ff9aefc2725172b5d3153973d243">&#9670;&nbsp;</a></span>Square() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Square::Square </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed2b762514bacaa1eadba139ee770278"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed2b762514bacaa1eadba139ee770278">&#9670;&nbsp;</a></span>Square() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Square::Square </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_square.html">Square</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a90af7ce1060cff7b717ceddb333846b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90af7ce1060cff7b717ceddb333846b8">&#9670;&nbsp;</a></span>~Square()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Square::~Square </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a731c8b84dc7a5a36dca18dcb97a1d057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a731c8b84dc7a5a36dca18dcb97a1d057">&#9670;&nbsp;</a></span>get_figure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_figure.html">Figure</a> * Square::get_figure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2194a37b021b8b5fb03d3669d104626"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2194a37b021b8b5fb03d3669d104626">&#9670;&nbsp;</a></span>is_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Square::is_empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3598ea3e02ea92e22b0d9f9c647582d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3598ea3e02ea92e22b0d9f9c647582d3">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_square.html">Square</a>&amp; Square::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_square.html">Square</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4561562473a4a434a194d125364586c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4561562473a4a434a194d125364586c">&#9670;&nbsp;</a></span>remove_figure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_figure.html">Figure</a> Square::remove_figure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae74055767c64f1a55c1dd0cb585f44ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae74055767c64f1a55c1dd0cb585f44ee">&#9670;&nbsp;</a></span>set_figure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Square::set_figure </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_figure.html">Figure</a>&#160;</td>
+          <td class="paramname"><em>figure</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.18
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_square.html">Square</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
 </body>
 </html>

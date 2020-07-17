@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +35,21 @@
    </div>
    <div id="projectbrief">Simple Chess Game with Console User Interface</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +61,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('_all_directions_one_step_movement_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,55 +92,50 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_e616e25d7bd79137915e90e651d34dea.html">chess-game</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">AllDirectionsOneStepMovement.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;Figure.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;Game.h&quot;</span></div>
+<a href="_all_directions_one_step_movement_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_figure_8h.html">Figure.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_8h.html">Game.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="class_all_directions_one_step_movement.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>(<a class="code" href="class_figure.html">Figure</a>* figure);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>(<span class="keyword">const</span> <a class="code" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>&amp; other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>&amp; other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    ~<a class="code" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>();</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="class_all_directions_one_step_movement.html#a576e92f0d12444ff486a4a9f96b32582">AllDirectionsOneStepMovement</a>(<a class="code" href="class_figure.html">Figure</a>* <a class="code" href="class_all_directions_one_step_movement.html#add6c67f8484b71ca63e3b2299e0fb1f7">figure</a>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_all_directions_one_step_movement.html#a6a2adf71d289e76831d27468719ab132">    9</a></span>&#160;    <a class="code" href="class_all_directions_one_step_movement.html#a6a2adf71d289e76831d27468719ab132">AllDirectionsOneStepMovement</a>(<span class="keyword">const</span> <a class="code" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>&amp; other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_all_directions_one_step_movement.html#ae1d9a5a53519867b3f140700afd4bb20">   10</a></span>&#160;    <a class="code" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>&amp; <a class="code" href="class_all_directions_one_step_movement.html#ae1d9a5a53519867b3f140700afd4bb20">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>&amp; other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_all_directions_one_step_movement.html#a0b089bdf8a7ddb3613e9eeea495e3c28">~AllDirectionsOneStepMovement</a>();</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> set_one_step_all_directions_possible_moves(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> set_one_step_forward_possible_moves(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> set_one_step_backwards_possible_moves(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> set_one_step_left_possible_moves(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> set_one_step_right_possible_moves(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> set_one_step_forward_left_possible_moves(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> set_one_step_backwards_left_possible_moves(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> set_one_step_forward_right_possible_moves(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> set_one_step_backwards_right_possible_moves(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> is_position_empty(<a class="code" href="class_game.html">Game</a>* game, <a class="code" href="class_position.html">Position</a>&amp; position);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">bool</span> has_position_enemy_figure(<a class="code" href="class_game.html">Game</a>* game, <a class="code" href="class_position.html">Position</a>&amp; position);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#a7ffc180c612ea9a20af2ac3b3246f0d9">set_one_step_all_directions_possible_moves</a>(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#ab55eaa6721da8665d3ed1cd2d30240e2">set_one_step_forward_possible_moves</a>(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#a47c992c875521ae62e0449da95eadc03">set_one_step_backwards_possible_moves</a>(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#a341d9bbad76c3985eee343c610da1f6d">set_one_step_left_possible_moves</a>(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#aaa73897b1789d75955141204c1242aea">set_one_step_right_possible_moves</a>(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#a7e43988bdd420d07b1cab7e0fa96b393">set_one_step_forward_left_possible_moves</a>(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#a2e588d169facd1656e9a4e8d7c04cac5">set_one_step_backwards_left_possible_moves</a>(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#ad2a0cf2257a4f82cff0a9fd7e2db9c8d">set_one_step_forward_right_possible_moves</a>(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#a2faab49ee2cc678a404e7bb15c230a7e">set_one_step_backwards_right_possible_moves</a>(<a class="code" href="class_game.html">Game</a>* game, std::vector&lt;Position&gt;&amp; all_possible_moves);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_all_directions_one_step_movement.html#a37e34bc7169d238de11d1454e7539f9b">is_position_empty</a>(<a class="code" href="class_game.html">Game</a>* game, <a class="code" href="class_position.html">Position</a>&amp; position);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_all_directions_one_step_movement.html#a2993ff8481b8cbecef207fdd58bcbbb1">has_position_enemy_figure</a>(<a class="code" href="class_game.html">Game</a>* game, <a class="code" href="class_position.html">Position</a>&amp; position);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> set_one_step_forward(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> set_one_step_backwards(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> set_one_step_left(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> set_one_step_right(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> set_one_step_forward_left(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> set_one_step_backwards_left(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> set_one_step_forward_right(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> set_one_step_backwards_right(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#aae97de0aac67052802302a6b17c98996">set_one_step_forward</a>(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#ab15e7cbbed194ba229a465e560f77dab">set_one_step_backwards</a>(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#a339c0f838087f1e9599d6c86c241d02e">set_one_step_left</a>(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#a3bfd9e26eef1101daa03a2f848e4cca7">set_one_step_right</a>(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#abf898d8e9434a4f0855e905b0a4d3bbd">set_one_step_forward_left</a>(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#ace5f1851e7a12a146e09087301bcbd66">set_one_step_backwards_left</a>(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#a4eaece7e13aefa511bd81aeb440aecc4">set_one_step_forward_right</a>(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_all_directions_one_step_movement.html#a2601c04845365fe77b84d3e2569cc43a">set_one_step_backwards_right</a>(<a class="code" href="class_position.html">Position</a>&amp; position, <a class="code" href="class_position.html">Position</a> current);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_figure.html">Figure</a>* figure;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_all_directions_one_step_movement.html#add6c67f8484b71ca63e3b2299e0fb1f7">   36</a></span>&#160;    <a class="code" href="class_figure.html">Figure</a>* <a class="code" href="class_all_directions_one_step_movement.html#add6c67f8484b71ca63e3b2299e0fb1f7">figure</a>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> set_figure_pointer(<a class="code" href="class_figure.html">Figure</a>* figure);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> set_figure_pointer(<a class="code" href="class_figure.html">Figure</a>* <a class="code" href="class_all_directions_one_step_movement.html#add6c67f8484b71ca63e3b2299e0fb1f7">figure</a>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_position.html">Position</a> get_one_step_forward_black_figure(<a class="code" href="class_position.html">Position</a>&amp; position);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="class_position.html">Position</a> get_one_step_forward_white_figure(<a class="code" href="class_position.html">Position</a>&amp; position);</div>
@@ -136,15 +162,45 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="class_position.html">Position</a> get_one_step_backwards_right_white_figure(<a class="code" href="class_position.html">Position</a>&amp; position);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a7ffc180c612ea9a20af2ac3b3246f0d9"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a7ffc180c612ea9a20af2ac3b3246f0d9">AllDirectionsOneStepMovement::set_one_step_all_directions_possible_moves</a></div><div class="ttdeci">void set_one_step_all_directions_possible_moves(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:17</div></div>
+<div class="ttc" id="a_game_8h_html"><div class="ttname"><a href="_game_8h.html">Game.h</a></div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a576e92f0d12444ff486a4a9f96b32582"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a576e92f0d12444ff486a4a9f96b32582">AllDirectionsOneStepMovement::AllDirectionsOneStepMovement</a></div><div class="ttdeci">AllDirectionsOneStepMovement(Figure *figure)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:3</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a3bfd9e26eef1101daa03a2f848e4cca7"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a3bfd9e26eef1101daa03a2f848e4cca7">AllDirectionsOneStepMovement::set_one_step_right</a></div><div class="ttdeci">void set_one_step_right(Position &amp;position, Position current)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:146</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a2faab49ee2cc678a404e7bb15c230a7e"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a2faab49ee2cc678a404e7bb15c230a7e">AllDirectionsOneStepMovement::set_one_step_backwards_right_possible_moves</a></div><div class="ttdeci">void set_one_step_backwards_right_possible_moves(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:275</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a339c0f838087f1e9599d6c86c241d02e"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a339c0f838087f1e9599d6c86c241d02e">AllDirectionsOneStepMovement::set_one_step_left</a></div><div class="ttdeci">void set_one_step_left(Position &amp;position, Position current)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:111</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_ae1d9a5a53519867b3f140700afd4bb20"><div class="ttname"><a href="class_all_directions_one_step_movement.html#ae1d9a5a53519867b3f140700afd4bb20">AllDirectionsOneStepMovement::operator=</a></div><div class="ttdeci">AllDirectionsOneStepMovement &amp; operator=(const AllDirectionsOneStepMovement &amp;other)=delete</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a2993ff8481b8cbecef207fdd58bcbbb1"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a2993ff8481b8cbecef207fdd58bcbbb1">AllDirectionsOneStepMovement::has_position_enemy_figure</a></div><div class="ttdeci">bool has_position_enemy_figure(Game *game, Position &amp;position)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:322</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_add6c67f8484b71ca63e3b2299e0fb1f7"><div class="ttname"><a href="class_all_directions_one_step_movement.html#add6c67f8484b71ca63e3b2299e0fb1f7">AllDirectionsOneStepMovement::figure</a></div><div class="ttdeci">Figure * figure</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.h:36</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_ab15e7cbbed194ba229a465e560f77dab"><div class="ttname"><a href="class_all_directions_one_step_movement.html#ab15e7cbbed194ba229a465e560f77dab">AllDirectionsOneStepMovement::set_one_step_backwards</a></div><div class="ttdeci">void set_one_step_backwards(Position &amp;position, Position current)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:76</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a6a2adf71d289e76831d27468719ab132"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a6a2adf71d289e76831d27468719ab132">AllDirectionsOneStepMovement::AllDirectionsOneStepMovement</a></div><div class="ttdeci">AllDirectionsOneStepMovement(const AllDirectionsOneStepMovement &amp;other)=delete</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_ad2a0cf2257a4f82cff0a9fd7e2db9c8d"><div class="ttname"><a href="class_all_directions_one_step_movement.html#ad2a0cf2257a4f82cff0a9fd7e2db9c8d">AllDirectionsOneStepMovement::set_one_step_forward_right_possible_moves</a></div><div class="ttdeci">void set_one_step_forward_right_possible_moves(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:240</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a341d9bbad76c3985eee343c610da1f6d"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a341d9bbad76c3985eee343c610da1f6d">AllDirectionsOneStepMovement::set_one_step_left_possible_moves</a></div><div class="ttdeci">void set_one_step_left_possible_moves(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:100</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_ace5f1851e7a12a146e09087301bcbd66"><div class="ttname"><a href="class_all_directions_one_step_movement.html#ace5f1851e7a12a146e09087301bcbd66">AllDirectionsOneStepMovement::set_one_step_backwards_left</a></div><div class="ttdeci">void set_one_step_backwards_left(Position &amp;position, Position current)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:216</div></div>
 <div class="ttc" id="aclass_position_html"><div class="ttname"><a href="class_position.html">Position</a></div><div class="ttdef"><b>Definition:</b> Position.h:4</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_ab55eaa6721da8665d3ed1cd2d30240e2"><div class="ttname"><a href="class_all_directions_one_step_movement.html#ab55eaa6721da8665d3ed1cd2d30240e2">AllDirectionsOneStepMovement::set_one_step_forward_possible_moves</a></div><div class="ttdeci">void set_one_step_forward_possible_moves(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:30</div></div>
 <div class="ttc" id="aclass_figure_html"><div class="ttname"><a href="class_figure.html">Figure</a></div><div class="ttdef"><b>Definition:</b> Figure.h:35</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_aaa73897b1789d75955141204c1242aea"><div class="ttname"><a href="class_all_directions_one_step_movement.html#aaa73897b1789d75955141204c1242aea">AllDirectionsOneStepMovement::set_one_step_right_possible_moves</a></div><div class="ttdeci">void set_one_step_right_possible_moves(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:135</div></div>
 <div class="ttc" id="aclass_all_directions_one_step_movement_html"><div class="ttname"><a href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.h:6</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a37e34bc7169d238de11d1454e7539f9b"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a37e34bc7169d238de11d1454e7539f9b">AllDirectionsOneStepMovement::is_position_empty</a></div><div class="ttdeci">bool is_position_empty(Game *game, Position &amp;position)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:310</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a4eaece7e13aefa511bd81aeb440aecc4"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a4eaece7e13aefa511bd81aeb440aecc4">AllDirectionsOneStepMovement::set_one_step_forward_right</a></div><div class="ttdeci">void set_one_step_forward_right(Position &amp;position, Position current)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:251</div></div>
+<div class="ttc" id="a_figure_8h_html"><div class="ttname"><a href="_figure_8h.html">Figure.h</a></div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a0b089bdf8a7ddb3613e9eeea495e3c28"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a0b089bdf8a7ddb3613e9eeea495e3c28">AllDirectionsOneStepMovement::~AllDirectionsOneStepMovement</a></div><div class="ttdeci">~AllDirectionsOneStepMovement()</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:8</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a7e43988bdd420d07b1cab7e0fa96b393"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a7e43988bdd420d07b1cab7e0fa96b393">AllDirectionsOneStepMovement::set_one_step_forward_left_possible_moves</a></div><div class="ttdeci">void set_one_step_forward_left_possible_moves(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:170</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_aae97de0aac67052802302a6b17c98996"><div class="ttname"><a href="class_all_directions_one_step_movement.html#aae97de0aac67052802302a6b17c98996">AllDirectionsOneStepMovement::set_one_step_forward</a></div><div class="ttdeci">void set_one_step_forward(Position &amp;position, Position current)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:41</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a2601c04845365fe77b84d3e2569cc43a"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a2601c04845365fe77b84d3e2569cc43a">AllDirectionsOneStepMovement::set_one_step_backwards_right</a></div><div class="ttdeci">void set_one_step_backwards_right(Position &amp;position, Position current)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:286</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_abf898d8e9434a4f0855e905b0a4d3bbd"><div class="ttname"><a href="class_all_directions_one_step_movement.html#abf898d8e9434a4f0855e905b0a4d3bbd">AllDirectionsOneStepMovement::set_one_step_forward_left</a></div><div class="ttdeci">void set_one_step_forward_left(Position &amp;position, Position current)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:181</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a2e588d169facd1656e9a4e8d7c04cac5"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a2e588d169facd1656e9a4e8d7c04cac5">AllDirectionsOneStepMovement::set_one_step_backwards_left_possible_moves</a></div><div class="ttdeci">void set_one_step_backwards_left_possible_moves(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:205</div></div>
+<div class="ttc" id="aclass_all_directions_one_step_movement_html_a47c992c875521ae62e0449da95eadc03"><div class="ttname"><a href="class_all_directions_one_step_movement.html#a47c992c875521ae62e0449da95eadc03">AllDirectionsOneStepMovement::set_one_step_backwards_possible_moves</a></div><div class="ttdeci">void set_one_step_backwards_possible_moves(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</div><div class="ttdef"><b>Definition:</b> AllDirectionsOneStepMovement.cpp:65</div></div>
 <div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdef"><b>Definition:</b> Game.h:10</div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.18
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e616e25d7bd79137915e90e651d34dea.html">chess-game</a></li><li class="navelem"><a class="el" href="_all_directions_one_step_movement_8h.html">AllDirectionsOneStepMovement.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
 </body>
 </html>

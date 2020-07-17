@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +35,21 @@
    </div>
    <div id="projectbrief">Simple Chess Game with Console User Interface</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +61,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('class_horizontal_movement.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +92,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">HorizontalMovement Member List</div>  </div>
@@ -70,43 +100,46 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="class_horizontal_movement.html">HorizontalMovement</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>AllDirectionsOneStepMovement</b>(Figure *figure) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>AllDirectionsOneStepMovement</b>(const AllDirectionsOneStepMovement &amp;other)=delete (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>figure</b> (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>has_position_enemy_figure</b>(Game *game, Position &amp;position) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>HorizontalMovement</b>(Figure *figure) (defined in <a class="el" href="class_horizontal_movement.html">HorizontalMovement</a>)</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>HorizontalMovement</b>(const HorizontalMovement &amp;other)=delete (defined in <a class="el" href="class_horizontal_movement.html">HorizontalMovement</a>)</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>is_position_empty</b>(Game *game, Position &amp;position) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator=</b>(const HorizontalMovement &amp;other)=delete (defined in <a class="el" href="class_horizontal_movement.html">HorizontalMovement</a>)</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator=</b>(const AllDirectionsOneStepMovement &amp;other)=delete (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>set_horizontal_possible_moves</b>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves) (defined in <a class="el" href="class_horizontal_movement.html">HorizontalMovement</a>)</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>set_left_possible_moves</b>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves) (defined in <a class="el" href="class_horizontal_movement.html">HorizontalMovement</a>)</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>set_one_step_all_directions_possible_moves</b>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>set_one_step_backwards</b>(Position &amp;position, Position current) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>set_one_step_backwards_left</b>(Position &amp;position, Position current) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>set_one_step_backwards_left_possible_moves</b>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>set_one_step_backwards_possible_moves</b>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>set_one_step_backwards_right</b>(Position &amp;position, Position current) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>set_one_step_backwards_right_possible_moves</b>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>set_one_step_forward</b>(Position &amp;position, Position current) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>set_one_step_forward_left</b>(Position &amp;position, Position current) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>set_one_step_forward_left_possible_moves</b>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>set_one_step_forward_possible_moves</b>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>set_one_step_forward_right</b>(Position &amp;position, Position current) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>set_one_step_forward_right_possible_moves</b>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>set_one_step_left</b>(Position &amp;position, Position current) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>set_one_step_left_possible_moves</b>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>set_one_step_right</b>(Position &amp;position, Position current) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>set_one_step_right_possible_moves</b>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves) (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>set_right_possible_moves</b>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves) (defined in <a class="el" href="class_horizontal_movement.html">HorizontalMovement</a>)</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>~AllDirectionsOneStepMovement</b>() (defined in <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~HorizontalMovement</b>() (defined in <a class="el" href="class_horizontal_movement.html">HorizontalMovement</a>)</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a576e92f0d12444ff486a4a9f96b32582">AllDirectionsOneStepMovement</a>(Figure *figure)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a6a2adf71d289e76831d27468719ab132">AllDirectionsOneStepMovement</a>(const AllDirectionsOneStepMovement &amp;other)=delete</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#add6c67f8484b71ca63e3b2299e0fb1f7">figure</a></td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a2993ff8481b8cbecef207fdd58bcbbb1">has_position_enemy_figure</a>(Game *game, Position &amp;position)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_horizontal_movement.html#a0d222d8963da0f429e2097e28518fa96">HorizontalMovement</a>(Figure *figure)</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_horizontal_movement.html#a00c457045957c3607bb738e090062fd0">HorizontalMovement</a>(const HorizontalMovement &amp;other)=delete</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a37e34bc7169d238de11d1454e7539f9b">is_position_empty</a>(Game *game, Position &amp;position)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_horizontal_movement.html#a3128143a3355f2fdcdb1715882ec0d39">operator=</a>(const HorizontalMovement &amp;other)=delete</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#ae1d9a5a53519867b3f140700afd4bb20">AllDirectionsOneStepMovement::operator=</a>(const AllDirectionsOneStepMovement &amp;other)=delete</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_horizontal_movement.html#aef800bb2506427a38d562f8773711e66">set_horizontal_possible_moves</a>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_horizontal_movement.html#aa0b841f69523613c939a72419fabdced">set_left_possible_moves</a>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a7ffc180c612ea9a20af2ac3b3246f0d9">set_one_step_all_directions_possible_moves</a>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#ab15e7cbbed194ba229a465e560f77dab">set_one_step_backwards</a>(Position &amp;position, Position current)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#ace5f1851e7a12a146e09087301bcbd66">set_one_step_backwards_left</a>(Position &amp;position, Position current)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a2e588d169facd1656e9a4e8d7c04cac5">set_one_step_backwards_left_possible_moves</a>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a47c992c875521ae62e0449da95eadc03">set_one_step_backwards_possible_moves</a>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a2601c04845365fe77b84d3e2569cc43a">set_one_step_backwards_right</a>(Position &amp;position, Position current)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a2faab49ee2cc678a404e7bb15c230a7e">set_one_step_backwards_right_possible_moves</a>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#aae97de0aac67052802302a6b17c98996">set_one_step_forward</a>(Position &amp;position, Position current)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#abf898d8e9434a4f0855e905b0a4d3bbd">set_one_step_forward_left</a>(Position &amp;position, Position current)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a7e43988bdd420d07b1cab7e0fa96b393">set_one_step_forward_left_possible_moves</a>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#ab55eaa6721da8665d3ed1cd2d30240e2">set_one_step_forward_possible_moves</a>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a4eaece7e13aefa511bd81aeb440aecc4">set_one_step_forward_right</a>(Position &amp;position, Position current)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#ad2a0cf2257a4f82cff0a9fd7e2db9c8d">set_one_step_forward_right_possible_moves</a>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a339c0f838087f1e9599d6c86c241d02e">set_one_step_left</a>(Position &amp;position, Position current)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a341d9bbad76c3985eee343c610da1f6d">set_one_step_left_possible_moves</a>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a3bfd9e26eef1101daa03a2f848e4cca7">set_one_step_right</a>(Position &amp;position, Position current)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#aaa73897b1789d75955141204c1242aea">set_one_step_right_possible_moves</a>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_horizontal_movement.html#aeaeafce51828601a622b9e1cd116b9c0">set_right_possible_moves</a>(Game *game, std::vector&lt; Position &gt; &amp;all_possible_moves)</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html#a0b089bdf8a7ddb3613e9eeea495e3c28">~AllDirectionsOneStepMovement</a>()</td><td class="entry"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_horizontal_movement.html#a3e249378147ae4ce9ddb7126e094c102">~HorizontalMovement</a>()</td><td class="entry"><a class="el" href="class_horizontal_movement.html">HorizontalMovement</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.18
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
 </body>
 </html>

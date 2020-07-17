@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +35,21 @@
    </div>
    <div id="projectbrief">Simple Chess Game with Console User Interface</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +61,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('class_board.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +92,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -70,77 +100,457 @@ $(function() {
 <div class="title">Board Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_board_8h_source.html">Board.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a692f9810041644a115a59d7b0f774c88"><td class="memItemLeft" align="right" valign="top"><a id="a692f9810041644a115a59d7b0f774c88"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Board</b> (const <a class="el" href="class_board.html">Board</a> &amp;other)=delete</td></tr>
+<tr class="memitem:a9ee491d4fea680cf69b033374a9fdfcb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a9ee491d4fea680cf69b033374a9fdfcb">Board</a> ()</td></tr>
+<tr class="separator:a9ee491d4fea680cf69b033374a9fdfcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a692f9810041644a115a59d7b0f774c88"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a692f9810041644a115a59d7b0f774c88">Board</a> (const <a class="el" href="class_board.html">Board</a> &amp;other)=delete</td></tr>
 <tr class="separator:a692f9810041644a115a59d7b0f774c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7288b018e3e2373dde861de91b8e05c8"><td class="memItemLeft" align="right" valign="top"><a id="a7288b018e3e2373dde861de91b8e05c8"></a>
-<a class="el" href="class_board.html">Board</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_board.html">Board</a> &amp;other)=delete</td></tr>
+<tr class="memitem:a7288b018e3e2373dde861de91b8e05c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_board.html">Board</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a7288b018e3e2373dde861de91b8e05c8">operator=</a> (const <a class="el" href="class_board.html">Board</a> &amp;other)=delete</td></tr>
 <tr class="separator:a7288b018e3e2373dde861de91b8e05c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a492a90319e3d7908f1ffbd87ad1b5c00"><td class="memItemLeft" align="right" valign="top"><a id="a492a90319e3d7908f1ffbd87ad1b5c00"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_board_field</b> ()</td></tr>
+<tr class="memitem:af73f45730119a1fd8f6670f53f959e68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#af73f45730119a1fd8f6670f53f959e68">~Board</a> ()</td></tr>
+<tr class="separator:af73f45730119a1fd8f6670f53f959e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a492a90319e3d7908f1ffbd87ad1b5c00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a492a90319e3d7908f1ffbd87ad1b5c00">set_board_field</a> ()</td></tr>
 <tr class="separator:a492a90319e3d7908f1ffbd87ad1b5c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b806283f82517d0b60622790a433be0"><td class="memItemLeft" align="right" valign="top"><a id="a1b806283f82517d0b60622790a433be0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_figure</b> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_figure.html">Figure</a> *figure)</td></tr>
+<tr class="memitem:a1b806283f82517d0b60622790a433be0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a1b806283f82517d0b60622790a433be0">set_figure</a> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_figure.html">Figure</a> *figure)</td></tr>
 <tr class="separator:a1b806283f82517d0b60622790a433be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab350dddd3d7d0bfa2de28b43351bc7d4"><td class="memItemLeft" align="right" valign="top"><a id="ab350dddd3d7d0bfa2de28b43351bc7d4"></a>
-<a class="el" href="class_figure.html">Figure</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_figure</b> (<a class="el" href="class_position.html">Position</a> &amp;position)</td></tr>
+<tr class="memitem:ab350dddd3d7d0bfa2de28b43351bc7d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_figure.html">Figure</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#ab350dddd3d7d0bfa2de28b43351bc7d4">get_figure</a> (<a class="el" href="class_position.html">Position</a> &amp;position)</td></tr>
 <tr class="separator:ab350dddd3d7d0bfa2de28b43351bc7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66872346d3b0f78020021b2fd848f4c1"><td class="memItemLeft" align="right" valign="top"><a id="a66872346d3b0f78020021b2fd848f4c1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>remove_figure</b> (<a class="el" href="class_position.html">Position</a> &amp;position)</td></tr>
+<tr class="memitem:a66872346d3b0f78020021b2fd848f4c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a66872346d3b0f78020021b2fd848f4c1">remove_figure</a> (<a class="el" href="class_position.html">Position</a> &amp;position)</td></tr>
 <tr class="separator:a66872346d3b0f78020021b2fd848f4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5eb03ba58670ca5bb8ba25b516960bda"><td class="memItemLeft" align="right" valign="top"><a id="a5eb03ba58670ca5bb8ba25b516960bda"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_empty</b> (<a class="el" href="class_position.html">Position</a> &amp;position) const</td></tr>
+<tr class="memitem:a5eb03ba58670ca5bb8ba25b516960bda"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a5eb03ba58670ca5bb8ba25b516960bda">is_empty</a> (<a class="el" href="class_position.html">Position</a> &amp;position) const</td></tr>
 <tr class="separator:a5eb03ba58670ca5bb8ba25b516960bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34959dc76efdab3602d0b0f0e0a7fe46"><td class="memItemLeft" align="right" valign="top"><a id="a34959dc76efdab3602d0b0f0e0a7fe46"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>print_board_field_view</b> ()</td></tr>
+<tr class="memitem:a34959dc76efdab3602d0b0f0e0a7fe46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a34959dc76efdab3602d0b0f0e0a7fe46">print_board_field_view</a> ()</td></tr>
 <tr class="separator:a34959dc76efdab3602d0b0f0e0a7fe46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48824243ff5eb858561c8389ec6a8a23"><td class="memItemLeft" align="right" valign="top"><a id="a48824243ff5eb858561c8389ec6a8a23"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update_board_field_view_center</b> ()</td></tr>
+<tr class="memitem:a48824243ff5eb858561c8389ec6a8a23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a48824243ff5eb858561c8389ec6a8a23">update_board_field_view_center</a> ()</td></tr>
 <tr class="separator:a48824243ff5eb858561c8389ec6a8a23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad102636ebfa9afe01eec250d46fccf58"><td class="memItemLeft" align="right" valign="top"><a id="ad102636ebfa9afe01eec250d46fccf58"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_board_field_view</b> ()</td></tr>
+<tr class="memitem:ad102636ebfa9afe01eec250d46fccf58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#ad102636ebfa9afe01eec250d46fccf58">set_board_field_view</a> ()</td></tr>
 <tr class="separator:ad102636ebfa9afe01eec250d46fccf58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5f68d37856d912f83cbb3a05f3bff33"><td class="memItemLeft" align="right" valign="top"><a id="ac5f68d37856d912f83cbb3a05f3bff33"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_board_field_view_center</b> ()</td></tr>
+<tr class="memitem:ac5f68d37856d912f83cbb3a05f3bff33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#ac5f68d37856d912f83cbb3a05f3bff33">set_board_field_view_center</a> ()</td></tr>
 <tr class="separator:ac5f68d37856d912f83cbb3a05f3bff33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaef1bc1c7a20418b14bcd56e65bb0dd6"><td class="memItemLeft" align="right" valign="top"><a id="aaef1bc1c7a20418b14bcd56e65bb0dd6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_board_field_view_outlines</b> ()</td></tr>
+<tr class="memitem:aaef1bc1c7a20418b14bcd56e65bb0dd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#aaef1bc1c7a20418b14bcd56e65bb0dd6">set_board_field_view_outlines</a> ()</td></tr>
 <tr class="separator:aaef1bc1c7a20418b14bcd56e65bb0dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac09647e9b66b635ac59281b9888d650c"><td class="memItemLeft" align="right" valign="top"><a id="ac09647e9b66b635ac59281b9888d650c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_all_chars_with_spaces_board_field_view</b> ()</td></tr>
+<tr class="memitem:ac09647e9b66b635ac59281b9888d650c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#ac09647e9b66b635ac59281b9888d650c">set_all_chars_with_spaces_board_field_view</a> ()</td></tr>
 <tr class="separator:ac09647e9b66b635ac59281b9888d650c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02696557716bdebf6f8dac898050a490"><td class="memItemLeft" align="right" valign="top"><a id="a02696557716bdebf6f8dac898050a490"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_top_numbers_board_field_view</b> ()</td></tr>
+<tr class="memitem:a02696557716bdebf6f8dac898050a490"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a02696557716bdebf6f8dac898050a490">set_top_numbers_board_field_view</a> ()</td></tr>
 <tr class="separator:a02696557716bdebf6f8dac898050a490"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c624728ae8ad08ea1a0a811a0ea44be"><td class="memItemLeft" align="right" valign="top"><a id="a2c624728ae8ad08ea1a0a811a0ea44be"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_bottom_numbers_board_field_view</b> ()</td></tr>
+<tr class="memitem:a2c624728ae8ad08ea1a0a811a0ea44be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a2c624728ae8ad08ea1a0a811a0ea44be">set_bottom_numbers_board_field_view</a> ()</td></tr>
 <tr class="separator:a2c624728ae8ad08ea1a0a811a0ea44be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae346115afab095c3c75c816e907f772d"><td class="memItemLeft" align="right" valign="top"><a id="ae346115afab095c3c75c816e907f772d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_left_side_numbers_board_field_view</b> ()</td></tr>
+<tr class="memitem:ae346115afab095c3c75c816e907f772d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#ae346115afab095c3c75c816e907f772d">set_left_side_numbers_board_field_view</a> ()</td></tr>
 <tr class="separator:ae346115afab095c3c75c816e907f772d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3484d2a7136173c11506635ca1f9f12a"><td class="memItemLeft" align="right" valign="top"><a id="a3484d2a7136173c11506635ca1f9f12a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_right_side_numbers_board_field_view</b> ()</td></tr>
+<tr class="memitem:a3484d2a7136173c11506635ca1f9f12a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a3484d2a7136173c11506635ca1f9f12a">set_right_side_numbers_board_field_view</a> ()</td></tr>
 <tr class="separator:a3484d2a7136173c11506635ca1f9f12a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa427eee3243288f87d34c20fa6cd1161"><td class="memItemLeft" align="right" valign="top"><a id="aa427eee3243288f87d34c20fa6cd1161"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>convert_row_board_field_view_to_row_board_view_index</b> (int &amp;row)</td></tr>
+<tr class="memitem:aa427eee3243288f87d34c20fa6cd1161"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#aa427eee3243288f87d34c20fa6cd1161">convert_row_board_field_view_to_row_board_view_index</a> (int &amp;row)</td></tr>
 <tr class="separator:aa427eee3243288f87d34c20fa6cd1161"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa36a7dec8560d7e50eee8dbb2d1478eb"><td class="memItemLeft" align="right" valign="top"><a id="aa36a7dec8560d7e50eee8dbb2d1478eb"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>convert_col_board_field_view_to_col_board_view_index</b> (int &amp;col)</td></tr>
+<tr class="memitem:aa36a7dec8560d7e50eee8dbb2d1478eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#aa36a7dec8560d7e50eee8dbb2d1478eb">convert_col_board_field_view_to_col_board_view_index</a> (int &amp;col)</td></tr>
 <tr class="separator:aa36a7dec8560d7e50eee8dbb2d1478eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>chess-game/<a class="el" href="_board_8h_source.html">Board.h</a></li>
-<li>chess-game/Board.cpp</li>
-</ul>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9ee491d4fea680cf69b033374a9fdfcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ee491d4fea680cf69b033374a9fdfcb">&#9670;&nbsp;</a></span>Board() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Board::Board </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a692f9810041644a115a59d7b0f774c88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a692f9810041644a115a59d7b0f774c88">&#9670;&nbsp;</a></span>Board() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Board::Board </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_board.html">Board</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af73f45730119a1fd8f6670f53f959e68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73f45730119a1fd8f6670f53f959e68">&#9670;&nbsp;</a></span>~Board()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Board::~Board </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa36a7dec8560d7e50eee8dbb2d1478eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa36a7dec8560d7e50eee8dbb2d1478eb">&#9670;&nbsp;</a></span>convert_col_board_field_view_to_col_board_view_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Board::convert_col_board_field_view_to_col_board_view_index </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>col</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa427eee3243288f87d34c20fa6cd1161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa427eee3243288f87d34c20fa6cd1161">&#9670;&nbsp;</a></span>convert_row_board_field_view_to_row_board_view_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Board::convert_row_board_field_view_to_row_board_view_index </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>row</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab350dddd3d7d0bfa2de28b43351bc7d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab350dddd3d7d0bfa2de28b43351bc7d4">&#9670;&nbsp;</a></span>get_figure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_figure.html">Figure</a> * Board::get_figure </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5eb03ba58670ca5bb8ba25b516960bda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eb03ba58670ca5bb8ba25b516960bda">&#9670;&nbsp;</a></span>is_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Board::is_empty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7288b018e3e2373dde861de91b8e05c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7288b018e3e2373dde861de91b8e05c8">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_board.html">Board</a>&amp; Board::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_board.html">Board</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34959dc76efdab3602d0b0f0e0a7fe46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34959dc76efdab3602d0b0f0e0a7fe46">&#9670;&nbsp;</a></span>print_board_field_view()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::print_board_field_view </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a66872346d3b0f78020021b2fd848f4c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66872346d3b0f78020021b2fd848f4c1">&#9670;&nbsp;</a></span>remove_figure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::remove_figure </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac09647e9b66b635ac59281b9888d650c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac09647e9b66b635ac59281b9888d650c">&#9670;&nbsp;</a></span>set_all_chars_with_spaces_board_field_view()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::set_all_chars_with_spaces_board_field_view </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a492a90319e3d7908f1ffbd87ad1b5c00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a492a90319e3d7908f1ffbd87ad1b5c00">&#9670;&nbsp;</a></span>set_board_field()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::set_board_field </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad102636ebfa9afe01eec250d46fccf58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad102636ebfa9afe01eec250d46fccf58">&#9670;&nbsp;</a></span>set_board_field_view()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::set_board_field_view </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac5f68d37856d912f83cbb3a05f3bff33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5f68d37856d912f83cbb3a05f3bff33">&#9670;&nbsp;</a></span>set_board_field_view_center()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::set_board_field_view_center </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaef1bc1c7a20418b14bcd56e65bb0dd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaef1bc1c7a20418b14bcd56e65bb0dd6">&#9670;&nbsp;</a></span>set_board_field_view_outlines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::set_board_field_view_outlines </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c624728ae8ad08ea1a0a811a0ea44be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c624728ae8ad08ea1a0a811a0ea44be">&#9670;&nbsp;</a></span>set_bottom_numbers_board_field_view()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::set_bottom_numbers_board_field_view </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1b806283f82517d0b60622790a433be0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b806283f82517d0b60622790a433be0">&#9670;&nbsp;</a></span>set_figure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::set_figure </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_figure.html">Figure</a> *&#160;</td>
+          <td class="paramname"><em>figure</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae346115afab095c3c75c816e907f772d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae346115afab095c3c75c816e907f772d">&#9670;&nbsp;</a></span>set_left_side_numbers_board_field_view()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::set_left_side_numbers_board_field_view </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3484d2a7136173c11506635ca1f9f12a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3484d2a7136173c11506635ca1f9f12a">&#9670;&nbsp;</a></span>set_right_side_numbers_board_field_view()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::set_right_side_numbers_board_field_view </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a02696557716bdebf6f8dac898050a490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02696557716bdebf6f8dac898050a490">&#9670;&nbsp;</a></span>set_top_numbers_board_field_view()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::set_top_numbers_board_field_view </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48824243ff5eb858561c8389ec6a8a23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48824243ff5eb858561c8389ec6a8a23">&#9670;&nbsp;</a></span>update_board_field_view_center()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::update_board_field_view_center </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.18
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_board.html">Board</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
 </body>
 </html>

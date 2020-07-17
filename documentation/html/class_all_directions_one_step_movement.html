@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +35,21 @@
    </div>
    <div id="projectbrief">Simple Chess Game with Console User Interface</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +61,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('class_all_directions_one_step_movement.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +92,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -72,6 +102,8 @@ $(function() {
 <div class="title">AllDirectionsOneStepMovement Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_all_directions_one_step_movement_8h_source.html">AllDirectionsOneStepMovement.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AllDirectionsOneStepMovement:</div>
 <div class="dyncontent">
@@ -97,92 +129,867 @@ Inheritance diagram for AllDirectionsOneStepMovement:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a576e92f0d12444ff486a4a9f96b32582"><td class="memItemLeft" align="right" valign="top"><a id="a576e92f0d12444ff486a4a9f96b32582"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AllDirectionsOneStepMovement</b> (<a class="el" href="class_figure.html">Figure</a> *figure)</td></tr>
+<tr class="memitem:a576e92f0d12444ff486a4a9f96b32582"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a576e92f0d12444ff486a4a9f96b32582">AllDirectionsOneStepMovement</a> (<a class="el" href="class_figure.html">Figure</a> *<a class="el" href="class_all_directions_one_step_movement.html#add6c67f8484b71ca63e3b2299e0fb1f7">figure</a>)</td></tr>
 <tr class="separator:a576e92f0d12444ff486a4a9f96b32582"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a2adf71d289e76831d27468719ab132"><td class="memItemLeft" align="right" valign="top"><a id="a6a2adf71d289e76831d27468719ab132"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AllDirectionsOneStepMovement</b> (const <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a> &amp;other)=delete</td></tr>
+<tr class="memitem:a6a2adf71d289e76831d27468719ab132"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a6a2adf71d289e76831d27468719ab132">AllDirectionsOneStepMovement</a> (const <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a> &amp;other)=delete</td></tr>
 <tr class="separator:a6a2adf71d289e76831d27468719ab132"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1d9a5a53519867b3f140700afd4bb20"><td class="memItemLeft" align="right" valign="top"><a id="ae1d9a5a53519867b3f140700afd4bb20"></a>
-<a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a> &amp;other)=delete</td></tr>
+<tr class="memitem:ae1d9a5a53519867b3f140700afd4bb20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#ae1d9a5a53519867b3f140700afd4bb20">operator=</a> (const <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a> &amp;other)=delete</td></tr>
 <tr class="separator:ae1d9a5a53519867b3f140700afd4bb20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b089bdf8a7ddb3613e9eeea495e3c28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a0b089bdf8a7ddb3613e9eeea495e3c28">~AllDirectionsOneStepMovement</a> ()</td></tr>
+<tr class="separator:a0b089bdf8a7ddb3613e9eeea495e3c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a7ffc180c612ea9a20af2ac3b3246f0d9"><td class="memItemLeft" align="right" valign="top"><a id="a7ffc180c612ea9a20af2ac3b3246f0d9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_all_directions_possible_moves</b> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
+<tr class="memitem:a7ffc180c612ea9a20af2ac3b3246f0d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a7ffc180c612ea9a20af2ac3b3246f0d9">set_one_step_all_directions_possible_moves</a> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
 <tr class="separator:a7ffc180c612ea9a20af2ac3b3246f0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab55eaa6721da8665d3ed1cd2d30240e2"><td class="memItemLeft" align="right" valign="top"><a id="ab55eaa6721da8665d3ed1cd2d30240e2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_forward_possible_moves</b> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
+<tr class="memitem:ab55eaa6721da8665d3ed1cd2d30240e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#ab55eaa6721da8665d3ed1cd2d30240e2">set_one_step_forward_possible_moves</a> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
 <tr class="separator:ab55eaa6721da8665d3ed1cd2d30240e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47c992c875521ae62e0449da95eadc03"><td class="memItemLeft" align="right" valign="top"><a id="a47c992c875521ae62e0449da95eadc03"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_backwards_possible_moves</b> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
+<tr class="memitem:a47c992c875521ae62e0449da95eadc03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a47c992c875521ae62e0449da95eadc03">set_one_step_backwards_possible_moves</a> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
 <tr class="separator:a47c992c875521ae62e0449da95eadc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a341d9bbad76c3985eee343c610da1f6d"><td class="memItemLeft" align="right" valign="top"><a id="a341d9bbad76c3985eee343c610da1f6d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_left_possible_moves</b> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
+<tr class="memitem:a341d9bbad76c3985eee343c610da1f6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a341d9bbad76c3985eee343c610da1f6d">set_one_step_left_possible_moves</a> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
 <tr class="separator:a341d9bbad76c3985eee343c610da1f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa73897b1789d75955141204c1242aea"><td class="memItemLeft" align="right" valign="top"><a id="aaa73897b1789d75955141204c1242aea"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_right_possible_moves</b> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
+<tr class="memitem:aaa73897b1789d75955141204c1242aea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#aaa73897b1789d75955141204c1242aea">set_one_step_right_possible_moves</a> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
 <tr class="separator:aaa73897b1789d75955141204c1242aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e43988bdd420d07b1cab7e0fa96b393"><td class="memItemLeft" align="right" valign="top"><a id="a7e43988bdd420d07b1cab7e0fa96b393"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_forward_left_possible_moves</b> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
+<tr class="memitem:a7e43988bdd420d07b1cab7e0fa96b393"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a7e43988bdd420d07b1cab7e0fa96b393">set_one_step_forward_left_possible_moves</a> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
 <tr class="separator:a7e43988bdd420d07b1cab7e0fa96b393"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e588d169facd1656e9a4e8d7c04cac5"><td class="memItemLeft" align="right" valign="top"><a id="a2e588d169facd1656e9a4e8d7c04cac5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_backwards_left_possible_moves</b> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
+<tr class="memitem:a2e588d169facd1656e9a4e8d7c04cac5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a2e588d169facd1656e9a4e8d7c04cac5">set_one_step_backwards_left_possible_moves</a> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
 <tr class="separator:a2e588d169facd1656e9a4e8d7c04cac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2a0cf2257a4f82cff0a9fd7e2db9c8d"><td class="memItemLeft" align="right" valign="top"><a id="ad2a0cf2257a4f82cff0a9fd7e2db9c8d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_forward_right_possible_moves</b> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
+<tr class="memitem:ad2a0cf2257a4f82cff0a9fd7e2db9c8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#ad2a0cf2257a4f82cff0a9fd7e2db9c8d">set_one_step_forward_right_possible_moves</a> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
 <tr class="separator:ad2a0cf2257a4f82cff0a9fd7e2db9c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2faab49ee2cc678a404e7bb15c230a7e"><td class="memItemLeft" align="right" valign="top"><a id="a2faab49ee2cc678a404e7bb15c230a7e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_backwards_right_possible_moves</b> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
+<tr class="memitem:a2faab49ee2cc678a404e7bb15c230a7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a2faab49ee2cc678a404e7bb15c230a7e">set_one_step_backwards_right_possible_moves</a> (<a class="el" href="class_game.html">Game</a> *game, std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;all_possible_moves)</td></tr>
 <tr class="separator:a2faab49ee2cc678a404e7bb15c230a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37e34bc7169d238de11d1454e7539f9b"><td class="memItemLeft" align="right" valign="top"><a id="a37e34bc7169d238de11d1454e7539f9b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_position_empty</b> (<a class="el" href="class_game.html">Game</a> *game, <a class="el" href="class_position.html">Position</a> &amp;position)</td></tr>
+<tr class="memitem:a37e34bc7169d238de11d1454e7539f9b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a37e34bc7169d238de11d1454e7539f9b">is_position_empty</a> (<a class="el" href="class_game.html">Game</a> *game, <a class="el" href="class_position.html">Position</a> &amp;position)</td></tr>
 <tr class="separator:a37e34bc7169d238de11d1454e7539f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2993ff8481b8cbecef207fdd58bcbbb1"><td class="memItemLeft" align="right" valign="top"><a id="a2993ff8481b8cbecef207fdd58bcbbb1"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_position_enemy_figure</b> (<a class="el" href="class_game.html">Game</a> *game, <a class="el" href="class_position.html">Position</a> &amp;position)</td></tr>
+<tr class="memitem:a2993ff8481b8cbecef207fdd58bcbbb1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a2993ff8481b8cbecef207fdd58bcbbb1">has_position_enemy_figure</a> (<a class="el" href="class_game.html">Game</a> *game, <a class="el" href="class_position.html">Position</a> &amp;position)</td></tr>
 <tr class="separator:a2993ff8481b8cbecef207fdd58bcbbb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae97de0aac67052802302a6b17c98996"><td class="memItemLeft" align="right" valign="top"><a id="aae97de0aac67052802302a6b17c98996"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_forward</b> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
+<tr class="memitem:aae97de0aac67052802302a6b17c98996"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#aae97de0aac67052802302a6b17c98996">set_one_step_forward</a> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
 <tr class="separator:aae97de0aac67052802302a6b17c98996"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab15e7cbbed194ba229a465e560f77dab"><td class="memItemLeft" align="right" valign="top"><a id="ab15e7cbbed194ba229a465e560f77dab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_backwards</b> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
+<tr class="memitem:ab15e7cbbed194ba229a465e560f77dab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#ab15e7cbbed194ba229a465e560f77dab">set_one_step_backwards</a> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
 <tr class="separator:ab15e7cbbed194ba229a465e560f77dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a339c0f838087f1e9599d6c86c241d02e"><td class="memItemLeft" align="right" valign="top"><a id="a339c0f838087f1e9599d6c86c241d02e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_left</b> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
+<tr class="memitem:a339c0f838087f1e9599d6c86c241d02e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a339c0f838087f1e9599d6c86c241d02e">set_one_step_left</a> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
 <tr class="separator:a339c0f838087f1e9599d6c86c241d02e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bfd9e26eef1101daa03a2f848e4cca7"><td class="memItemLeft" align="right" valign="top"><a id="a3bfd9e26eef1101daa03a2f848e4cca7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_right</b> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
+<tr class="memitem:a3bfd9e26eef1101daa03a2f848e4cca7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a3bfd9e26eef1101daa03a2f848e4cca7">set_one_step_right</a> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
 <tr class="separator:a3bfd9e26eef1101daa03a2f848e4cca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf898d8e9434a4f0855e905b0a4d3bbd"><td class="memItemLeft" align="right" valign="top"><a id="abf898d8e9434a4f0855e905b0a4d3bbd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_forward_left</b> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
+<tr class="memitem:abf898d8e9434a4f0855e905b0a4d3bbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#abf898d8e9434a4f0855e905b0a4d3bbd">set_one_step_forward_left</a> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
 <tr class="separator:abf898d8e9434a4f0855e905b0a4d3bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace5f1851e7a12a146e09087301bcbd66"><td class="memItemLeft" align="right" valign="top"><a id="ace5f1851e7a12a146e09087301bcbd66"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_backwards_left</b> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
+<tr class="memitem:ace5f1851e7a12a146e09087301bcbd66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#ace5f1851e7a12a146e09087301bcbd66">set_one_step_backwards_left</a> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
 <tr class="separator:ace5f1851e7a12a146e09087301bcbd66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4eaece7e13aefa511bd81aeb440aecc4"><td class="memItemLeft" align="right" valign="top"><a id="a4eaece7e13aefa511bd81aeb440aecc4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_forward_right</b> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
+<tr class="memitem:a4eaece7e13aefa511bd81aeb440aecc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a4eaece7e13aefa511bd81aeb440aecc4">set_one_step_forward_right</a> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
 <tr class="separator:a4eaece7e13aefa511bd81aeb440aecc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2601c04845365fe77b84d3e2569cc43a"><td class="memItemLeft" align="right" valign="top"><a id="a2601c04845365fe77b84d3e2569cc43a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_one_step_backwards_right</b> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
+<tr class="memitem:a2601c04845365fe77b84d3e2569cc43a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#a2601c04845365fe77b84d3e2569cc43a">set_one_step_backwards_right</a> (<a class="el" href="class_position.html">Position</a> &amp;position, <a class="el" href="class_position.html">Position</a> current)</td></tr>
 <tr class="separator:a2601c04845365fe77b84d3e2569cc43a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:add6c67f8484b71ca63e3b2299e0fb1f7"><td class="memItemLeft" align="right" valign="top"><a id="add6c67f8484b71ca63e3b2299e0fb1f7"></a>
-<a class="el" href="class_figure.html">Figure</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>figure</b></td></tr>
+<tr class="memitem:add6c67f8484b71ca63e3b2299e0fb1f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_figure.html">Figure</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_all_directions_one_step_movement.html#add6c67f8484b71ca63e3b2299e0fb1f7">figure</a></td></tr>
 <tr class="separator:add6c67f8484b71ca63e3b2299e0fb1f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>chess-game/<a class="el" href="_all_directions_one_step_movement_8h_source.html">AllDirectionsOneStepMovement.h</a></li>
-<li>chess-game/AllDirectionsOneStepMovement.cpp</li>
-</ul>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a576e92f0d12444ff486a4a9f96b32582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a576e92f0d12444ff486a4a9f96b32582">&#9670;&nbsp;</a></span>AllDirectionsOneStepMovement() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AllDirectionsOneStepMovement::AllDirectionsOneStepMovement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_figure.html">Figure</a> *&#160;</td>
+          <td class="paramname"><em>figure</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6a2adf71d289e76831d27468719ab132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a2adf71d289e76831d27468719ab132">&#9670;&nbsp;</a></span>AllDirectionsOneStepMovement() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AllDirectionsOneStepMovement::AllDirectionsOneStepMovement </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b089bdf8a7ddb3613e9eeea495e3c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b089bdf8a7ddb3613e9eeea495e3c28">&#9670;&nbsp;</a></span>~AllDirectionsOneStepMovement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AllDirectionsOneStepMovement::~AllDirectionsOneStepMovement </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2993ff8481b8cbecef207fdd58bcbbb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2993ff8481b8cbecef207fdd58bcbbb1">&#9670;&nbsp;</a></span>has_position_enemy_figure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AllDirectionsOneStepMovement::has_position_enemy_figure </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a37e34bc7169d238de11d1454e7539f9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37e34bc7169d238de11d1454e7539f9b">&#9670;&nbsp;</a></span>is_position_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AllDirectionsOneStepMovement::is_position_empty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1d9a5a53519867b3f140700afd4bb20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1d9a5a53519867b3f140700afd4bb20">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a>&amp; AllDirectionsOneStepMovement::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ffc180c612ea9a20af2ac3b3246f0d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ffc180c612ea9a20af2ac3b3246f0d9">&#9670;&nbsp;</a></span>set_one_step_all_directions_possible_moves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_all_directions_possible_moves </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>all_possible_moves</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab15e7cbbed194ba229a465e560f77dab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab15e7cbbed194ba229a465e560f77dab">&#9670;&nbsp;</a></span>set_one_step_backwards()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_backwards </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>current</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace5f1851e7a12a146e09087301bcbd66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace5f1851e7a12a146e09087301bcbd66">&#9670;&nbsp;</a></span>set_one_step_backwards_left()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_backwards_left </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>current</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e588d169facd1656e9a4e8d7c04cac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e588d169facd1656e9a4e8d7c04cac5">&#9670;&nbsp;</a></span>set_one_step_backwards_left_possible_moves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_backwards_left_possible_moves </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>all_possible_moves</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a47c992c875521ae62e0449da95eadc03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47c992c875521ae62e0449da95eadc03">&#9670;&nbsp;</a></span>set_one_step_backwards_possible_moves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_backwards_possible_moves </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>all_possible_moves</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2601c04845365fe77b84d3e2569cc43a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2601c04845365fe77b84d3e2569cc43a">&#9670;&nbsp;</a></span>set_one_step_backwards_right()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_backwards_right </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>current</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2faab49ee2cc678a404e7bb15c230a7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2faab49ee2cc678a404e7bb15c230a7e">&#9670;&nbsp;</a></span>set_one_step_backwards_right_possible_moves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_backwards_right_possible_moves </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>all_possible_moves</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aae97de0aac67052802302a6b17c98996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae97de0aac67052802302a6b17c98996">&#9670;&nbsp;</a></span>set_one_step_forward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_forward </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>current</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf898d8e9434a4f0855e905b0a4d3bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf898d8e9434a4f0855e905b0a4d3bbd">&#9670;&nbsp;</a></span>set_one_step_forward_left()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_forward_left </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>current</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e43988bdd420d07b1cab7e0fa96b393"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e43988bdd420d07b1cab7e0fa96b393">&#9670;&nbsp;</a></span>set_one_step_forward_left_possible_moves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_forward_left_possible_moves </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>all_possible_moves</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab55eaa6721da8665d3ed1cd2d30240e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab55eaa6721da8665d3ed1cd2d30240e2">&#9670;&nbsp;</a></span>set_one_step_forward_possible_moves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_forward_possible_moves </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>all_possible_moves</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4eaece7e13aefa511bd81aeb440aecc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eaece7e13aefa511bd81aeb440aecc4">&#9670;&nbsp;</a></span>set_one_step_forward_right()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_forward_right </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>current</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad2a0cf2257a4f82cff0a9fd7e2db9c8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2a0cf2257a4f82cff0a9fd7e2db9c8d">&#9670;&nbsp;</a></span>set_one_step_forward_right_possible_moves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_forward_right_possible_moves </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>all_possible_moves</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a339c0f838087f1e9599d6c86c241d02e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339c0f838087f1e9599d6c86c241d02e">&#9670;&nbsp;</a></span>set_one_step_left()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_left </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>current</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a341d9bbad76c3985eee343c610da1f6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a341d9bbad76c3985eee343c610da1f6d">&#9670;&nbsp;</a></span>set_one_step_left_possible_moves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_left_possible_moves </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>all_possible_moves</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3bfd9e26eef1101daa03a2f848e4cca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bfd9e26eef1101daa03a2f848e4cca7">&#9670;&nbsp;</a></span>set_one_step_right()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_right </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>current</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa73897b1789d75955141204c1242aea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa73897b1789d75955141204c1242aea">&#9670;&nbsp;</a></span>set_one_step_right_possible_moves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AllDirectionsOneStepMovement::set_one_step_right_possible_moves </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_position.html">Position</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>all_possible_moves</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="add6c67f8484b71ca63e3b2299e0fb1f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add6c67f8484b71ca63e3b2299e0fb1f7">&#9670;&nbsp;</a></span>figure</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_figure.html">Figure</a>* AllDirectionsOneStepMovement::figure</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.18
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_all_directions_one_step_movement.html">AllDirectionsOneStepMovement</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
 </body>
 </html>
