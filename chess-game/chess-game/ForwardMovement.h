@@ -1,7 +1,10 @@
 #pragma once
-
 #include "AllDirectionsOneStepMovement.h"
 
+/// This class is Forward movement
+///
+/// This class is inherited by pieces that can move only forward such as Pawn
+/// Class contain method for two steps forward
 class ForwardMovement : public AllDirectionsOneStepMovement
 {
 public:
