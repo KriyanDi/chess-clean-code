@@ -1,7 +1,9 @@
 #pragma once
-
 #include "ForwardMovement.h"
 
+/// This is Pawn piece
+///
+/// This class is about Pawn piece as piece and can give Pawn possible moves on the board field
 class Pawn
 	: virtual public Figure
 	, public ForwardMovement
