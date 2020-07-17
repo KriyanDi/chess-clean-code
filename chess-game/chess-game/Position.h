@@ -1,5 +1,9 @@
 #pragma once
 
+/// This is Position class
+///
+/// This class is about position of any piece on the board field.
+/// Through this class piece can change position and have position
 class Position
 {
 public:

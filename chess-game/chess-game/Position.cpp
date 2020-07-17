@@ -1,10 +1,15 @@
 #include "Position.h"
 
+/// This method is Position default constructor.
+/// Sets default row and col - 0 0
 Position::Position()
 {
 	set_position(0, 0);
 }
 
+/// This method is Position constructor that sets by given row and col
+/// @param row row on the board field
+/// @param col col on the board field
 Position::Position(int row, int col)
 {
 	set_position(row, col);
@@ -29,6 +34,9 @@ Position::~Position()
 {
 }
 
+/// This method checks if Position is equal to our current position
+/// @param rhs other position that is compared to the current
+/// @return **true** if positions are equal, **false** otherwise
 bool Position::operator==(const Position& rhs)
 {
 	if (this->row == rhs.get_row() &&
@@ -62,6 +70,8 @@ int Position::get_col() const
 	return this->col;
 }
 
+/// This function checks if current possition is valid 
+/// according to the limits of the board field
 bool Position::is_valid_position()
 {
 	if (0 <= this->row && this->row <= 7 &&
