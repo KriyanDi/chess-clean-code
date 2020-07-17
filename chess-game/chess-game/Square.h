@@ -2,6 +2,12 @@
 
 #include "Figure.h"
 
+/// This Chess board square
+///
+/// This class is about square on the board field. 
+/// It can give information what piece is in the square or 
+/// if the square is empty. It also can set different pieces
+/// into the square or remove them.
 class Square
 {
 public:
