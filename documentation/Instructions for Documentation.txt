@@ -1,0 +1,2 @@
+1. Open "html" folder
+2. Open index.html
