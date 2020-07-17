@@ -1,7 +1,5 @@
 # **Chess Game - Project**
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
 This **Chess Game** project was made during the course **Clean Code**. In this project I tried my best to show what I have learnt during the course. Special thanks to our teacher **Philip Yankov** for the great teaching and motivation during the course.
 
 # Project Highlights
