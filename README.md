@@ -4,7 +4,7 @@ This **Chess Game** project was made during the course **Clean Code**. In this p
 
 # Project Highlights
   - *Full Git history*
-  - *Documentation with JavaDocs*
+  - *Documentation with JavaDocs and Doxygen*
   - *Clean Code practices used in all files*
   - *Unit Tests*
 
