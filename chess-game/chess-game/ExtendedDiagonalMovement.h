@@ -1,7 +1,9 @@
 #pragma once
-
 #include "AllDirectionsOneStepMovement.h"
 
+/// This class is Extended diagonal movement
+///
+/// This class is inherited by the pieces that can move on extended diagonals such as the horse piece
 class ExtendedDiagonalMovement : public AllDirectionsOneStepMovement
 {
 public:

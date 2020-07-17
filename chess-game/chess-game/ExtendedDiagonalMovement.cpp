@@ -1,5 +1,8 @@
 #include "ExtendedDiagonalMovement.h"
 
+/// This method is ExtendedDiagonalMovement default constructor.
+/// Its role is to set pointer to the figure
+/// @param figure pointer to the figure we want to give movement
 ExtendedDiagonalMovement::ExtendedDiagonalMovement(Figure* figure)
 	:AllDirectionsOneStepMovement(figure)
 {
