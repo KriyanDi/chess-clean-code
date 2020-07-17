@@ -1,9 +1,11 @@
 #pragma once
-
 #include "HorizontalMovement.h"
 #include "VerticalMovement.h"
 #include "DiagonalMovement.h"
 
+/// This is Queen piece
+///
+/// This class is about Queen piece as piece and can give Queen possible moves on the board field
 class Queen 
 	: virtual public Figure
 	, public HorizontalMovement
