@@ -1,5 +1,6 @@
 var dir_e616e25d7bd79137915e90e651d34dea =
 [
+    [ "Debug", "dir_37c47cf16e327a3e1644203455d628db.html", null ],
     [ "AllDirectionsOneStepMovement.cpp", "_all_directions_one_step_movement_8cpp.html", null ],
     [ "AllDirectionsOneStepMovement.h", "_all_directions_one_step_movement_8h.html", [
       [ "AllDirectionsOneStepMovement", "class_all_directions_one_step_movement.html", "class_all_directions_one_step_movement" ]
