@@ -1,8 +1,10 @@
 #pragma once
-
 #include "HorizontalMovement.h"
 #include "VerticalMovement.h"
 
+/// This is Rook piece
+///
+/// This class is about Rook piece as piece and can give Rook possible moves on the board field
 class Rook 
 	: virtual public Figure
 	, public HorizontalMovement
