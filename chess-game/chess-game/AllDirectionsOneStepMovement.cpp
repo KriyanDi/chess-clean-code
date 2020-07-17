@@ -1,5 +1,8 @@
 #include "AllDirectionsOneStepMovement.h"
 
+/// This method is AllDirectionsOneStepMovement default constructor.
+/// Its role is to set pointer to the figure
+/// @param figure pointer to the figure we want to give movement
 AllDirectionsOneStepMovement::AllDirectionsOneStepMovement(Figure* figure)
 {
 	set_figure_pointer(figure);

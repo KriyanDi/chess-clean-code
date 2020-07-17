@@ -2,6 +2,10 @@
 #include "Figure.h"
 #include "Game.h"
 
+/// This is basic one step movement in all directions
+///
+/// This class is basis and its inherited by all other movement classes.
+/// The class contains methods for movement in any direction by one step
 class AllDirectionsOneStepMovement
 {
 public:
