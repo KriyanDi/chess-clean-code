@@ -181,7 +181,10 @@ void Figure::copy_from(const Figure& other)
 
 bool operator==(const Figure& lhs, const Figure& rhs)
 {
-	if (lhs.get_color() == rhs.get_color())
+	if (lhs.get_type() == rhs.get_type() &&
+		lhs.get_color() == rhs.get_color() &&
+		lhs.get_position() == rhs.get_position() &&
+		lhs.get_owner() == rhs.get_owner())
 	{
 		return true;
 	}
