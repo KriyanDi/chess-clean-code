@@ -527,4 +527,94 @@ namespace UnitTestChessGame
 			Assert::AreEqual(expected, actual, L"should be k symbol for king");
 		}
 	};
+
+	TEST_CLASS(TestSquareClass)
+	{
+		TEST_METHOD(testSquareDefaultConstructorFigurePointerEqualsNullptr)
+		{
+			Square square;
+
+			Figure* expected = nullptr;
+			Figure* actual = square.get_figure();
+
+			Assert::AreEqual(*expected, *actual, L"default figure pointer should be nullptr");
+		}
+
+		TEST_METHOD(testSquareSetFigureGivenFigurePawnWhitePositionThreeFourOwnerPlayerOne)
+		{
+			Square square;
+			Type type = Type::PAWN;
+			Color color = Color::WHITE;
+			Position position(3, 4);
+			Player owner = Player::PLAYER_ONE;
+			Figure figure(type, color, position, owner);
+
+			square.set_figure(figure);
+
+			Figure expected = figure;
+			Figure* actual = square.get_figure();
+
+			Assert::AreEqual(expected, *actual, L"should be the same figure");
+		}
+
+		TEST_METHOD(testSquareIsEmptyGivenFigurePawnWhitePositionThreeFourOwnerPlayerOne)
+		{
+			Square square;
+			Type type = Type::PAWN;
+			Color color = Color::WHITE;
+			Position position(3, 4);
+			Player owner = Player::PLAYER_ONE;
+			Figure figure(type, color, position, owner);
+
+			bool expected = false;
+			bool actual = square.is_empty();
+
+			Assert::AreEqual(expected, actual, L"should not be empty");
+		}
+
+		TEST_METHOD(testSquareIsEmptyGivenNothing)
+		{
+			Square square;
+
+			bool expected = true;
+			bool actual = square.is_empty();
+
+			Assert::AreEqual(expected, actual, L"should be empty");
+		}
+
+		TEST_METHOD(testSquareRemoveFigureGivenFigurePawnWhitePositionThreeFourOwnerPlayerOne)
+		{
+			Square square;
+			Type type = Type::PAWN;
+			Color color = Color::WHITE;
+			Position position(3, 4);
+			Player owner = Player::PLAYER_ONE;
+			Figure figure(type, color, position, owner);
+			square.set_figure(figure);
+
+			square.remove_figure();
+
+			Figure* expected = nullptr;
+			Figure* actual = square.get_figure();
+
+			Assert::AreEqual(*expected, *actual, L"Should be nullptr");
+		}
+
+		TEST_METHOD(testSquareGetFigureGivenFigurePawnWhitePositionThreeFourOwnerPlayerOne)
+		{
+			Square square;
+			Type type = Type::PAWN;
+			Color color = Color::WHITE;
+			Position position(3, 4);
+			Player owner = Player::PLAYER_ONE;
+			Figure figure(type, color, position, owner);
+			square.set_figure(figure);
+
+			Figure* expected = &figure;
+			Figure* actual = square.get_figure();
+
+			Assert::AreEqual(*expected, *actual, L"Should be nullptr");
+		}
+
+	};
 }
