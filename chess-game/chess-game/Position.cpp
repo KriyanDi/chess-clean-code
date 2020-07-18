@@ -116,3 +116,16 @@ void Position::set_position(int row, int col)
 	set_row(row);
 	set_col(col);
 }
+
+bool operator==(const Position& lhs, const Position& rhs)
+{
+	if (lhs.get_row() == rhs.get_row() &&
+		lhs.get_col() == rhs.get_col())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
